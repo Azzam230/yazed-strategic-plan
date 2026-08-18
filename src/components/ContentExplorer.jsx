@@ -1,97 +1,307 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import AnimatedSection from './AnimatedSection'
-import { Lightbulb, ExternalLink } from 'lucide-react'
+import { Lightbulb, ExternalLink, Filter } from 'lucide-react'
 
-const tabs = [
+const categories = [
   { id: 'all', label: 'الكل' },
-  { id: 'entitlement', label: 'هل يحق لك؟' },
-  { id: 'risk', label: 'انتبه قبل لا...' },
-  { id: 'case', label: 'قضية في دقيقة' },
-  { id: 'crisis', label: 'ماذا تفعل إذا...؟' },
-  { id: 'b2b', label: 'قانون الأعمال ببساطة' },
-  { id: 'news', label: 'ماذا يعني هذا القرار؟' },
+  { id: 'real-estate', label: 'عقار' },
+  { id: 'labor', label: 'عمالي' },
+  { id: 'financial', label: 'نزاعات مالية' },
+  { id: 'family', label: 'أحوال شخصية' },
+  { id: 'corporate', label: 'شركات وعقود' },
+  { id: 'case-study', label: 'Case Studies' },
+]
+
+const platforms = [
+  { id: 'all', label: 'الكل' },
+  { id: 'instagram', label: 'Instagram' },
+  { id: 'tiktok', label: 'TikTok' },
+  { id: 'x', label: 'X' },
+  { id: 'linkedin', label: 'LinkedIn' },
 ]
 
 const ideas = [
+  // العقار — 4
   {
     id: 1,
-    pillar: 'هل يحق لك؟',
-    pillarId: 'entitlement',
-    title: 'هل يحق لك تجاوز بوابيع الإجارة؟',
-    platform: 'Instagram Reel',
-    description: 'شرح لحقوق المستأجر والمالك عند حدوث خلاف حول بنود الإجارة',
-    tags: ['تعليمي', 'تحفيزي'],
+    category: 'real-estate',
+    hook: 'اشتريت عقار وطلع فيه عيب؟ وش تسوي؟',
+    description: 'الخطوات القانونية لما تكتشف عيب خفي في العقار بعد الشراء.',
+    platform: 'instagram',
+    type: 'Educational',
+    pillar: 'عقار',
+    objective: 'Reach + Trust',
   },
   {
     id: 2,
-    pillar: 'انتبه قبل لا...',
-    pillarId: 'risk',
-    title: '3 بنود يجب فحصها قبل توقيع عقد العمل',
-    platform: 'LinkedIn Post',
-    description: 'aremphasizes على أهمية قراءة العقد قبل التوقيع لحماية حقوقك',
-    tags: ['توعوي', 'تعليمي'],
+    category: 'real-estate',
+    hook: 'المؤجر يرفض يرجّع لك مبلغ التأمين؟ هل يحق له؟',
+    description: 'حقوقك كمستأجر عند انتهاء العقد وعودة مبلغ التأمين.',
+    platform: 'tiktok',
+    type: 'Educational',
+    pillar: 'عقار',
+    objective: 'Reach + Engagement',
   },
   {
     id: 3,
-    pillar: 'قضية في دقيقة',
-    pillarId: 'case',
-    title: 'قضية أمانة: شركاء تجاريون واختلاف في التقسيم',
-    platform: 'TikTok',
-    description: 'قصة واقعية عن نزاع بين شركاء تجاريين وكيف تم حله بالقانون',
-    tags: ['ترفيهي', 'قانوني'],
+    category: 'real-estate',
+    hook: 'بعت عقارك وبعدها اكتشفت مشكلة بالعقد.. وش موقفك؟',
+    description: 'الخيارات القانونية متى تكتشف خلل في عقد البيع بعد التسليم.',
+    platform: 'x',
+    type: 'Educational',
+    pillar: 'عقار',
+    objective: 'Trust + Authority',
   },
   {
     id: 4,
-    pillar: 'ماذا تفعل إذا...؟',
-    pillarId: 'crisis',
-    title: 'ماذا تفعل إذا تم حذفك من واتساب العمل فجأة؟',
-    platform: 'Instagram Carousel',
-    description: 'خطوات عملية للتعامل مع فقدان الوصول لحسابات العمل الرقمية',
-    tags: ['عملي', 'توعوي'],
+    category: 'real-estate',
+    hook: 'تأخر المقاول عن تسليم العقار؟ وش حقوقك؟',
+    description: 'المطالبة بالتعويض أو فسخ العقد عند إخلال المقاول بالمواعيد.',
+    platform: 'instagram',
+    type: 'Carousel',
+    pillar: 'عقار',
+    objective: 'Reach + Trust',
   },
+
+  // القضايا العمالية — 4
   {
     id: 5,
-    pillar: 'قانون الأعمال ببساطة',
-    pillarId: 'b2b',
-    title: 'كيف تحفظ حقوقك في عقد المقاولات',
-    platform: 'LinkedIn',
-    description: 'نصائح للشركات والمقاولين عند إبرام عقود المقاولات',
-    tags: ['تعليمي', 'B2B'],
+    category: 'labor',
+    hook: 'فصلوك من العمل؟ قبل ما توقع على أي ورقة، انتبه.',
+    description: 'أهم الأمور اللي لازم تعرفها قبل توقيع مخالصة أو إنهاء علاقة العمل.',
+    platform: 'tiktok',
+    type: 'Educational',
+    pillar: 'عمالي',
+    objective: 'Reach + Trust',
   },
   {
     id: 6,
-    pillar: 'ماذا يعني هذا القرار؟',
-    pillarId: 'news',
-    title: 'الجديد من هيئة التسويق: قرار حماية تجارب المستهلك',
-    platform: 'X Thread',
-    description: 'تحليل مبسّط لأحدث القرارات التنظيمية وتأثيرها على الشركات',
-    tags: ['تحليلي', 'أخبار'],
+    category: 'labor',
+    hook: 'استقلت من وظيفتك وما صرفوا مستحقاتك.. وش تسوي؟',
+    description: 'خطوات استرجاع حقوقك المالية عند الاستقالة.',
+    platform: 'instagram',
+    type: 'Reel',
+    pillar: 'عمالي',
+    objective: 'Reach + Engagement',
   },
   {
     id: 7,
-    pillar: 'قانون الأعمال ببساطة',
-    pillarId: 'b2b',
-    title: '5 أخطاء تجنبها عند تأسيس شركة',
-    platform: 'Instagram Reel',
-    description: 'الأخطاء الشائعة التي يقع فيها رواد الأعمال عند بدء مشروعهم',
-    tags: ['تعليمي', 'تحفيزي'],
+    category: 'labor',
+    hook: 'خصموا من راتبك مبلغ ما تعرف سببه؟ هل يحق لهم؟',
+    description: 'الخصومات المسموح بها قانونيًا من راتب الموظف.',
+    platform: 'x',
+    type: 'Thread',
+    pillar: 'عمالي',
+    objective: 'Trust + Authority',
   },
   {
     id: 8,
-    pillar: 'هل يحق لك؟',
-    pillarId: 'entitlement',
-    title: 'هل يمكنك فسخ العقد بسبب التأخر عن التسليم؟',
-    platform: 'TikTok',
-    description: 'شرح للحقوق القانونية عند إخلال الطرف الآخر بمواعيد التسليم',
-    tags: ['توعوي', 'قانوني'],
+    category: 'labor',
+    hook: 'موظفك أخذ بيانات العملاء لما مشى.. وش موقفك؟',
+    description: 'الإجراءات القانونية عند انتقال موظف لمنافس مع بيانات سرية.',
+    platform: 'linkedin',
+    type: 'Article',
+    pillar: 'عمالي',
+    objective: 'Authority + Trust',
+  },
+
+  // النزاعات المالية — 4
+  {
+    id: 9,
+    category: 'financial',
+    hook: 'شخص استلف منك مبلغ ورفض يرجّعه.. كيف تطالب بحقك؟',
+    description: 'الخطوات القانونية لاسترداد الأموال المتقرضة.',
+    platform: 'tiktok',
+    type: 'Educational',
+    pillar: 'نزاعات مالية',
+    objective: 'Reach + Engagement',
+  },
+  {
+    id: 10,
+    category: 'financial',
+    hook: 'حوّلت مبلغ لشخص وما نفّذ الاتفاق؟ وش تقدر تسوي؟',
+    description: 'الخيارات القانونية عند عدم تنفيذ التعهد بعد التحويل.',
+    platform: 'instagram',
+    type: 'Reel',
+    pillar: 'نزاعات مالية',
+    objective: 'Reach + Trust',
+  },
+  {
+    id: 11,
+    category: 'financial',
+    hook: 'عندك مبلغ مستحق وما تم سداده؟ وش أول خطوة؟',
+    description: 'كيف تبدأ إجراءات المطالبة المالية بالطريقة الصحيحة.',
+    platform: 'x',
+    type: 'Thread',
+    pillar: 'نزاعات مالية',
+    objective: 'Trust + Authority',
+  },
+  {
+    id: 12,
+    category: 'financial',
+    hook: 'البنك يرفض يسلّمك محفظتك المالية؟ وش تسوي؟',
+    description: 'الإجراءات القانونية عند رفض البنك تسليمك محفظتك المالية.',
+    platform: 'linkedin',
+    type: 'Article',
+    pillar: 'نزاعات مالية',
+    objective: 'Authority + Trust',
+  },
+
+  // الأحوال الشخصية — 3
+  {
+    id: 13,
+    category: 'family',
+    hook: 'صار بينكم خلاف على الحضانة؟ وش الأمور اللي تؤخذ بعين الاعتبار؟',
+    description: 'العوامل اللي تاخذها المحكمة بعين الاعتبار بخصوص حضانة الأطفال.',
+    platform: 'instagram',
+    type: 'Carousel',
+    pillar: 'أحوال شخصية',
+    objective: 'Trust + Engagement',
+  },
+  {
+    id: 14,
+    category: 'family',
+    hook: 'بعد الطلاق.. مين يتحمل النفقة؟',
+    description: 'حقوق الزوجة والزوج فيما يخص النفقة بعد الطلاق.',
+    platform: 'tiktok',
+    type: 'Educational',
+    pillar: 'أحوال شخصية',
+    objective: 'Reach + Trust',
+  },
+  {
+    id: 15,
+    category: 'family',
+    hook: 'عندك خلاف على نفقة الأبناء؟ وش الخيارات المتاحة لك؟',
+    description: 'الخيارات القانونية متى تختلف على مبلغ نفقة الأبناء.',
+    platform: 'x',
+    type: 'Thread',
+    pillar: 'أحوال شخصية',
+    objective: 'Trust + Authority',
+  },
+
+  // الشركات والعقود — 5
+  {
+    id: 16,
+    category: 'corporate',
+    hook: 'داخل شراكة مع صديقك؟ لا توقع قبل ما تتفقون على هذي الأمور.',
+    description: 'البنود الأساسية اللي لازم تتفقون عليها قبل ما تبدأون الشراكة.',
+    platform: 'linkedin',
+    type: 'Article',
+    pillar: 'شركات وعقود',
+    objective: 'Authority + Trust',
+  },
+  {
+    id: 17,
+    category: 'corporate',
+    hook: '3 أخطاء في عقود الشركات ممكن تكلفك كثير.',
+    description: 'الأخطاء الشائعة في صياغة عقود الشركات ومراحل تجنبها.',
+    platform: 'instagram',
+    type: 'Carousel',
+    pillar: 'شركات وعقود',
+    objective: 'Reach + Engagement',
+  },
+  {
+    id: 18,
+    category: 'corporate',
+    hook: 'بتأسس شركة؟ وش الأشياء اللي لازم تنتبه لها من البداية؟',
+    description: 'المتطلبات القانونية الأساسية لتأسيس شركة في السعودية.',
+    platform: 'tiktok',
+    type: 'Educational',
+    pillar: 'شركات وعقود',
+    objective: 'Reach + Trust',
+  },
+  {
+    id: 19,
+    category: 'corporate',
+    hook: 'شريكك انسحب من الشركة.. وش يصير؟',
+    description: 'الإجراءات القانونية عند انسحاب شريك من شركة ناشئة.',
+    platform: 'x',
+    type: 'Thread',
+    pillar: 'شركات وعقود',
+    objective: 'Trust + Authority',
+  },
+  {
+    id: 20,
+    category: 'corporate',
+    hook: 'بتعقد عقد مقاولات؟ 3 بنود لا تتنازل عنها.',
+    description: 'البنود الحاسمة في عقود المقاولات لحماية حقوقك.',
+    platform: 'linkedin',
+    type: 'Post',
+    pillar: 'شركات وعقود',
+    objective: 'Authority + Trust',
+  },
+
+  // Case Studies — 4
+  {
+    id: 21,
+    category: 'case-study',
+    hook: 'جاءنا عميل عنده مشكلة في شراكة تجارية.. وش صار؟',
+    description: 'تعارض أهداف بين شركاء تجاريين وكيف تم حله بالقانون.',
+    platform: 'instagram',
+    type: 'Carousel',
+    pillar: 'Case Studies',
+    objective: 'Trust + Authority',
+  },
+  {
+    id: 22,
+    category: 'case-study',
+    hook: 'رفض الطرف الثاني دفع مستحقات العميل.. كيف تعاملنا مع القضية؟',
+    description: 'مطالبة مالية رفضها الطرف الآخر والنتيجة النهائية.',
+    platform: 'linkedin',
+    type: 'Article',
+    pillar: 'Case Studies',
+    objective: 'Authority + Trust',
+  },
+  {
+    id: 23,
+    category: 'case-study',
+    hook: 'نزاع عقاري استمر فترة.. وش كانت النتيجة؟',
+    description: 'نزاع عقاري بين مالك ومستأجر وكيف وصلنا لحل.',
+    platform: 'tiktok',
+    type: 'Educational',
+    pillar: 'Case Studies',
+    objective: 'Reach + Trust',
+  },
+  {
+    id: 24,
+    category: 'case-study',
+    hook: 'مطالبة مالية رفضها الطرف الآخر.. كيف انتهت القضية؟',
+    description: 'قضية مالية استمرت عدة أشهر والنتيجة النهائية.',
+    platform: 'x',
+    type: 'Thread',
+    pillar: 'Case Studies',
+    objective: 'Trust + Authority',
   },
 ]
 
 function IdeaCard({ idea, index }) {
   const [hovered, setHovered] = useState(false)
 
+  const platformColors = {
+    instagram: '#E1306C',
+    tiktok: '#000000',
+    x: '#1DA1F2',
+    linkedin: '#0A66C2',
+  }
+
+  const platformLabels = {
+    instagram: 'Instagram',
+    tiktok: 'TikTok',
+    x: 'X',
+    linkedin: 'LinkedIn',
+  }
+
+  const typeColors = {
+    Educational: 'rgba(255,255,255,0.08)',
+    Reel: 'rgba(255,255,255,0.08)',
+    Carousel: 'rgba(255,255,255,0.08)',
+    Thread: 'rgba(255,255,255,0.08)',
+    Article: 'rgba(255,255,255,0.08)',
+    Post: 'rgba(255,255,255,0.08)',
+  }
+
   return (
-    <AnimatedSection delay={index * 0.06} direction="up">
+    <AnimatedSection delay={index * 0.05} direction="up">
       <div
         className="glass"
         onMouseEnter={() => setHovered(true)}
@@ -108,11 +318,12 @@ function IdeaCard({ idea, index }) {
           cursor: 'default',
           display: 'flex',
           flexDirection: 'column',
-          gap: '1rem',
+          gap: '0.875rem',
           position: 'relative',
           overflow: 'clip',
         }}
       >
+        {/* Top accent line */}
         <div
           style={{
             position: 'absolute',
@@ -127,6 +338,7 @@ function IdeaCard({ idea, index }) {
           }}
         />
 
+        {/* Tags row */}
         <div
           style={{
             display: 'flex',
@@ -152,17 +364,18 @@ function IdeaCard({ idea, index }) {
             style={{
               padding: '0.2rem 0.625rem',
               borderRadius: '9999px',
-              backgroundColor: 'rgba(255,255,255,0.06)',
-              color: '#A0A0A0',
+              backgroundColor: platformColors[idea.platform] || 'rgba(255,255,255,0.06)',
+              color: '#FFFFFF',
               fontSize: '0.65rem',
               fontWeight: 600,
               whiteSpace: 'nowrap',
             }}
           >
-            {idea.platform}
+            {platformLabels[idea.platform]}
           </span>
         </div>
 
+        {/* Hook */}
         <h3
           style={{
             fontSize: '1.05rem',
@@ -172,9 +385,10 @@ function IdeaCard({ idea, index }) {
             margin: 0,
           }}
         >
-          {idea.title}
+          {idea.hook}
         </h3>
 
+        {/* Description */}
         <p
           style={{
             fontSize: '0.8rem',
@@ -187,6 +401,7 @@ function IdeaCard({ idea, index }) {
           {idea.description}
         </p>
 
+        {/* Metadata row */}
         <div
           style={{
             display: 'flex',
@@ -195,21 +410,30 @@ function IdeaCard({ idea, index }) {
             flexWrap: 'wrap',
           }}
         >
-          {idea.tags.map((tag, i) => (
-            <span
-              key={i}
-              style={{
-                padding: '0.2rem 0.5rem',
-                borderRadius: '6px',
-                backgroundColor: 'rgba(255,255,255,0.06)',
-                color: '#A0A0A0',
-                fontSize: '0.65rem',
-                fontWeight: 500,
-              }}
-            >
-              {tag}
-            </span>
-          ))}
+          <span
+            style={{
+              padding: '0.2rem 0.5rem',
+              borderRadius: '6px',
+              backgroundColor: typeColors[idea.type] || 'rgba(255,255,255,0.06)',
+              color: '#999999',
+              fontSize: '0.65rem',
+              fontWeight: 500,
+            }}
+          >
+            {idea.type}
+          </span>
+          <span
+            style={{
+              padding: '0.2rem 0.5rem',
+              borderRadius: '6px',
+              backgroundColor: 'rgba(255,255,255,0.06)',
+              color: '#999999',
+              fontSize: '0.65rem',
+              fontWeight: 500,
+            }}
+          >
+            {idea.objective}
+          </span>
         </div>
       </div>
     </AnimatedSection>
@@ -217,12 +441,16 @@ function IdeaCard({ idea, index }) {
 }
 
 export default function ContentExplorer() {
-  const [activeTab, setActiveTab] = useState('all')
+  const [activeCategory, setActiveCategory] = useState('all')
+  const [activePlatform, setActivePlatform] = useState('all')
 
-  const filteredIdeas =
-    activeTab === 'all'
-      ? ideas
-      : ideas.filter((idea) => idea.pillarId === activeTab)
+  const filteredIdeas = useMemo(() => {
+    return ideas.filter((idea) => {
+      const categoryMatch = activeCategory === 'all' || idea.category === activeCategory
+      const platformMatch = activePlatform === 'all' || idea.platform === activePlatform
+      return categoryMatch && platformMatch
+    })
+  }, [activeCategory, activePlatform])
 
   return (
     <section
@@ -235,6 +463,7 @@ export default function ContentExplorer() {
       }}
     >
       <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
+        {/* Header */}
         <AnimatedSection delay={0}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <div className="accent-line" style={{ marginInline: 'auto', marginBottom: '1rem' }} />
@@ -281,11 +510,12 @@ export default function ContentExplorer() {
                 margin: '0 auto',
               }}
             >
-              Find the right content idea for your audience and platform
+              كل فكرة مبنية على مشكلة حقيقية، سؤال حقيقي، محتوى مفيد، ثقة، استشارة
             </p>
           </div>
         </AnimatedSection>
 
+        {/* Category Filters */}
         <AnimatedSection delay={0.1}>
           <div
             style={{
@@ -296,18 +526,17 @@ export default function ContentExplorer() {
               backgroundColor: 'rgba(20,20,20,0.7)',
               borderRadius: '14px',
               border: '1px solid rgba(255,255,255,0.08)',
-              marginBottom: '2rem',
-              overflowX: 'auto',
+              marginBottom: '1rem',
               flexWrap: 'wrap',
               justifyContent: 'center',
             }}
           >
-            {tabs.map((tab) => {
-              const isActive = activeTab === tab.id
+            {categories.map((cat) => {
+              const isActive = activeCategory === cat.id
               return (
                 <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
                   style={{
                     padding: '0.6rem 1rem',
                     borderRadius: '8px',
@@ -324,13 +553,60 @@ export default function ContentExplorer() {
                     borderBottom: isActive ? '2px solid #FFFFFF' : '2px solid transparent',
                   }}
                 >
-                  {tab.label}
+                  {cat.label}
                 </button>
               )
             })}
           </div>
         </AnimatedSection>
 
+        {/* Platform Filters */}
+        <AnimatedSection delay={0.15}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.25rem',
+              padding: '0.375rem',
+              backgroundColor: 'rgba(20,20,20,0.7)',
+              borderRadius: '14px',
+              border: '1px solid rgba(255,255,255,0.08)',
+              marginBottom: '2rem',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+            }}
+          >
+            <Filter style={{ width: '0.875rem', height: '0.875rem', color: '#999999', marginInlineEnd: '0.5rem' }} />
+            {platforms.map((plat) => {
+              const isActive = activePlatform === plat.id
+              return (
+                <button
+                  key={plat.id}
+                  onClick={() => setActivePlatform(plat.id)}
+                  style={{
+                    padding: '0.6rem 1rem',
+                    borderRadius: '8px',
+                    border: 'none',
+                    backgroundColor: isActive ? 'rgba(255,255,255,0.1)' : 'transparent',
+                    color: isActive ? '#FFFFFF' : '#999999',
+                    fontSize: '0.8rem',
+                    fontWeight: isActive ? 700 : 500,
+                    fontFamily: 'inherit',
+                    cursor: 'pointer',
+                    transition: 'all 0.25s ease',
+                    whiteSpace: 'nowrap',
+                    position: 'relative',
+                    borderBottom: isActive ? '2px solid #FFFFFF' : '2px solid transparent',
+                  }}
+                >
+                  {plat.label}
+                </button>
+              )
+            })}
+          </div>
+        </AnimatedSection>
+
+        {/* Ideas Grid */}
         <div
           className="explorer-grid"
           style={{
@@ -343,6 +619,7 @@ export default function ContentExplorer() {
           ))}
         </div>
 
+        {/* Footer info */}
         <AnimatedSection delay={0.2} direction="fade">
           <div
             style={{
@@ -367,7 +644,7 @@ export default function ContentExplorer() {
                 fontWeight: 500,
               }}
             >
-              عرض {filteredIdeas.length} من 60+ فكرة محتوى
+              عرض {filteredIdeas.length} من {ideas.length} فكرة محتوى
             </span>
           </div>
         </AnimatedSection>
