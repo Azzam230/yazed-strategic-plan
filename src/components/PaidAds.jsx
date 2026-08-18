@@ -40,7 +40,7 @@ export default function PaidAds() {
               fontSize: '0.875rem', fontWeight: 600, marginBottom: '1rem',
               backgroundColor: 'rgba(255,255,255,0.06)', color: '#FFFFFF',
               border: '1px solid rgba(255,255,255,0.08)',
-            }}>08</span>
+            }}>05</span>
             <h2 style={{
               fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 800,
               fontFamily: 'var(--font-display)', lineHeight: 1.2, color: '#A0A0A0', marginBottom: '0.5rem',

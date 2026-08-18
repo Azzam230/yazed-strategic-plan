@@ -20,7 +20,7 @@ const AudienceSlide = () => {
     <section id="audience" className="section-padding" style={{ position: 'relative', overflow: 'clip' }}>
       <div className="section-container">
         <AnimatedSection direction="up">
-          <div style={{ fontSize: '4rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1, marginBottom: 8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>04</div>
+          <div style={{ fontSize: '4rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1, marginBottom: 8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>03</div>
         </AnimatedSection>
 
         <AnimatedSection direction="up" delay={0.1}>

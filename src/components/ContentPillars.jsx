@@ -226,7 +226,7 @@ export default function ContentPillars() {
       <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
         <AnimatedSection delay={0}>
           <div>
-            <div style={{ fontSize: '4rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1, marginBottom: 8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>05</div>
+            <div style={{ fontSize: '4rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1, marginBottom: 8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>04</div>
             <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#FFFFFF', marginBottom: 8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>استراتيجية المحتوى</h2>
             <p style={{ fontSize: '1.1rem', color: '#A0A0A0', maxWidth: 600, lineHeight: 1.8, marginBottom: 48, fontFamily: "'Noto Sans Arabic', sans-serif" }}>6 ركائز محتوى مصممة لتحقيق التفاعل والتحويل</p>
           </div>
