@@ -2,9 +2,9 @@ import { motion } from 'framer-motion'
 import { ChevronDown, Eye, UserCheck, ArrowLeftRight } from 'lucide-react'
 
 const fadeUp = (delay) => ({
-  initial: { opacity: 0, y: 28 },
+  initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] },
+  transition: { duration: 0.4, delay, ease: 'easeOut' },
 })
 
 const metrics = [
@@ -39,18 +39,13 @@ export default function Hero() {
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
-        background: '#000000',
+        background: 'radial-gradient(ellipse 70% 60% at 50% 45%, #141414 0%, #0A0A0A 40%, #000000 100%)',
       }}
     >
-      {/* Radial gradient overlay */}
       <div style={{
-        position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: 'radial-gradient(ellipse 70% 60% at 50% 45%, #141414 0%, #0A0A0A 40%, #000000 100%)',
-      }} />
-
-      {/* Subtle ambient glow */}
-      <div style={{
-        position: 'absolute', inset: 0, pointerEvents: 'none',
+        position: 'absolute',
+        inset: 0,
+        pointerEvents: 'none',
         background: 'radial-gradient(circle at 50% 35%, rgba(255,255,255,0.02) 0%, transparent 60%)',
       }} />
 
@@ -65,8 +60,7 @@ export default function Hero() {
         paddingBottom: '5rem',
         textAlign: 'center',
       }}>
-        {/* Badge */}
-        <motion.div {...fadeUp(0.15)} style={{
+        <motion.div {...fadeUp(0.05)} style={{
           display: 'inline-flex',
           alignItems: 'center',
           gap: '0.5rem',
@@ -77,26 +71,21 @@ export default function Hero() {
           marginBottom: '2.5rem',
         }}>
           <span style={{
-            width: 6,
-            height: 6,
-            borderRadius: '50%',
+            width: 6, height: 6, borderRadius: '50%',
             backgroundColor: '#FFFFFF',
             boxShadow: '0 0 8px rgba(255,255,255,0.5)',
             animation: 'pulse 2.5s ease-in-out infinite',
           }} />
           <span style={{
-            fontSize: '0.8rem',
-            fontWeight: 600,
+            fontSize: '0.8rem', fontWeight: 600,
             fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
             color: '#FFFFFF',
-            letterSpacing: '0.01em',
           }}>
             الاستراتيجية الرقمية 2026/2027
           </span>
         </motion.div>
 
-        {/* Headline */}
-        <motion.h1 {...fadeUp(0.35)} style={{
+        <motion.h1 {...fadeUp(0.1)} style={{
           fontSize: 'clamp(2.25rem, 6.5vw, 4.5rem)',
           fontWeight: 800,
           fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
@@ -111,8 +100,7 @@ export default function Hero() {
           إلى محرك مستمر للثقة والعملاء
         </motion.h1>
 
-        {/* Subtitle */}
-        <motion.p {...fadeUp(0.55)} style={{
+        <motion.p {...fadeUp(0.15)} style={{
           fontSize: 'clamp(0.95rem, 1.8vw, 1.2rem)',
           fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
           color: '#A0A0A0',
@@ -124,8 +112,7 @@ export default function Hero() {
           استراتيجية النمو الرقمي لمكتب المحامي يزيد اليوبي للمحاماة والاستشارات القانونية
         </motion.p>
 
-        {/* Location */}
-        <motion.p {...fadeUp(0.7)} style={{
+        <motion.p {...fadeUp(0.2)} style={{
           fontSize: '0.8rem',
           fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
           color: '#666666',
@@ -135,8 +122,7 @@ export default function Hero() {
           جدة — المملكة العربية السعودية
         </motion.p>
 
-        {/* Metric cards */}
-        <motion.div {...fadeUp(0.9)} style={{
+        <motion.div {...fadeUp(0.25)} style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
           gap: '1rem',
@@ -147,21 +133,16 @@ export default function Hero() {
           {metrics.map((m, i) => (
             <motion.div
               key={m.en}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 1.05 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.35, delay: 0.3 + i * 0.05, ease: 'easeOut' }}
               style={{
-                padding: '1.25rem 1.5rem',
-                borderRadius: '0.875rem',
+                padding: '1.25rem 1.5rem', borderRadius: '0.875rem',
                 backgroundColor: 'rgba(20,20,20,0.6)',
                 backdropFilter: 'blur(12px)',
-                WebkitBackdropFilter: 'blur(12px)',
                 border: '1px solid rgba(255,255,255,0.08)',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'flex-start',
-                gap: '0.5rem',
-                textAlign: 'start',
+                display: 'flex', flexDirection: 'column', alignItems: 'flex-start',
+                gap: '0.5rem', textAlign: 'start',
                 transition: 'border-color 0.3s, background-color 0.3s',
                 cursor: 'default',
               }}
@@ -176,37 +157,29 @@ export default function Hero() {
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                 <div style={{
-                  width: '2rem',
-                  height: '2rem',
-                  borderRadius: '0.5rem',
+                  width: '2rem', height: '2rem', borderRadius: '0.5rem',
                   backgroundColor: 'rgba(255,255,255,0.06)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
                 }}>
                   <m.icon style={{ width: '1rem', height: '1rem', color: '#FFFFFF' }} />
                 </div>
                 <span style={{
-                  fontSize: '0.6rem',
-                  fontWeight: 700,
+                  fontSize: '0.6rem', fontWeight: 700,
                   fontFamily: "monospace, 'Noto Sans Arabic'",
-                  color: '#FFFFFF',
-                  letterSpacing: '0.12em',
+                  color: '#FFFFFF', letterSpacing: '0.12em',
                 }}>
                   {m.en}
                 </span>
               </div>
               <div style={{
-                fontSize: '0.95rem',
-                fontWeight: 600,
+                fontSize: '0.95rem', fontWeight: 600,
                 fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
                 color: '#FFFFFF',
               }}>
                 {m.label}
               </div>
               <div style={{
-                fontSize: '0.7rem',
-                color: '#666666',
+                fontSize: '0.7rem', color: '#666666',
                 fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
               }}>
                 {m.sub}
@@ -215,21 +188,17 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* Tagline below cards */}
-        <motion.p {...fadeUp(1.35)} style={{
-          fontSize: '0.75rem',
-          fontWeight: 500,
+        <motion.p {...fadeUp(0.5)} style={{
+          fontSize: '0.75rem', fontWeight: 500,
           fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
-          color: '#666666',
-          letterSpacing: '0.06em',
+          color: '#666666', letterSpacing: '0.06em',
           textTransform: 'uppercase',
           marginBottom: '2.5rem',
         }}>
           Organic Growth + Performance Marketing
         </motion.p>
 
-        {/* CTA Button */}
-        <motion.div {...fadeUp(1.5)}>
+        <motion.div {...fadeUp(0.55)}>
           <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
@@ -239,43 +208,27 @@ export default function Hero() {
             }}
             style={{
               padding: '0.875rem 2.25rem',
-              backgroundColor: '#FFFFFF',
-              color: '#000000',
-              fontWeight: 700,
-              fontSize: '0.95rem',
+              backgroundColor: '#FFFFFF', color: '#000000',
+              fontWeight: 700, fontSize: '0.95rem',
               fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
-              borderRadius: '9999px',
-              border: 'none',
-              cursor: 'pointer',
+              borderRadius: '9999px', border: 'none', cursor: 'pointer',
               boxShadow: '0 8px 32px rgba(255,255,255,0.1)',
               transition: 'box-shadow 0.3s',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.5rem',
+              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = '0 12px 40px rgba(255,255,255,0.15)'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow = '0 8px 32px rgba(255,255,255,0.1)'
-            }}
+            onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 12px 40px rgba(255,255,255,0.2)'}
+            onMouseLeave={(e) => e.currentTarget.style.boxShadow = '0 8px 32px rgba(255,255,255,0.1)'}
           >
             استكشف الاستراتيجية
             <ChevronDown style={{ width: '1rem', height: '1rem', transform: 'rotate(90deg)' }} />
           </motion.button>
         </motion.div>
 
-        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 2 }}
-          style={{
-            marginTop: '4rem',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          style={{ marginTop: '4rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
         >
           <motion.div
             animate={{ y: [0, 6, 0] }}
