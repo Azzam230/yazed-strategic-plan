@@ -3,12 +3,12 @@ import { Scale, Menu, X } from 'lucide-react';
 
 const sectionIds = [
   'strategy', 'problem', 'data', 'audience', 'content',
-  'organic', 'paid', 'kpi', 'roadmap', 'next'
+  'organic', 'paid', 'roadmap', 'next'
 ];
 
 const sectionLabels = [
   'الاستراتيجية', 'المشكلة', 'البيانات', 'الجمهور', 'المحتوى',
-  'العضوي', 'المدفوع', 'المؤشرات', 'خارطة الطريق', 'الخطوة القادمة'
+  'العضوي', 'المدفوع', 'خارطة الطريق', 'الخطوة القادمة'
 ];
 
 export default function Navbar() {

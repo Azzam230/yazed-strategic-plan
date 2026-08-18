@@ -11,8 +11,6 @@ import OrganicGrowth from './components/OrganicGrowth'
 import VideoStrategy from './components/VideoStrategy'
 import PaidAds from './components/PaidAds'
 import Retargeting from './components/Retargeting'
-import Budget from './components/Budget'
-import KPIDashboard from './components/KPIDashboard'
 import ContentExplorer from './components/ContentExplorer'
 import WhatsAppConversion from './components/WhatsAppConversion'
 import Differentiation from './components/Differentiation'
@@ -37,8 +35,6 @@ export default function App() {
         <VideoStrategy />
         <PaidAds />
         <Retargeting />
-        <Budget />
-        <KPIDashboard />
         <ContentExplorer />
         <WhatsAppConversion />
         <Differentiation />
