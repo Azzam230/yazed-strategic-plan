@@ -1,7 +1,7 @@
 import AnimatedSection from './AnimatedSection'
 import {
   Check, Megaphone, Phone, Target, CalendarCheck, FileSignature,
-  Camera, Briefcase, ArrowRight, MessageSquare
+  ArrowRight, MessageSquare
 } from 'lucide-react'
 
 const organicItems = [
@@ -92,7 +92,7 @@ export default function PaidAds() {
                     </div>
                     <div>
                       <div style={{ fontSize: '0.875rem', fontWeight: 600, color: '#FFFFFF' }}>{item.label}</div>
-                      <div style={{ fontSize: '0.65rem', color: '#666666', fontFamily: 'monospace' }}>{item.en}</div>
+                      <div style={{ fontSize: '0.65rem', color: '#999999', fontFamily: 'monospace' }}>{item.en}</div>
                     </div>
                   </div>
                 ))}
@@ -128,7 +128,7 @@ export default function PaidAds() {
               background: 'rgba(20,20,20,0.7)',
             }}>
               <div style={{
-                fontSize: '0.7rem', fontWeight: 700, color: '#666666',
+                fontSize: '0.7rem', fontWeight: 700, color: '#999999',
                 fontFamily: 'monospace', marginBottom: '0.25rem', letterSpacing: '0.08em',
               }}>PAID</div>
               <h3 style={{
@@ -151,7 +151,7 @@ export default function PaidAds() {
                     </div>
                     <div>
                       <div style={{ fontSize: '0.875rem', fontWeight: 600, color: '#FFFFFF' }}>{item.label}</div>
-                      <div style={{ fontSize: '0.65rem', color: '#666666', fontFamily: 'monospace' }}>{item.en}</div>
+                      <div style={{ fontSize: '0.65rem', color: '#999999', fontFamily: 'monospace' }}>{item.en}</div>
                     </div>
                   </div>
                 ))}
@@ -190,7 +190,7 @@ export default function PaidAds() {
                     color: i === b2cSteps.length - 1 ? '#FFFFFF' : '#A0A0A0',
                   }}>{step}</span>
                   {i < b2cSteps.length - 1 && (
-                    <ArrowRight style={{ width: '0.75rem', height: '0.75rem', color: '#666666' }} />
+                    <ArrowRight style={{ width: '0.75rem', height: '0.75rem', color: '#999999' }} />
                   )}
                 </div>
               ))}
@@ -201,14 +201,14 @@ export default function PaidAds() {
               borderRadius: '0.875rem', padding: '1.25rem',
               backgroundColor: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)',
             }}>
-              <div style={{ fontSize: '0.65rem', fontWeight: 700, color: '#666666', marginBottom: '0.75rem', fontFamily: 'monospace' }}>EXAMPLE AD</div>
+              <div style={{ fontSize: '0.65rem', fontWeight: 700, color: '#999999', marginBottom: '0.75rem', fontFamily: 'monospace' }}>EXAMPLE AD</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <div>
                   <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#A0A0A0' }}>Hook: </span>
                   <span style={{ fontSize: '0.85rem', color: '#FFFFFF', fontWeight: 600 }}>"عندك نزاع عقاري؟"</span>
                 </div>
                 <div>
-                  <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#666666' }}>Body: </span>
+                  <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#999999' }}>Body: </span>
                   <span style={{ fontSize: '0.85rem', color: '#A0A0A0' }}>"قبل اتخاذ أي خطوة، افهم موقفك النظامي."</span>
                 </div>
                 <div style={{
@@ -252,7 +252,7 @@ export default function PaidAds() {
                     color: i === b2bSteps.length - 1 ? '#FFFFFF' : '#A0A0A0',
                   }}>{step}</span>
                   {i < b2bSteps.length - 1 && (
-                    <ArrowRight style={{ width: '0.75rem', height: '0.75rem', color: '#666666' }} />
+                    <ArrowRight style={{ width: '0.75rem', height: '0.75rem', color: '#999999' }} />
                   )}
                 </div>
               ))}
@@ -263,7 +263,7 @@ export default function PaidAds() {
               borderRadius: '0.875rem', padding: '1.25rem',
               backgroundColor: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)',
             }}>
-              <div style={{ fontSize: '0.65rem', fontWeight: 700, color: '#666666', marginBottom: '0.75rem', fontFamily: 'monospace' }}>EXAMPLE AD</div>
+              <div style={{ fontSize: '0.65rem', fontWeight: 700, color: '#999999', marginBottom: '0.75rem', fontFamily: 'monospace' }}>EXAMPLE AD</div>
               <p style={{ fontSize: '0.9rem', color: '#FFFFFF', fontWeight: 500, lineHeight: 1.7, margin: '0 0 0.75rem 0' }}>
                 "3 أخطاء في عقود الشركات قد تتحول إلى مشكلة مكلفة."
               </p>

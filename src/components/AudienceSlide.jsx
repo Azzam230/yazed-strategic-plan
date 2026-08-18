@@ -10,14 +10,14 @@ const b2cFlow = ['Attention', 'Trust', 'WhatsApp', 'Consultation'];
 const b2bFlow = ['Authority', 'Lead', 'Consultation', 'Corporate Client'];
 
 const FlowArrow = () => (
-  <span style={{ color: '#666666', padding: '0 6px', flexShrink: 0, fontSize: '1rem' }}>
+  <span style={{ color: '#999999', padding: '0 6px', flexShrink: 0, fontSize: '1rem' }}>
     <ChevronLeft size={18} />
   </span>
 );
 
 const AudienceSlide = () => {
   return (
-    <section id="audience" className="section-padding" style={{ position: 'relative', overflow: 'hidden' }}>
+    <section id="audience" className="section-padding" style={{ position: 'relative', overflow: 'clip' }}>
       <div className="section-container">
         <AnimatedSection direction="up">
           <div style={{ fontSize: '4rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1, marginBottom: 8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>04</div>
@@ -44,7 +44,7 @@ const AudienceSlide = () => {
                 ))}
               </div>
 
-              <div style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1.5, color: '#666666', marginBottom: 14, fontFamily: "'Noto Sans Arabic', sans-serif" }}>Pain Points</div>
+              <div style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1.5, color: '#999999', marginBottom: 14, fontFamily: "'Noto Sans Arabic', sans-serif" }}>Pain Points</div>
               <div style={{ marginBottom: 32 }}>
                 {b2cPainPoints.map((item, i) => (
                   <div
@@ -58,7 +58,7 @@ const AudienceSlide = () => {
               </div>
 
               <div style={{ marginTop: 'auto' }}>
-                <div style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1.5, color: '#666666', marginBottom: 14, fontFamily: "'Noto Sans Arabic', sans-serif" }}>Customer Flow</div>
+                <div style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1.5, color: '#999999', marginBottom: 14, fontFamily: "'Noto Sans Arabic', sans-serif" }}>Customer Flow</div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 0, flexWrap: 'wrap' }}>
                   {b2cFlow.map((step, i) => (
                     <React.Fragment key={i}>
@@ -95,7 +95,7 @@ const AudienceSlide = () => {
                 ))}
               </div>
 
-              <div style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1.5, color: '#666666', marginBottom: 14, fontFamily: "'Noto Sans Arabic', sans-serif" }}>Pain Points</div>
+              <div style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1.5, color: '#999999', marginBottom: 14, fontFamily: "'Noto Sans Arabic', sans-serif" }}>Pain Points</div>
               <div style={{ marginBottom: 32 }}>
                 {b2bPainPoints.map((item, i) => (
                   <div
@@ -109,7 +109,7 @@ const AudienceSlide = () => {
               </div>
 
               <div style={{ marginTop: 'auto' }}>
-                <div style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1.5, color: '#666666', marginBottom: 14, fontFamily: "'Noto Sans Arabic', sans-serif" }}>Customer Flow</div>
+                <div style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1.5, color: '#999999', marginBottom: 14, fontFamily: "'Noto Sans Arabic', sans-serif" }}>Customer Flow</div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 0, flexWrap: 'wrap' }}>
                   {b2bFlow.map((step, i) => (
                     <React.Fragment key={i}>

@@ -87,7 +87,7 @@ export default function Budget() {
                 </div>
                 <div style={{
                   fontSize: '0.875rem', fontWeight: 500,
-                  color: s.featured ? 'rgba(0,0,0,0.4)' : '#666666',
+                  color: s.featured ? 'rgba(0,0,0,0.4)' : '#999999',
                   marginBottom: '1.5rem',
                 }}>{s.currency}</div>
 
@@ -109,7 +109,7 @@ export default function Budget() {
                           }}>{item.amount}</span>
                           <span style={{
                             fontSize: '0.65rem', fontWeight: 600,
-                            color: s.featured ? 'rgba(0,0,0,0.35)' : '#666666',
+                            color: s.featured ? 'rgba(0,0,0,0.35)' : '#999999',
                           }}>{item.pct}%</span>
                         </div>
                       </div>

@@ -110,7 +110,7 @@ function IdeaCard({ idea, index }) {
           flexDirection: 'column',
           gap: '1rem',
           position: 'relative',
-          overflow: 'hidden',
+          overflow: 'clip',
         }}
       >
         <div
@@ -231,7 +231,7 @@ export default function ContentExplorer() {
       style={{
         backgroundColor: '#000000',
         position: 'relative',
-        overflow: 'hidden',
+        overflow: 'clip',
       }}
     >
       <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
@@ -313,7 +313,7 @@ export default function ContentExplorer() {
                     borderRadius: '8px',
                     border: 'none',
                     backgroundColor: isActive ? 'rgba(255,255,255,0.1)' : 'transparent',
-                    color: isActive ? '#FFFFFF' : '#666666',
+                    color: isActive ? '#FFFFFF' : '#999999',
                     fontSize: '0.8rem',
                     fontWeight: isActive ? 700 : 500,
                     fontFamily: 'inherit',
@@ -359,11 +359,11 @@ export default function ContentExplorer() {
               marginInline: 'auto',
             }}
           >
-            <ExternalLink style={{ width: '0.875rem', height: '0.875rem', color: '#666666' }} />
+            <ExternalLink style={{ width: '0.875rem', height: '0.875rem', color: '#999999' }} />
             <span
               style={{
                 fontSize: '0.8rem',
-                color: '#666666',
+                color: '#999999',
                 fontWeight: 500,
               }}
             >

@@ -26,7 +26,7 @@ const DataSlide = () => {
   const [hoveredCard, setHoveredCard] = React.useState(null);
 
   return (
-    <section id="data" className="section-padding" style={{ position: 'relative', overflow: 'hidden' }}>
+    <section id="data" className="section-padding" style={{ position: 'relative', overflow: 'clip' }}>
       <div className="section-container">
         <AnimatedSection direction="up">
           <div style={{ fontSize: '4rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1, marginBottom: 8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>03</div>
@@ -37,7 +37,7 @@ const DataSlide = () => {
         </AnimatedSection>
 
         <AnimatedSection direction="up" delay={150}>
-          <p style={{ fontSize: '1rem', color: '#666666', marginBottom: 60, fontWeight: 500, letterSpacing: 1 }}>Previous Content Performance</p>
+          <p style={{ fontSize: '1rem', color: '#999999', marginBottom: 60, fontWeight: 500, letterSpacing: 1 }}>Previous Content Performance</p>
         </AnimatedSection>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginBottom: 80 }}>
@@ -49,7 +49,7 @@ const DataSlide = () => {
                   padding: '48px 36px',
                   textAlign: 'center',
                   position: 'relative',
-                  overflow: 'hidden',
+                  overflow: 'clip',
                   transition: 'transform 0.3s, border-color 0.3s',
                   border: hoveredCard === i
                     ? '1px solid rgba(255,255,255,0.15)'
@@ -84,7 +84,7 @@ const DataSlide = () => {
             {formulaParts.map((part, i) => {
               if (part === '+') {
                 return (
-                  <span key={i} style={{ color: '#666666', fontSize: '1.2rem', fontWeight: 300 }}>
+                  <span key={i} style={{ color: '#999999', fontSize: '1.2rem', fontWeight: 300 }}>
                     +
                   </span>
                 );

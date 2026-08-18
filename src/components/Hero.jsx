@@ -38,7 +38,7 @@ export default function Hero() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        overflow: 'hidden',
+        overflow: 'clip',
         background: 'radial-gradient(ellipse 70% 60% at 50% 45%, #141414 0%, #0A0A0A 40%, #000000 100%)',
       }}
     >
@@ -115,7 +115,7 @@ export default function Hero() {
         <motion.p {...fadeUp(0.2)} style={{
           fontSize: '0.8rem',
           fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
-          color: '#666666',
+          color: '#999999',
           letterSpacing: '0.04em',
           marginBottom: '3.5rem',
         }}>
@@ -179,7 +179,7 @@ export default function Hero() {
                 {m.label}
               </div>
               <div style={{
-                fontSize: '0.7rem', color: '#666666',
+                fontSize: '0.7rem', color: '#999999',
                 fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
               }}>
                 {m.sub}
@@ -191,7 +191,7 @@ export default function Hero() {
         <motion.p {...fadeUp(0.5)} style={{
           fontSize: '0.75rem', fontWeight: 500,
           fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
-          color: '#666666', letterSpacing: '0.06em',
+          color: '#999999', letterSpacing: '0.06em',
           textTransform: 'uppercase',
           marginBottom: '2.5rem',
         }}>
@@ -234,7 +234,7 @@ export default function Hero() {
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
           >
-            <ChevronDown style={{ width: '1.25rem', height: '1.25rem', color: '#666666' }} />
+            <ChevronDown style={{ width: '1.25rem', height: '1.25rem', color: '#999999' }} />
           </motion.div>
         </motion.div>
       </div>

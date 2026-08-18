@@ -63,7 +63,7 @@ export default function CaseStudies() {
       style={{
         backgroundColor: '#000000',
         position: 'relative',
-        overflow: 'hidden',
+        overflow: 'clip',
       }}
     >
       <div
@@ -225,7 +225,7 @@ export default function CaseStudies() {
                   <p
                     style={{
                       fontSize: '0.75rem',
-                      color: '#666666',
+                      color: '#999999',
                       lineHeight: 1.5,
                       margin: 0,
                     }}
@@ -297,7 +297,7 @@ export default function CaseStudies() {
                   {vp.titleAr}
                 </span>
                 <span
-                  style={{ fontSize: '0.7rem', color: '#666666', fontWeight: 500 }}
+                  style={{ fontSize: '0.7rem', color: '#999999', fontWeight: 500 }}
                 >
                   {vp.title}
                 </span>
@@ -318,7 +318,7 @@ export default function CaseStudies() {
             <p
               style={{
                 fontSize: '0.75rem',
-                color: '#666666',
+                color: '#999999',
                 lineHeight: 1.7,
                 padding: '1rem 1.5rem',
                 borderRadius: '10px',

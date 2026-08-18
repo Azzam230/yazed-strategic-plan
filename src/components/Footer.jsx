@@ -8,15 +8,14 @@ export default function Footer() {
         position: 'relative',
         backgroundColor: '#000000',
         borderTop: '1px solid rgba(255,255,255,0.08)',
-        overflow: 'hidden',
       }}
     >
       <div
         style={{
           position: 'absolute',
           top: 0,
-          left: 0,
-          right: 0,
+          insetInlineStart: 0,
+          insetInlineEnd: 0,
           height: '1px',
           background:
             'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)',
@@ -69,7 +68,7 @@ export default function Footer() {
                   </h4>
                 </div>
               </div>
-              <p style={{ fontSize: '0.875rem', color: '#666666', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '0.875rem', color: '#999999', lineHeight: 1.6 }}>
                 للمحاماة والاستشارات القانونية
               </p>
             </div>
@@ -132,7 +131,7 @@ export default function Footer() {
                 تواصل
               </h4>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#A0A0A0', fontSize: '0.875rem' }}>
-                <MapPin style={{ width: '0.875rem', height: '0.875rem', color: '#666666', flexShrink: 0 }} />
+                <MapPin style={{ width: '0.875rem', height: '0.875rem', color: '#999999', flexShrink: 0 }} />
                 جدة — المملكة العربية السعودية
               </div>
               <a
@@ -194,7 +193,7 @@ export default function Footer() {
             gap: '0.5rem',
           }}
         >
-          <p style={{ fontSize: '0.8rem', color: '#666666', textAlign: 'center' }}>
+          <p style={{ fontSize: '0.8rem', color: '#999999', textAlign: 'center' }}>
             © 2026 مكتب المحامي يزيد اليوبي — جميع الحقوق محفوظة
           </p>
         </div>
@@ -205,7 +204,7 @@ export default function Footer() {
         style={{
           position: 'fixed',
           bottom: '1.5rem',
-          left: '1.5rem',
+          insetInlineEnd: '1.5rem',
           width: '3rem',
           height: '3rem',
           borderRadius: '50%',

@@ -77,7 +77,7 @@ export default function OrganicGrowth() {
       style={{
         backgroundColor: '#000000',
         position: 'relative',
-        overflow: 'hidden',
+        overflow: 'clip',
       }}
     >
       <div
@@ -216,7 +216,7 @@ export default function OrganicGrowth() {
                     <span
                       style={{
                         fontSize: '0.65rem',
-                        color: '#666666',
+                        color: '#999999',
                         fontWeight: 500,
                       }}
                     >
@@ -304,7 +304,7 @@ export default function OrganicGrowth() {
                 <span
                   style={{
                     fontSize: '0.65rem',
-                    color: '#666666',
+                    color: '#999999',
                     display: 'block',
                     marginBottom: '0.5rem',
                   }}

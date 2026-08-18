@@ -129,7 +129,7 @@ export default function VideoStrategy() {
                 borderRadius: '0.875rem', padding: '1.25rem',
                 backgroundColor: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)',
               }}>
-                <div style={{ fontSize: '0.65rem', fontWeight: 700, color: '#666666', marginBottom: '0.5rem', fontFamily: 'monospace' }}>PROBLEM</div>
+                <div style={{ fontSize: '0.65rem', fontWeight: 700, color: '#999999', marginBottom: '0.5rem', fontFamily: 'monospace' }}>PROBLEM</div>
                 <p style={{ fontSize: '0.95rem', color: '#FFFFFF', fontWeight: 600, lineHeight: 1.6, margin: 0 }}>
                   "لا تبدأ بهذه الخطوة."
                 </p>
@@ -148,7 +148,7 @@ export default function VideoStrategy() {
                     display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.125rem',
                   }}>
                     <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#FFFFFF' }}>{step.ar}</span>
-                    <span style={{ fontSize: '0.6rem', color: '#666666', fontFamily: 'monospace' }}>{step.en}</span>
+                    <span style={{ fontSize: '0.6rem', color: '#999999', fontFamily: 'monospace' }}>{step.en}</span>
                   </div>
                   {i < flowSteps.length - 1 && (
                     <Play style={{ width: '0.75rem', height: '0.75rem', color: 'rgba(255,255,255,0.35)', transform: 'scaleX(-1)' }} />

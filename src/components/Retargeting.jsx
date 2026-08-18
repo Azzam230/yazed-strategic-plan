@@ -57,7 +57,7 @@ export default function Retargeting() {
               {audienceParts.map((part, i) => (
                 <span key={i}>
                   <span style={{ color: '#FFFFFF', fontWeight: 600 }}>{part}</span>
-                  {i < audienceParts.length - 1 && <span style={{ color: '#666666' }}> • </span>}
+                  {i < audienceParts.length - 1 && <span style={{ color: '#999999' }}> • </span>}
                 </span>
               ))}
             </p>
@@ -92,7 +92,7 @@ export default function Retargeting() {
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', marginBottom: '0.125rem' }}>
                       <span style={{ fontSize: '0.95rem', fontWeight: 700, color: '#FFFFFF' }}>{step.title}</span>
-                      <span style={{ fontSize: '0.6rem', color: '#666666', fontFamily: 'monospace' }}>{step.en}</span>
+                      <span style={{ fontSize: '0.6rem', color: '#999999', fontFamily: 'monospace' }}>{step.en}</span>
                     </div>
                     <span style={{ fontSize: '0.75rem', color: '#A0A0A0' }}>{step.desc}</span>
                   </div>

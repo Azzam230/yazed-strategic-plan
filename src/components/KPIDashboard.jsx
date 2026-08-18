@@ -81,7 +81,7 @@ export default function KPIDashboard() {
                       fontSize: '1.125rem', fontWeight: 700,
                       color: '#FFFFFF',
                     }}>{cat.title}</h3>
-                    <span style={{ fontSize: '0.7rem', color: '#666666', fontWeight: 500 }}>{cat.titleEn}</span>
+                    <span style={{ fontSize: '0.7rem', color: '#999999', fontWeight: 500 }}>{cat.titleEn}</span>
                   </div>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>

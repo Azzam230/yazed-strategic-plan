@@ -33,7 +33,7 @@ export default function FinalSlide() {
         alignItems: 'center',
         justifyContent: 'center',
         position: 'relative',
-        overflow: 'hidden',
+        overflow: 'clip',
         backgroundColor: '#000000',
       }}
     >
@@ -230,7 +230,7 @@ export default function FinalSlide() {
             style={{
               marginTop: '3rem',
               fontSize: '0.8rem',
-              color: '#666666',
+              color: '#999999',
               letterSpacing: '0.04em',
             }}
           >

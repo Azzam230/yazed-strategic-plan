@@ -48,7 +48,7 @@ const flowSteps = [
 
 const qualificationQuestions = [
   { num: '1', text: 'هل الاستشارة مرتبطة بـ...؟', detail: 'نوع القضية: عقار / عقود / نزاع / شركة / أخرى' },
-  { num: '2', text: 'ما هي المدينة؟', detail: 'تحديد الموقع الجغرافي للـ管辖法院' },
+  { num: '2', text: 'ما هي المدينة؟', detail: 'تحديد الموقع الجغرافي للمحكمة المختصة' },
   { num: '3', text: 'هل الحالة مرتبطة بـ...؟', detail: 'النوع: تعاملات تجارية / شخصية' },
 ]
 
@@ -130,7 +130,7 @@ function ChatBubble({ step, index }) {
         <span
           style={{
             fontSize: '0.6rem',
-            color: '#666666',
+            color: '#999999',
             paddingInline: '0.5rem',
           }}
         >
@@ -149,7 +149,7 @@ export default function WhatsAppConversion() {
       style={{
         backgroundColor: '#000000',
         position: 'relative',
-        overflow: 'hidden',
+        overflow: 'clip',
       }}
     >
       <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
@@ -261,7 +261,7 @@ export default function WhatsAppConversion() {
                     <ChatBubble step={step} index={i} />
                     {i < flowSteps.length - 1 && (
                       <div style={{ display: 'flex', justifyContent: 'center', padding: '0.125rem 0' }}>
-                        <ArrowDown style={{ width: '0.75rem', height: '0.75rem', color: '#666666', opacity: 0.5 }} />
+                        <ArrowDown style={{ width: '0.75rem', height: '0.75rem', color: '#999999', opacity: 0.5 }} />
                       </div>
                     )}
                   </div>
@@ -336,7 +336,7 @@ export default function WhatsAppConversion() {
                         <p
                           style={{
                             fontSize: '0.75rem',
-                            color: '#666666',
+                            color: '#999999',
                             lineHeight: 1.5,
                             margin: 0,
                           }}

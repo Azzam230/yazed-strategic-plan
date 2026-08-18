@@ -30,7 +30,7 @@ const phases = [
 
 export default function Roadmap() {
   return (
-    <section id="roadmap" className="section-padding" style={{ backgroundColor: '#07111F' }}>
+    <section id="roadmap" className="section-padding" style={{ backgroundColor: '#000000' }}>
       <div className="section-container">
         <AnimatedSection>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
@@ -71,7 +71,7 @@ export default function Roadmap() {
                   <div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                       <span style={{ fontSize: '0.75rem', color: '#C4FA00', fontWeight: 700 }}>{phase.month}</span>
-                      <span style={{ fontSize: '0.65rem', color: '#64748B' }}>{phase.monthEn}</span>
+                      <span style={{ fontSize: '0.65rem', color: '#999999' }}>{phase.monthEn}</span>
                     </div>
                     <h3 style={{
                       fontSize: '1.125rem', fontWeight: 700,

@@ -54,7 +54,7 @@ function DiffCard({ item, index }) {
           textAlign: 'center',
           gap: '1.25rem',
           position: 'relative',
-          overflow: 'hidden',
+          overflow: 'clip',
         }}
       >
         <div
@@ -139,7 +139,7 @@ export default function Differentiation() {
       style={{
         backgroundColor: '#000000',
         position: 'relative',
-        overflow: 'hidden',
+        overflow: 'clip',
       }}
     >
       <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>

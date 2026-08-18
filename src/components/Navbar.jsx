@@ -189,7 +189,7 @@ export default function Navbar() {
                 style={{
                   fontSize: '10px',
                   fontWeight: 600,
-                  color: activeSection === i ? '#FFFFFF' : '#666666',
+                  color: activeSection === i ? '#FFFFFF' : '#999999',
                   fontVariantNumeric: 'tabular-nums',
                   minWidth: '16px',
                 }}
@@ -210,7 +210,7 @@ export default function Navbar() {
               display: 'none',
               fontSize: '12px',
               fontWeight: 600,
-              color: '#666666',
+              color: '#999999',
               fontVariantNumeric: 'tabular-nums',
               letterSpacing: '0.05em',
             }}
@@ -259,7 +259,7 @@ export default function Navbar() {
             style={{
               fontSize: '11px',
               fontWeight: 600,
-              color: '#666666',
+              color: '#999999',
               marginBottom: '12px',
               fontVariantNumeric: 'tabular-nums',
               letterSpacing: '0.1em',
@@ -295,7 +295,7 @@ export default function Navbar() {
                   style={{
                     fontSize: '11px',
                     fontWeight: 700,
-                    color: activeSection === i ? '#FFFFFF' : '#666666',
+                    color: activeSection === i ? '#FFFFFF' : '#999999',
                     fontVariantNumeric: 'tabular-nums',
                     minWidth: '20px',
                   }}

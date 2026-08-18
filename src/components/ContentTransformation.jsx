@@ -230,7 +230,7 @@ export default function ContentTransformation() {
                   >
                     {asset.name}
                   </span>
-                  <span style={{ fontSize: '0.65rem', color: '#666666' }}>
+                  <span style={{ fontSize: '0.65rem', color: '#999999' }}>
                     {asset.platform}
                   </span>
                 </div>
