@@ -38,19 +38,19 @@ const kpiCategories = [
 
 export default function KPIDashboard() {
   return (
-    <section id="kpi" className="section-padding" style={{ backgroundColor: '#07111F' }}>
+    <section id="kpi" className="section-padding" style={{ backgroundColor: '#000000' }}>
       <div className="section-container">
         <AnimatedSection>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <div className="accent-line" style={{ marginInline: 'auto', marginBottom: '1rem' }} />
             <h2 style={{
               fontSize: 'clamp(1.875rem, 4vw, 3rem)', fontWeight: 800,
-              fontFamily: 'var(--font-display)', color: '#F5F7FA', lineHeight: 1.2, marginBottom: '0.75rem',
+              color: '#FFFFFF', lineHeight: 1.2, marginBottom: '0.75rem',
             }}>
               مؤشرات الأداء الرئيسية
             </h2>
             <p style={{
-              fontSize: 'clamp(0.95rem, 2vw, 1.1rem)', color: '#94A3B8',
+              fontSize: 'clamp(0.95rem, 2vw, 1.1rem)', color: '#A0A0A0',
               maxWidth: '48rem', marginInline: 'auto', lineHeight: 1.7,
             }}>
               KPIs واضحة وقابلة للقياس لضمان تتبع النجاح
@@ -65,23 +65,23 @@ export default function KPIDashboard() {
                 borderRadius: '1.5rem', padding: 'clamp(1.5rem, 3vw, 2rem)',
                 height: '100%', transition: 'border-color 0.3s',
               }}
-                onMouseEnter={(e) => e.currentTarget.style.borderColor = 'rgba(196,250,0,0.2)'}
-                onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'}
+                onMouseEnter={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'}
+                onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
                   <div style={{
                     width: '2.75rem', height: '2.75rem', borderRadius: '0.75rem',
-                    backgroundColor: 'rgba(196,250,0,0.1)',
+                    backgroundColor: 'rgba(255,255,255,0.06)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                   }}>
-                    <cat.icon style={{ width: '1.25rem', height: '1.25rem', color: '#C4FA00' }} />
+                    <cat.icon style={{ width: '1.25rem', height: '1.25rem', color: '#FFFFFF' }} />
                   </div>
                   <div>
                     <h3 style={{
                       fontSize: '1.125rem', fontWeight: 700,
-                      fontFamily: 'var(--font-display)', color: '#F5F7FA',
+                      color: '#FFFFFF',
                     }}>{cat.title}</h3>
-                    <span style={{ fontSize: '0.7rem', color: '#64748B', fontWeight: 500 }}>{cat.titleEn}</span>
+                    <span style={{ fontSize: '0.7rem', color: '#666666', fontWeight: 500 }}>{cat.titleEn}</span>
                   </div>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -89,10 +89,10 @@ export default function KPIDashboard() {
                     <div key={j} style={{
                       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                       padding: '0.75rem 0',
-                      borderBottom: j < cat.kpis.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
+                      borderBottom: j < cat.kpis.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none',
                     }}>
-                      <span style={{ fontSize: '0.875rem', color: '#94A3B8' }}>{kpi.metric}</span>
-                      <span style={{ fontSize: '0.875rem', fontWeight: 700, color: '#C4FA00' }}>{kpi.target}</span>
+                      <span style={{ fontSize: '0.875rem', color: '#A0A0A0' }}>{kpi.metric}</span>
+                      <span style={{ fontSize: '0.875rem', fontWeight: 700, color: '#FFFFFF' }}>{kpi.target}</span>
                     </div>
                   ))}
                 </div>

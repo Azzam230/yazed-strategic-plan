@@ -1,5 +1,4 @@
 import AnimatedSection from './AnimatedSection'
-import SectionHeader from './SectionHeader'
 import {
   AlertCircle,
   Scale,
@@ -60,9 +59,9 @@ const valuePillars = [
 export default function CaseStudies() {
   return (
     <section
-      className="slide"
+      className="section-padding"
       style={{
-        backgroundColor: '#07111F',
+        backgroundColor: '#000000',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -71,22 +70,41 @@ export default function CaseStudies() {
         style={{
           position: 'absolute',
           bottom: '10%',
-          insetInlineStart: '30%',
+          left: '30%',
           width: '500px',
           height: '400px',
           borderRadius: '50%',
-          background: 'rgba(196,250,0,0.025)',
+          background: 'rgba(255,255,255,0.01)',
           filter: 'blur(150px)',
           pointerEvents: 'none',
         }}
       />
 
-      <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+      <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
         <AnimatedSection delay={0}>
-          <SectionHeader
-            title="دراسات الحالة"
-            subtitle="كيف نحول النتائج إلى ثقة وعملاء"
-          />
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2
+              style={{
+                fontSize: 'clamp(1.875rem, 4vw, 3rem)',
+                fontWeight: 800,
+                fontFamily: 'var(--font-display)',
+                lineHeight: 1.2,
+                color: '#FFFFFF',
+                marginBottom: '0.5rem',
+              }}
+            >
+              دراسات الحالة
+            </h2>
+            <p
+              style={{
+                fontSize: 'clamp(0.9rem, 1.5vw, 1.1rem)',
+                color: '#A0A0A0',
+                fontWeight: 500,
+              }}
+            >
+              كيف نحول النتائج إلى ثقة وعملاء
+            </p>
+          </div>
         </AnimatedSection>
 
         {/* Flow */}
@@ -121,11 +139,11 @@ export default function CaseStudies() {
                     style={{
                       position: 'absolute',
                       top: '2rem',
-                      insetInlineEnd: '-1rem',
+                      right: '-1rem',
                       width: '2rem',
                       height: '2px',
                       background:
-                        'linear-gradient(90deg, rgba(196,250,0,0.3), rgba(196,250,0,0.1))',
+                        'linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05))',
                     }}
                   />
                 )}
@@ -135,16 +153,18 @@ export default function CaseStudies() {
                   style={{
                     padding: '1.25rem 1rem',
                     borderRadius: '14px',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    background: 'rgba(20,20,20,0.7)',
                     width: '100%',
                     transition: 'all 0.3s',
                     cursor: 'default',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(196,250,0,0.2)'
+                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'
                     e.currentTarget.style.transform = 'translateY(-2px)'
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'
+                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
                     e.currentTarget.style.transform = 'translateY(0)'
                   }}
                 >
@@ -152,7 +172,7 @@ export default function CaseStudies() {
                     style={{
                       fontSize: '0.7rem',
                       fontFamily: 'monospace',
-                      color: 'rgba(196,250,0,0.4)',
+                      color: 'rgba(255,255,255,0.25)',
                       display: 'block',
                       marginBottom: '0.5rem',
                     }}
@@ -164,7 +184,7 @@ export default function CaseStudies() {
                       width: '2.5rem',
                       height: '2.5rem',
                       borderRadius: '10px',
-                      backgroundColor: 'rgba(196,250,0,0.1)',
+                      backgroundColor: 'rgba(255,255,255,0.06)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -176,7 +196,7 @@ export default function CaseStudies() {
                       style={{
                         width: '1.15rem',
                         height: '1.15rem',
-                        color: '#C4FA00',
+                        color: '#FFFFFF',
                       }}
                     />
                   </div>
@@ -184,7 +204,7 @@ export default function CaseStudies() {
                     style={{
                       fontSize: '0.95rem',
                       fontWeight: 700,
-                      color: '#F5F7FA',
+                      color: '#FFFFFF',
                       marginBottom: '0.15rem',
                       fontFamily: 'var(--font-display)',
                     }}
@@ -194,7 +214,7 @@ export default function CaseStudies() {
                   <span
                     style={{
                       fontSize: '0.65rem',
-                      color: '#C4FA00',
+                      color: '#A0A0A0',
                       fontWeight: 500,
                       display: 'block',
                       marginBottom: '0.5rem',
@@ -205,7 +225,7 @@ export default function CaseStudies() {
                   <p
                     style={{
                       fontSize: '0.75rem',
-                      color: '#64748B',
+                      color: '#666666',
                       lineHeight: 1.5,
                       margin: 0,
                     }}
@@ -235,15 +255,17 @@ export default function CaseStudies() {
                 style={{
                   padding: '1.25rem 1rem',
                   borderRadius: '14px',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: 'rgba(20,20,20,0.7)',
                   textAlign: 'center',
                   transition: 'all 0.3s',
                   cursor: 'default',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(196,250,0,0.2)'
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
                 }}
               >
                 <div
@@ -251,7 +273,7 @@ export default function CaseStudies() {
                     width: '2.25rem',
                     height: '2.25rem',
                     borderRadius: '10px',
-                    backgroundColor: 'rgba(196,250,0,0.1)',
+                    backgroundColor: 'rgba(255,255,255,0.06)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -260,14 +282,14 @@ export default function CaseStudies() {
                   }}
                 >
                   <vp.icon
-                    style={{ width: '1.1rem', height: '1.1rem', color: '#C4FA00' }}
+                    style={{ width: '1.1rem', height: '1.1rem', color: '#FFFFFF' }}
                   />
                 </div>
                 <span
                   style={{
                     fontSize: '0.9rem',
                     fontWeight: 700,
-                    color: '#F5F7FA',
+                    color: '#FFFFFF',
                     display: 'block',
                     fontFamily: 'var(--font-display)',
                   }}
@@ -275,7 +297,7 @@ export default function CaseStudies() {
                   {vp.titleAr}
                 </span>
                 <span
-                  style={{ fontSize: '0.7rem', color: '#64748B', fontWeight: 500 }}
+                  style={{ fontSize: '0.7rem', color: '#666666', fontWeight: 500 }}
                 >
                   {vp.title}
                 </span>
@@ -296,12 +318,12 @@ export default function CaseStudies() {
             <p
               style={{
                 fontSize: '0.75rem',
-                color: '#64748B',
+                color: '#666666',
                 lineHeight: 1.7,
                 padding: '1rem 1.5rem',
                 borderRadius: '10px',
-                backgroundColor: 'rgba(255,255,255,0.02)',
-                border: '1px solid rgba(255,255,255,0.04)',
+                backgroundColor: 'rgba(20,20,20,0.5)',
+                border: '1px solid rgba(255,255,255,0.05)',
               }}
             >
               تُنشر الحالات وفق الضوابط المهنية، مع حماية سرية وخصوصية العملاء والحصول على الموافقات اللازمة عند الحاجة.

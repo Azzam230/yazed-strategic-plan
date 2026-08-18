@@ -44,8 +44,8 @@ function DiffCard({ item, index }) {
           height: '100%',
           transition: 'all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           border: hovered
-            ? '1px solid rgba(196,250,0,0.25)'
-            : '1px solid rgba(255,255,255,0.06)',
+            ? '1px solid rgba(255,255,255,0.15)'
+            : '1px solid rgba(255,255,255,0.08)',
           transform: hovered ? 'translateY(-6px)' : 'translateY(0)',
           cursor: 'default',
           display: 'flex',
@@ -65,8 +65,8 @@ function DiffCard({ item, index }) {
             width: '100%',
             height: '3px',
             background: hovered
-              ? 'linear-gradient(90deg, transparent, #C4FA00, transparent)'
-              : 'linear-gradient(90deg, transparent, rgba(196,250,0,0.3), transparent)',
+              ? 'linear-gradient(90deg, transparent, #FFFFFF, transparent)'
+              : 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
             transition: 'all 0.35s',
           }}
         />
@@ -76,7 +76,7 @@ function DiffCard({ item, index }) {
             width: '4rem',
             height: '4rem',
             borderRadius: '16px',
-            backgroundColor: hovered ? 'rgba(196,250,0,0.15)' : 'rgba(196,250,0,0.08)',
+            backgroundColor: hovered ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.06)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -87,7 +87,7 @@ function DiffCard({ item, index }) {
             style={{
               width: '1.5rem',
               height: '1.5rem',
-              color: '#C4FA00',
+              color: '#FFFFFF',
               transition: 'all 0.35s',
             }}
           />
@@ -98,8 +98,7 @@ function DiffCard({ item, index }) {
             style={{
               fontSize: '1.125rem',
               fontWeight: 700,
-              color: '#F5F7FA',
-              fontFamily: 'var(--font-display)',
+              color: '#FFFFFF',
               marginBottom: '0.25rem',
               lineHeight: 1.4,
             }}
@@ -109,7 +108,7 @@ function DiffCard({ item, index }) {
           <span
             style={{
               fontSize: '0.7rem',
-              color: '#C4FA00',
+              color: '#A0A0A0',
               fontWeight: 500,
             }}
           >
@@ -120,7 +119,7 @@ function DiffCard({ item, index }) {
         <p
           style={{
             fontSize: '0.85rem',
-            color: '#94A3B8',
+            color: '#A0A0A0',
             lineHeight: 1.7,
             margin: 0,
           }}
@@ -136,31 +135,17 @@ export default function Differentiation() {
   return (
     <section
       id="differentiation"
-      className="slide"
+      className="section-padding"
       style={{
-        backgroundColor: '#07111F',
+        backgroundColor: '#000000',
         position: 'relative',
         overflow: 'hidden',
       }}
     >
-      <div
-        style={{
-          position: 'absolute',
-          top: '20%',
-          insetInlineStart: '50%',
-          transform: 'translateX(-50%)',
-          width: '700px',
-          height: '350px',
-          borderRadius: '50%',
-          background: 'rgba(196,250,0,0.03)',
-          filter: 'blur(150px)',
-          pointerEvents: 'none',
-        }}
-      />
-
-      <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+      <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
         <AnimatedSection delay={0}>
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <div className="accent-line" style={{ marginInline: 'auto', marginBottom: '1rem' }} />
             <div
               style={{
                 display: 'inline-flex',
@@ -168,17 +153,17 @@ export default function Differentiation() {
                 gap: '0.5rem',
                 padding: '0.4rem 1rem',
                 borderRadius: '9999px',
-                backgroundColor: 'rgba(196,250,0,0.08)',
-                border: '1px solid rgba(196,250,0,0.15)',
+                backgroundColor: 'rgba(255,255,255,0.06)',
+                border: '1px solid rgba(255,255,255,0.08)',
                 marginBottom: '1.25rem',
               }}
             >
-              <Star style={{ width: '0.875rem', height: '0.875rem', color: '#C4FA00' }} />
+              <Star style={{ width: '0.875rem', height: '0.875rem', color: '#FFFFFF' }} />
               <span
                 style={{
                   fontSize: '0.75rem',
                   fontWeight: 600,
-                  color: '#C4FA00',
+                  color: '#FFFFFF',
                   letterSpacing: '0.05em',
                 }}
               >
@@ -189,8 +174,7 @@ export default function Differentiation() {
               style={{
                 fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
                 fontWeight: 800,
-                color: '#F5F7FA',
-                fontFamily: 'var(--font-display)',
+                color: '#FFFFFF',
                 marginBottom: '0.5rem',
                 lineHeight: 1.3,
               }}
@@ -200,7 +184,7 @@ export default function Differentiation() {
             <p
               style={{
                 fontSize: '1rem',
-                color: '#94A3B8',
+                color: '#A0A0A0',
                 maxWidth: '500px',
                 margin: '0 auto',
               }}

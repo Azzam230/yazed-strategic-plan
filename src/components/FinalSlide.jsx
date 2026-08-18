@@ -26,7 +26,7 @@ export default function FinalSlide() {
   return (
     <section
       id="next"
-      className="slide"
+      className="section-padding"
       style={{
         minHeight: '100vh',
         display: 'flex',
@@ -34,8 +34,7 @@ export default function FinalSlide() {
         justifyContent: 'center',
         position: 'relative',
         overflow: 'hidden',
-        background:
-          'radial-gradient(ellipse 60% 50% at 50% 50%, #101F32 0%, #0B1728 40%, #07111F 100%)',
+        backgroundColor: '#000000',
       }}
     >
       <div
@@ -44,20 +43,15 @@ export default function FinalSlide() {
           inset: 0,
           pointerEvents: 'none',
           background:
-            'radial-gradient(circle at 50% 40%, rgba(196,250,0,0.05) 0%, transparent 60%)',
+            'radial-gradient(circle at 50% 40%, rgba(255,255,255,0.03) 0%, transparent 60%)',
         }}
       />
 
       <div
-        className="container"
+        className="section-container"
         style={{
           position: 'relative',
           zIndex: 10,
-          width: '100%',
-          maxWidth: '72rem',
-          marginInline: 'auto',
-          paddingInline: '1.5rem',
-          paddingBlock: '6rem 4rem',
           textAlign: 'center',
         }}
       >
@@ -67,7 +61,7 @@ export default function FinalSlide() {
               fontSize: 'clamp(2rem, 5.5vw, 4rem)',
               fontWeight: 800,
               lineHeight: 1.2,
-              color: '#F5F7FA',
+              color: '#FFFFFF',
               marginBottom: '1rem',
             }}
           >
@@ -78,25 +72,16 @@ export default function FinalSlide() {
               fontSize: 'clamp(2rem, 5.5vw, 4rem)',
               fontWeight: 800,
               lineHeight: 1.2,
+              color: '#FFFFFF',
               marginBottom: '1.5rem',
             }}
           >
-            <span
-              style={{
-                background:
-                  'linear-gradient(135deg, #C4FA00 0%, #D2FF00 50%, #A8D600 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
-              الآن أنت ترى الخطة.
-            </span>
+            الآن أنت ترى الخطة.
           </h2>
           <p
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-              color: '#94A3B8',
+              color: '#A0A0A0',
               maxWidth: '40rem',
               marginInline: 'auto',
               lineHeight: 1.7,
@@ -128,8 +113,8 @@ export default function FinalSlide() {
                   gap: '1rem',
                   padding: '2rem',
                   borderRadius: '1rem',
-                  backgroundColor: '#101F32',
-                  border: '1px solid rgba(255,255,255,0.06)',
+                  backgroundColor: 'rgba(20,20,20,0.7)',
+                  border: '1px solid rgba(255,255,255,0.08)',
                   backdropFilter: 'blur(12px)',
                   WebkitBackdropFilter: 'blur(12px)',
                   textDecoration: 'none',
@@ -137,13 +122,13 @@ export default function FinalSlide() {
                   cursor: 'pointer',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(196,250,0,0.25)'
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'
                   e.currentTarget.style.transform = 'translateY(-4px)'
                   e.currentTarget.style.boxShadow =
-                    '0 12px 40px rgba(196,250,0,0.1)'
+                    '0 12px 40px rgba(255,255,255,0.05)'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
                   e.currentTarget.style.transform = 'translateY(0)'
                   e.currentTarget.style.boxShadow = 'none'
                 }}
@@ -153,14 +138,14 @@ export default function FinalSlide() {
                     width: '3rem',
                     height: '3rem',
                     borderRadius: '0.75rem',
-                    backgroundColor: 'rgba(196,250,0,0.1)',
+                    backgroundColor: 'rgba(255,255,255,0.06)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}
                 >
                   <item.icon
-                    style={{ width: '1.5rem', height: '1.5rem', color: '#C4FA00' }}
+                    style={{ width: '1.5rem', height: '1.5rem', color: '#FFFFFF' }}
                   />
                 </div>
                 <div>
@@ -168,7 +153,7 @@ export default function FinalSlide() {
                     style={{
                       fontSize: '1.25rem',
                       fontWeight: 700,
-                      color: '#F5F7FA',
+                      color: '#FFFFFF',
                       marginBottom: '0.375rem',
                     }}
                   >
@@ -177,7 +162,7 @@ export default function FinalSlide() {
                   <p
                     style={{
                       fontSize: '0.875rem',
-                      color: '#94A3B8',
+                      color: '#A0A0A0',
                       lineHeight: 1.6,
                     }}
                   >
@@ -192,7 +177,7 @@ export default function FinalSlide() {
                     marginTop: 'auto',
                     fontSize: '0.8rem',
                     fontWeight: 600,
-                    color: '#C4FA00',
+                    color: '#FFFFFF',
                   }}
                 >
                   ابدأ الآن
@@ -215,23 +200,23 @@ export default function FinalSlide() {
               alignItems: 'center',
               gap: '0.5rem',
               padding: '1rem 2.5rem',
-              backgroundColor: '#C4FA00',
-              color: '#07111F',
+              backgroundColor: '#FFFFFF',
+              color: '#000000',
               fontWeight: 700,
               fontSize: '1.125rem',
               borderRadius: '9999px',
               textDecoration: 'none',
-              boxShadow: '0 8px 32px rgba(196,250,0,0.25)',
+              boxShadow: '0 8px 32px rgba(255,255,255,0.1)',
               transition: 'box-shadow 0.3s, transform 0.3s',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.boxShadow =
-                '0 12px 40px rgba(196,250,0,0.4)'
+                '0 12px 40px rgba(255,255,255,0.2)'
               e.currentTarget.style.transform = 'translateY(-2px)'
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.boxShadow =
-                '0 8px 32px rgba(196,250,0,0.25)'
+                '0 8px 32px rgba(255,255,255,0.1)'
               e.currentTarget.style.transform = 'translateY(0)'
             }}
           >
@@ -245,7 +230,7 @@ export default function FinalSlide() {
             style={{
               marginTop: '3rem',
               fontSize: '0.8rem',
-              color: '#64748B',
+              color: '#666666',
               letterSpacing: '0.04em',
             }}
           >

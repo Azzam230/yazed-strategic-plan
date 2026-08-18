@@ -22,7 +22,7 @@ import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div style={{ backgroundColor: '#07111F', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#000000', minHeight: '100vh' }}>
       <Navbar />
       <main>
         <Hero />

@@ -1,5 +1,4 @@
 import AnimatedSection from './AnimatedSection'
-import SectionHeader from './SectionHeader'
 import {
   Zap,
   BookmarkCheck,
@@ -74,9 +73,9 @@ export default function OrganicGrowth() {
   return (
     <section
       id="organic"
-      className="slide"
+      className="section-padding"
       style={{
-        backgroundColor: '#07111F',
+        backgroundColor: '#000000',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -85,24 +84,42 @@ export default function OrganicGrowth() {
         style={{
           position: 'absolute',
           top: '30%',
-          insetInlineStart: '50%',
+          left: '50%',
           transform: 'translateX(-50%)',
           width: '500px',
           height: '500px',
           borderRadius: '50%',
-          background: 'rgba(196,250,0,0.025)',
+          background: 'rgba(255,255,255,0.01)',
           filter: 'blur(150px)',
           pointerEvents: 'none',
         }}
       />
 
-      <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+      <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
         <AnimatedSection delay={0}>
-          <SectionHeader
-            badge="07"
-            title="محرك النمو العضوي"
-            subtitle="النمو العضوي لا يعني النشر فقط — بل بناء نظام"
-          />
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2
+              style={{
+                fontSize: 'clamp(1.875rem, 4vw, 3rem)',
+                fontWeight: 800,
+                fontFamily: 'var(--font-display)',
+                lineHeight: 1.2,
+                color: '#FFFFFF',
+                marginBottom: '0.5rem',
+              }}
+            >
+              محرك النمو العضوي
+            </h2>
+            <p
+              style={{
+                fontSize: 'clamp(0.9rem, 1.5vw, 1.1rem)',
+                color: '#A0A0A0',
+                fontWeight: 500,
+              }}
+            >
+              النمو العضوي لا يعني النشر فقط — بل بناء نظام
+            </p>
+          </div>
         </AnimatedSection>
 
         {/* Growth Flow — Vertical Centered */}
@@ -127,7 +144,7 @@ export default function OrganicGrowth() {
               bottom: '2.5rem',
               width: '2px',
               background:
-                'linear-gradient(to bottom, rgba(196,250,0,0.25), rgba(196,250,0,0.05))',
+                'linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0.03))',
               zIndex: 0,
             }}
           />
@@ -140,6 +157,8 @@ export default function OrganicGrowth() {
                   width: '100%',
                   padding: '1rem 1.25rem',
                   borderRadius: '14px',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: 'rgba(20,20,20,0.7)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '1rem',
@@ -150,11 +169,11 @@ export default function OrganicGrowth() {
                   marginBottom: '0.5rem',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(196,250,0,0.2)'
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'
                   e.currentTarget.style.transform = 'scale(1.02)'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
                   e.currentTarget.style.transform = 'scale(1)'
                 }}
               >
@@ -163,7 +182,7 @@ export default function OrganicGrowth() {
                     width: '2.75rem',
                     height: '2.75rem',
                     borderRadius: '10px',
-                    backgroundColor: 'rgba(196,250,0,0.1)',
+                    backgroundColor: 'rgba(255,255,255,0.06)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -171,7 +190,7 @@ export default function OrganicGrowth() {
                   }}
                 >
                   <step.icon
-                    style={{ width: '1.15rem', height: '1.15rem', color: '#C4FA00' }}
+                    style={{ width: '1.15rem', height: '1.15rem', color: '#FFFFFF' }}
                   />
                 </div>
                 <div style={{ minWidth: 0 }}>
@@ -187,7 +206,7 @@ export default function OrganicGrowth() {
                       style={{
                         fontSize: '0.95rem',
                         fontWeight: 700,
-                        color: '#F5F7FA',
+                        color: '#FFFFFF',
                         fontFamily: 'var(--font-display)',
                         margin: 0,
                       }}
@@ -197,7 +216,7 @@ export default function OrganicGrowth() {
                     <span
                       style={{
                         fontSize: '0.65rem',
-                        color: '#64748B',
+                        color: '#666666',
                         fontWeight: 500,
                       }}
                     >
@@ -207,7 +226,7 @@ export default function OrganicGrowth() {
                   <p
                     style={{
                       fontSize: '0.8rem',
-                      color: '#94A3B8',
+                      color: '#A0A0A0',
                       lineHeight: 1.5,
                       margin: 0,
                     }}
@@ -238,16 +257,18 @@ export default function OrganicGrowth() {
                 style={{
                   padding: '1.25rem 1rem',
                   borderRadius: '14px',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: 'rgba(20,20,20,0.7)',
                   textAlign: 'center',
                   transition: 'all 0.3s',
                   cursor: 'default',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(196,250,0,0.2)'
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'
                   e.currentTarget.style.transform = 'translateY(-2px)'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
                   e.currentTarget.style.transform = 'translateY(0)'
                 }}
               >
@@ -256,7 +277,7 @@ export default function OrganicGrowth() {
                     width: '2.25rem',
                     height: '2.25rem',
                     borderRadius: '10px',
-                    backgroundColor: 'rgba(196,250,0,0.1)',
+                    backgroundColor: 'rgba(255,255,255,0.06)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -265,14 +286,14 @@ export default function OrganicGrowth() {
                   }}
                 >
                   <kpi.icon
-                    style={{ width: '1.1rem', height: '1.1rem', color: '#C4FA00' }}
+                    style={{ width: '1.1rem', height: '1.1rem', color: '#FFFFFF' }}
                   />
                 </div>
                 <span
                   style={{
                     fontSize: '0.9rem',
                     fontWeight: 700,
-                    color: '#F5F7FA',
+                    color: '#FFFFFF',
                     display: 'block',
                     fontFamily: 'var(--font-display)',
                     marginBottom: '0.15rem',
@@ -283,7 +304,7 @@ export default function OrganicGrowth() {
                 <span
                   style={{
                     fontSize: '0.65rem',
-                    color: '#64748B',
+                    color: '#666666',
                     display: 'block',
                     marginBottom: '0.5rem',
                   }}
@@ -294,7 +315,7 @@ export default function OrganicGrowth() {
                   style={{
                     fontSize: '0.8rem',
                     fontWeight: 700,
-                    color: '#C4FA00',
+                    color: '#FFFFFF',
                   }}
                 >
                   {kpi.value}

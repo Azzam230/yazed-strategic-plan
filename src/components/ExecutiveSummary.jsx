@@ -51,213 +51,65 @@ const b2bServices = [
   'المخاطر القانونية المؤسسية',
 ];
 
-const styles = {
-  section: {
-    padding: '120px 0',
-    background: '#07111F',
-    position: 'relative',
-    overflow: 'hidden',
-  },
-  container: {
-    maxWidth: 1200,
-    margin: '0 auto',
-    padding: '0 24px',
-  },
-  sectionNum: {
-    fontSize: '4rem',
-    fontWeight: 800,
-    color: '#C4FA00',
-    lineHeight: 1,
-    marginBottom: 8,
-    fontFamily: "'Noto Sans Arabic', sans-serif",
-  },
-  title: {
-    fontSize: '2.5rem',
-    fontWeight: 700,
-    color: '#F5F7FA',
-    marginBottom: 12,
-    fontFamily: "'Noto Sans Arabic', sans-serif",
-  },
-  subtitle: {
-    fontSize: '1.1rem',
-    color: '#94A3B8',
-    maxWidth: 600,
-    lineHeight: 1.8,
-    marginBottom: 60,
-    fontFamily: "'Noto Sans Arabic', sans-serif",
-  },
-  stepsRow: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(4, 1fr)',
-    gap: 20,
-    marginBottom: 60,
-  },
-  stepCard: {
-    background: '#101F32',
-    border: '1px solid rgba(255,255,255,0.06)',
-    borderRadius: 16,
-    padding: '36px 24px',
-    position: 'relative',
-    overflow: 'hidden',
-    transition: 'transform 0.3s, border-color 0.3s',
-  },
-  stepCardHover: {
-    transform: 'translateY(-4px)',
-    borderColor: 'rgba(196,250,0,0.3)',
-  },
-  stepNum: {
-    fontSize: '3rem',
-    fontWeight: 800,
-    color: 'rgba(196,250,0,0.12)',
-    lineHeight: 1,
-    marginBottom: 16,
-    fontFamily: "'Noto Sans Arabic', sans-serif",
-  },
-  stepIcon: {
-    marginBottom: 16,
-    color: '#C4FA00',
-  },
-  stepTitle: {
-    fontSize: '1.25rem',
-    fontWeight: 700,
-    color: '#F5F7FA',
-    marginBottom: 4,
-    fontFamily: "'Noto Sans Arabic', sans-serif",
-  },
-  stepSubtitle: {
-    fontSize: '0.8rem',
-    fontWeight: 600,
-    color: '#C4FA00',
-    textTransform: 'uppercase',
-    letterSpacing: 1,
-    marginBottom: 12,
-  },
-  stepDesc: {
-    fontSize: '0.9rem',
-    color: '#94A3B8',
-    lineHeight: 1.7,
-    fontFamily: "'Noto Sans Arabic', sans-serif",
-  },
-  accentLine: {
-    width: 40,
-    height: 3,
-    background: '#C4FA00',
-    borderRadius: 2,
-    marginBottom: 20,
-  },
-  formulaSection: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 12,
-    flexWrap: 'wrap',
-    marginBottom: 80,
-  },
-  pill: {
-    background: '#101F32',
-    border: '1px solid rgba(255,255,255,0.08)',
-    borderRadius: 50,
-    padding: '12px 28px',
-    color: '#F5F7FA',
-    fontSize: '0.95rem',
-    fontWeight: 600,
-    fontFamily: "'Noto Sans Arabic', sans-serif",
-  },
-  pillEquals: {
-    background: '#C4FA00',
-    color: '#07111F',
-    borderRadius: 50,
-    padding: '12px 28px',
-    fontSize: '1.1rem',
-    fontWeight: 800,
-  },
-  pillResult: {
-    background: 'rgba(196,250,0,0.12)',
-    border: '1px solid rgba(196,250,0,0.3)',
-    borderRadius: 50,
-    padding: '12px 28px',
-    color: '#C4FA00',
-    fontSize: '0.95rem',
-    fontWeight: 700,
-  },
-  twoCol: {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gap: 32,
-  },
-  b2bCard: {
-    background: '#101F32',
-    border: '1px solid rgba(255,255,255,0.06)',
-    borderRadius: 20,
-    padding: 40,
-  },
-  b2bHeader: {
-    fontSize: '1.4rem',
-    fontWeight: 700,
-    color: '#C4FA00',
-    marginBottom: 24,
-    fontFamily: "'Noto Sans Arabic', sans-serif",
-  },
-  b2bItem: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 12,
-    padding: '12px 0',
-    borderBottom: '1px solid rgba(255,255,255,0.06)',
-    fontSize: '0.95rem',
-    color: '#F5F7FA',
-    fontFamily: "'Noto Sans Arabic', sans-serif",
-  },
-  b2bDot: {
-    width: 8,
-    height: 8,
-    borderRadius: '50%',
-    background: '#C4FA00',
-    flexShrink: 0,
-  },
-};
-
 const ExecutiveSummary = () => {
   const [hoveredStep, setHoveredStep] = React.useState(null);
 
   return (
-    <section id="strategy" style={styles.section}>
-      <div style={styles.container}>
+    <section className="section-padding" style={{ position: 'relative', overflow: 'hidden' }}>
+      <div className="section-container">
         <AnimatedSection direction="up">
-          <div style={styles.sectionNum}>01</div>
+          <div style={{ fontSize: '4rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1, marginBottom: 8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>01</div>
         </AnimatedSection>
 
         <AnimatedSection direction="up" delay={100}>
-          <h2 style={styles.title}>الاستراتيجية الرقمية المتكاملة</h2>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#FFFFFF', marginBottom: 12, fontFamily: "'Noto Sans Arabic', sans-serif" }}>
+            الاستراتيجية الرقمية المتكاملة
+          </h2>
         </AnimatedSection>
 
         <AnimatedSection direction="up" delay={200}>
-          <p style={styles.subtitle}>
+          <p style={{ fontSize: '1.1rem', color: '#A0A0A0', maxWidth: 600, lineHeight: 1.8, marginBottom: 60, fontFamily: "'Noto Sans Arabic', sans-serif" }}>
             نظام متكامل يحوّل الحضور الرقمي إلى مصدر مستدام للثقة والعملاء
           </p>
         </AnimatedSection>
 
-        <div style={styles.stepsRow}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, marginBottom: 60 }}>
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (
               <AnimatedSection key={i} direction="up" delay={300 + i * 120}>
                 <div
+                  className="glass"
                   style={{
-                    ...styles.stepCard,
-                    ...(hoveredStep === i ? styles.stepCardHover : {}),
+                    padding: '36px 24px',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    transition: 'transform 0.3s, border-color 0.3s',
+                    border: hoveredStep === i
+                      ? '1px solid rgba(255,255,255,0.15)'
+                      : '1px solid rgba(255,255,255,0.08)',
+                    transform: hoveredStep === i ? 'translateY(-4px)' : 'translateY(0)',
+                    cursor: 'default',
                   }}
                   onMouseEnter={() => setHoveredStep(i)}
                   onMouseLeave={() => setHoveredStep(null)}
                 >
-                  <div style={styles.stepNum}>{step.num}</div>
-                  <div style={styles.accentLine} />
-                  <div style={styles.stepIcon}>
+                  <div style={{ fontSize: '3rem', fontWeight: 800, color: 'rgba(255,255,255,0.06)', lineHeight: 1, marginBottom: 16, fontFamily: "'Noto Sans Arabic', sans-serif" }}>
+                    {step.num}
+                  </div>
+                  <div className="accent-line" />
+                  <div style={{ marginBottom: 16, color: '#FFFFFF' }}>
                     <Icon size={28} />
                   </div>
-                  <h3 style={styles.stepTitle}>{step.title}</h3>
-                  <div style={styles.stepSubtitle}>{step.subtitle}</div>
-                  <p style={styles.stepDesc}>{step.desc}</p>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FFFFFF', marginBottom: 4, fontFamily: "'Noto Sans Arabic', sans-serif" }}>
+                    {step.title}
+                  </h3>
+                  <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 12 }}>
+                    {step.subtitle}
+                  </div>
+                  <p style={{ fontSize: '0.9rem', color: '#A0A0A0', lineHeight: 1.7, fontFamily: "'Noto Sans Arabic', sans-serif" }}>
+                    {step.desc}
+                  </p>
                 </div>
               </AnimatedSection>
             );
@@ -265,39 +117,47 @@ const ExecutiveSummary = () => {
         </div>
 
         <AnimatedSection direction="fade" delay={600}>
-          <div style={styles.formulaSection}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, flexWrap: 'wrap', marginBottom: 80 }}>
             {formulaParts.map((part, i) => {
               if (part === '+') {
                 return (
-                  <span key={i} style={{ color: '#64748B', fontSize: '1.2rem', fontWeight: 300 }}>
+                  <span key={i} style={{ color: '#666666', fontSize: '1.2rem', fontWeight: 300 }}>
                     +
                   </span>
                 );
               }
               if (part === '=') {
                 return (
-                  <span key={i} style={styles.pillEquals}>=</span>
+                  <span key={i} style={{ background: '#FFFFFF', color: '#000000', borderRadius: 50, padding: '12px 28px', fontSize: '1.1rem', fontWeight: 800 }}>
+                    =
+                  </span>
                 );
               }
               if (part === 'Growth Engine') {
                 return (
-                  <span key={i} style={styles.pillResult}>{part}</span>
+                  <span key={i} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 50, padding: '12px 28px', color: '#FFFFFF', fontSize: '0.95rem', fontWeight: 700 }}>
+                    {part}
+                  </span>
                 );
               }
               return (
-                <span key={i} style={styles.pill}>{part}</span>
+                <span key={i} style={{ background: 'rgba(20,20,20,0.7)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 50, padding: '12px 28px', color: '#FFFFFF', fontSize: '0.95rem', fontWeight: 600, fontFamily: "'Noto Sans Arabic', sans-serif" }}>
+                  {part}
+                </span>
               );
             })}
           </div>
         </AnimatedSection>
 
-        <div style={styles.twoCol}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
           <AnimatedSection direction="left" delay={800}>
-            <div style={styles.b2bCard}>
-              <h3 style={styles.b2bHeader}>B2B — الشركات</h3>
+            <div className="glass" style={{ padding: 40 }}>
+              <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#FFFFFF', marginBottom: 24, fontFamily: "'Noto Sans Arabic', sans-serif" }}>
+                B2B — الشركات
+              </h3>
               {b2bServices.map((s, i) => (
-                <div key={i} style={styles.b2bItem}>
-                  <div style={styles.b2bDot} />
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 0', borderBottom: i < b2bServices.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none', fontSize: '0.95rem', color: '#FFFFFF', fontFamily: "'Noto Sans Arabic', sans-serif" }}>
+                  <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#FFFFFF', flexShrink: 0 }} />
                   <span>{s}</span>
                 </div>
               ))}
@@ -305,11 +165,13 @@ const ExecutiveSummary = () => {
           </AnimatedSection>
 
           <AnimatedSection direction="right" delay={800}>
-            <div style={styles.b2bCard}>
-              <h3 style={styles.b2bHeader}>B2C — الأفراد</h3>
+            <div className="glass" style={{ padding: 40 }}>
+              <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#FFFFFF', marginBottom: 24, fontFamily: "'Noto Sans Arabic', sans-serif" }}>
+                B2C — الأفراد
+              </h3>
               {b2cServices.map((s, i) => (
-                <div key={i} style={styles.b2bItem}>
-                  <div style={styles.b2bDot} />
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 0', borderBottom: i < b2cServices.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none', fontSize: '0.95rem', color: '#FFFFFF', fontFamily: "'Noto Sans Arabic', sans-serif" }}>
+                  <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#FFFFFF', flexShrink: 0 }} />
                   <span>{s}</span>
                 </div>
               ))}

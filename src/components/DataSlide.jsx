@@ -22,217 +22,83 @@ const metrics = [
 
 const formulaParts = ['Financial Pain', '+', 'Legal Problem', '+', 'Real Scenario', '→', 'Higher Attention'];
 
-const styles = {
-  section: {
-    padding: '120px 0',
-    background: '#07111F',
-    position: 'relative',
-    overflow: 'hidden',
-  },
-  container: {
-    maxWidth: 1200,
-    margin: '0 auto',
-    padding: '0 24px',
-  },
-  sectionNum: {
-    fontSize: '4rem',
-    fontWeight: 800,
-    color: '#C4FA00',
-    lineHeight: 1,
-    marginBottom: 8,
-    fontFamily: "'Noto Sans Arabic', sans-serif",
-  },
-  title: {
-    fontSize: '2.5rem',
-    fontWeight: 700,
-    color: '#F5F7FA',
-    marginBottom: 8,
-    fontFamily: "'Noto Sans Arabic', sans-serif",
-  },
-  subtitle: {
-    fontSize: '1rem',
-    color: '#64748B',
-    marginBottom: 60,
-    fontWeight: 500,
-    letterSpacing: 1,
-  },
-  metricsRow: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: 24,
-    marginBottom: 80,
-  },
-  metricCard: {
-    background: '#101F32',
-    border: '1px solid rgba(255,255,255,0.06)',
-    borderRadius: 20,
-    padding: '48px 36px',
-    textAlign: 'center',
-    position: 'relative',
-    overflow: 'hidden',
-    transition: 'transform 0.3s, border-color 0.3s',
-  },
-  metricCardHover: {
-    transform: 'translateY(-4px)',
-    borderColor: 'rgba(196,250,0,0.3)',
-  },
-  metricGlow: {
-    position: 'absolute',
-    top: -30,
-    left: '50%',
-    transform: 'translateX(-50%)',
-    width: 120,
-    height: 120,
-    borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(196,250,0,0.08) 0%, transparent 70%)',
-    pointerEvents: 'none',
-  },
-  metricIcon: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 48,
-    height: 48,
-    borderRadius: 12,
-    background: 'rgba(196,250,0,0.1)',
-    margin: '0 auto 24px',
-    color: '#C4FA00',
-  },
-  metricNumber: {
-    fontSize: '3.5rem',
-    fontWeight: 800,
-    color: '#C4FA00',
-    lineHeight: 1,
-    marginBottom: 4,
-    fontFamily: "'Noto Sans Arabic', sans-serif",
-  },
-  metricLabel: {
-    fontSize: '1.1rem',
-    fontWeight: 600,
-    color: '#F5F7FA',
-    marginBottom: 12,
-  },
-  metricDesc: {
-    fontSize: '0.9rem',
-    color: '#94A3B8',
-    lineHeight: 1.6,
-    fontFamily: "'Noto Sans Arabic', sans-serif",
-  },
-  insight: {
-    textAlign: 'center',
-    marginBottom: 80,
-  },
-  insightLine1: {
-    fontSize: '1.8rem',
-    fontWeight: 700,
-    color: '#F5F7FA',
-    lineHeight: 1.8,
-    fontFamily: "'Noto Sans Arabic', sans-serif",
-  },
-  insightLine2: {
-    fontSize: '1.8rem',
-    fontWeight: 700,
-    color: '#C4FA00',
-    lineHeight: 1.8,
-    fontFamily: "'Noto Sans Arabic', sans-serif",
-  },
-  formulaSection: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 12,
-    flexWrap: 'wrap',
-  },
-  pill: {
-    background: '#101F32',
-    border: '1px solid rgba(255,255,255,0.08)',
-    borderRadius: 50,
-    padding: '12px 28px',
-    color: '#F5F7FA',
-    fontSize: '0.95rem',
-    fontWeight: 600,
-  },
-  pillArrow: {
-    background: '#C4FA00',
-    borderRadius: 50,
-    padding: '12px 24px',
-    color: '#07111F',
-    display: 'flex',
-    alignItems: 'center',
-    gap: 6,
-    fontWeight: 800,
-    fontSize: '0.95rem',
-  },
-};
-
 const DataSlide = () => {
   const [hoveredCard, setHoveredCard] = React.useState(null);
 
   return (
-    <section id="data" style={styles.section}>
-      <div style={styles.container}>
+    <section id="data" className="section-padding" style={{ position: 'relative', overflow: 'hidden' }}>
+      <div className="section-container">
         <AnimatedSection direction="up">
-          <div style={styles.sectionNum}>03</div>
+          <div style={{ fontSize: '4rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1, marginBottom: 8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>03</div>
         </AnimatedSection>
 
         <AnimatedSection direction="up" delay={100}>
-          <h2 style={styles.title}>ماذا تخبرنا البيانات؟</h2>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#FFFFFF', marginBottom: 8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>ماذا تخبرنا البيانات؟</h2>
         </AnimatedSection>
 
         <AnimatedSection direction="up" delay={150}>
-          <p style={styles.subtitle}>Previous Content Performance</p>
+          <p style={{ fontSize: '1rem', color: '#666666', marginBottom: 60, fontWeight: 500, letterSpacing: 1 }}>Previous Content Performance</p>
         </AnimatedSection>
 
-        <div style={styles.metricsRow}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginBottom: 80 }}>
           {metrics.map((m, i) => (
             <AnimatedSection key={i} direction="up" delay={300 + i * 150}>
               <div
+                className="glass"
                 style={{
-                  ...styles.metricCard,
-                  ...(hoveredCard === i ? styles.metricCardHover : {}),
+                  padding: '48px 36px',
+                  textAlign: 'center',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'transform 0.3s, border-color 0.3s',
+                  border: hoveredCard === i
+                    ? '1px solid rgba(255,255,255,0.15)'
+                    : '1px solid rgba(255,255,255,0.08)',
+                  transform: hoveredCard === i ? 'translateY(-4px)' : 'translateY(0)',
+                  cursor: 'default',
                 }}
                 onMouseEnter={() => setHoveredCard(i)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                <div style={styles.metricGlow} />
-                <div style={styles.metricIcon}>
+                <div style={{ position: 'absolute', top: -30, left: '50%', transform: 'translateX(-50%)', width: 120, height: 120, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 48, height: 48, borderRadius: 12, background: 'rgba(255,255,255,0.06)', margin: '0 auto 24px', color: '#FFFFFF' }}>
                   <TrendingUp size={24} />
                 </div>
-                <div style={styles.metricNumber}>{m.number}</div>
-                <div style={styles.metricLabel}>{m.label}</div>
-                <div style={styles.metricDesc}>{m.desc}</div>
+                <div style={{ fontSize: '3.5rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1, marginBottom: 4, fontFamily: "'Noto Sans Arabic', sans-serif" }}>{m.number}</div>
+                <div style={{ fontSize: '1.1rem', fontWeight: 600, color: '#FFFFFF', marginBottom: 12 }}>{m.label}</div>
+                <div style={{ fontSize: '0.9rem', color: '#A0A0A0', lineHeight: 1.6, fontFamily: "'Noto Sans Arabic', sans-serif" }}>{m.desc}</div>
               </div>
             </AnimatedSection>
           ))}
         </div>
 
         <AnimatedSection direction="up" delay={700}>
-          <div style={styles.insight}>
-            <div style={styles.insightLine1}>المحتوى المرتبط بمشكلة قانونية حقيقية</div>
-            <div style={styles.insightLine2}>يتفوق على المعلومة القانونية العامة.</div>
+          <div style={{ textAlign: 'center', marginBottom: 80 }}>
+            <div style={{ fontSize: '1.8rem', fontWeight: 700, color: '#FFFFFF', lineHeight: 1.8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>المحتوى المرتبط بمشكلة قانونية حقيقية</div>
+            <div style={{ fontSize: '1.8rem', fontWeight: 700, color: '#FFFFFF', lineHeight: 1.8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>يتفوق على المعلومة القانونية العامة.</div>
           </div>
         </AnimatedSection>
 
         <AnimatedSection direction="fade" delay={900}>
-          <div style={styles.formulaSection}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
             {formulaParts.map((part, i) => {
               if (part === '+') {
                 return (
-                  <span key={i} style={{ color: '#64748B', fontSize: '1.2rem', fontWeight: 300 }}>
+                  <span key={i} style={{ color: '#666666', fontSize: '1.2rem', fontWeight: 300 }}>
                     +
                   </span>
                 );
               }
               if (part === '→') {
                 return (
-                  <span key={i} style={styles.pillArrow}>
+                  <span key={i} style={{ background: '#FFFFFF', borderRadius: 50, padding: '12px 24px', color: '#000000', display: 'flex', alignItems: 'center', gap: 6, fontWeight: 800, fontSize: '0.95rem' }}>
                     <ArrowRight size={18} />
                     Higher Attention
                   </span>
                 );
               }
               return (
-                <span key={i} style={styles.pill}>{part}</span>
+                <span key={i} style={{ background: 'rgba(20,20,20,0.7)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 50, padding: '12px 28px', color: '#FFFFFF', fontSize: '0.95rem', fontWeight: 600 }}>{part}</span>
               );
             })}
           </div>

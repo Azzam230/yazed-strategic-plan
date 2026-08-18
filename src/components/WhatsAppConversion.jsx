@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import AnimatedSection from './AnimatedSection'
 import { MessageCircle, Bot, User, CheckCircle2, ArrowDown } from 'lucide-react'
 
@@ -59,18 +58,18 @@ function ChatBubble({ step, index }) {
 
   const bubbleStyle = isResponse
     ? {
-        backgroundColor: 'rgba(196,250,0,0.08)',
-        border: '1px solid rgba(196,250,0,0.2)',
+        backgroundColor: 'rgba(255,255,255,0.06)',
+        border: '1px solid rgba(255,255,255,0.15)',
       }
     : isClient
       ? {
-          backgroundColor: 'rgba(196,250,0,0.12)',
-          border: '1px solid rgba(196,250,0,0.18)',
+          backgroundColor: 'rgba(255,255,255,0.1)',
+          border: '1px solid rgba(255,255,255,0.15)',
           marginInlineStart: '2.5rem',
         }
       : {
-          backgroundColor: 'rgba(7,17,31,0.6)',
-          border: '1px solid rgba(255,255,255,0.06)',
+          backgroundColor: 'rgba(20,20,20,0.7)',
+          border: '1px solid rgba(255,255,255,0.08)',
           marginInlineEnd: '2.5rem',
         }
 
@@ -83,23 +82,23 @@ function ChatBubble({ step, index }) {
               width: '1.5rem',
               height: '1.5rem',
               borderRadius: '6px',
-              backgroundColor: isResponse ? 'rgba(196,250,0,0.15)' : isClient ? 'rgba(196,250,0,0.1)' : 'rgba(148,163,184,0.1)',
+              backgroundColor: isResponse ? 'rgba(255,255,255,0.1)' : isClient ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.06)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}
           >
             {isClient ? (
-              <User style={{ width: '0.75rem', height: '0.75rem', color: '#C4FA00' }} />
+              <User style={{ width: '0.75rem', height: '0.75rem', color: '#FFFFFF' }} />
             ) : (
-              <Bot style={{ width: '0.75rem', height: '0.75rem', color: isResponse ? '#C4FA00' : '#94A3B8' }} />
+              <Bot style={{ width: '0.75rem', height: '0.75rem', color: isResponse ? '#FFFFFF' : '#A0A0A0' }} />
             )}
           </div>
           <span
             style={{
               fontSize: '0.7rem',
               fontWeight: 600,
-              color: isResponse ? '#C4FA00' : isClient ? '#C4FA00' : '#94A3B8',
+              color: isResponse ? '#FFFFFF' : isClient ? '#FFFFFF' : '#A0A0A0',
             }}
           >
             {step.sender}
@@ -119,7 +118,7 @@ function ChatBubble({ step, index }) {
           <p
             style={{
               fontSize: '0.875rem',
-              color: '#F5F7FA',
+              color: '#FFFFFF',
               lineHeight: 1.7,
               margin: 0,
             }}
@@ -131,7 +130,7 @@ function ChatBubble({ step, index }) {
         <span
           style={{
             fontSize: '0.6rem',
-            color: '#64748B',
+            color: '#666666',
             paddingInline: '0.5rem',
           }}
         >
@@ -146,31 +145,17 @@ export default function WhatsAppConversion() {
   return (
     <section
       id="whatsapp-conversion"
-      className="slide"
+      className="section-padding"
       style={{
-        backgroundColor: '#07111F',
+        backgroundColor: '#000000',
         position: 'relative',
         overflow: 'hidden',
       }}
     >
-      <div
-        style={{
-          position: 'absolute',
-          top: '15%',
-          insetInlineStart: '50%',
-          transform: 'translateX(-50%)',
-          width: '650px',
-          height: '320px',
-          borderRadius: '50%',
-          background: 'rgba(34,197,94,0.03)',
-          filter: 'blur(150px)',
-          pointerEvents: 'none',
-        }}
-      />
-
-      <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+      <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
         <AnimatedSection delay={0}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div className="accent-line" style={{ marginInline: 'auto', marginBottom: '1rem' }} />
             <div
               style={{
                 display: 'inline-flex',
@@ -178,17 +163,17 @@ export default function WhatsAppConversion() {
                 gap: '0.5rem',
                 padding: '0.4rem 1rem',
                 borderRadius: '9999px',
-                backgroundColor: 'rgba(34,197,94,0.08)',
-                border: '1px solid rgba(34,197,94,0.15)',
+                backgroundColor: 'rgba(255,255,255,0.06)',
+                border: '1px solid rgba(255,255,255,0.08)',
                 marginBottom: '1.25rem',
               }}
             >
-              <MessageCircle style={{ width: '0.875rem', height: '0.875rem', color: '#22C55E' }} />
+              <MessageCircle style={{ width: '0.875rem', height: '0.875rem', color: '#FFFFFF' }} />
               <span
                 style={{
                   fontSize: '0.75rem',
                   fontWeight: 600,
-                  color: '#22C55E',
+                  color: '#FFFFFF',
                   letterSpacing: '0.05em',
                 }}
               >
@@ -199,8 +184,7 @@ export default function WhatsAppConversion() {
               style={{
                 fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
                 fontWeight: 800,
-                color: '#F5F7FA',
-                fontFamily: 'var(--font-display)',
+                color: '#FFFFFF',
                 marginBottom: '0.5rem',
                 lineHeight: 1.3,
               }}
@@ -210,7 +194,7 @@ export default function WhatsAppConversion() {
             <p
               style={{
                 fontSize: '1rem',
-                color: '#94A3B8',
+                color: '#A0A0A0',
                 maxWidth: '500px',
                 margin: '0 auto',
               }}
@@ -234,7 +218,7 @@ export default function WhatsAppConversion() {
               style={{
                 borderRadius: '20px',
                 padding: '1.75rem',
-                border: '1px solid rgba(255,255,255,0.06)',
+                border: '1px solid rgba(255,255,255,0.08)',
               }}
             >
               <div
@@ -244,7 +228,7 @@ export default function WhatsAppConversion() {
                   gap: '0.625rem',
                   marginBottom: '1.5rem',
                   paddingBottom: '1rem',
-                  borderBottom: '1px solid rgba(255,255,255,0.06)',
+                  borderBottom: '1px solid rgba(255,255,255,0.08)',
                 }}
               >
                 <div
@@ -252,20 +236,19 @@ export default function WhatsAppConversion() {
                     width: '2.25rem',
                     height: '2.25rem',
                     borderRadius: '10px',
-                    backgroundColor: 'rgba(34,197,94,0.1)',
+                    backgroundColor: 'rgba(255,255,255,0.06)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}
                 >
-                  <MessageCircle style={{ width: '1rem', height: '1rem', color: '#22C55E' }} />
+                  <MessageCircle style={{ width: '1rem', height: '1rem', color: '#FFFFFF' }} />
                 </div>
                 <h3
                   style={{
                     fontSize: '1rem',
                     fontWeight: 700,
-                    color: '#F5F7FA',
-                    fontFamily: 'var(--font-display)',
+                    color: '#FFFFFF',
                   }}
                 >
                   تسلسل المحادثة
@@ -278,7 +261,7 @@ export default function WhatsAppConversion() {
                     <ChatBubble step={step} index={i} />
                     {i < flowSteps.length - 1 && (
                       <div style={{ display: 'flex', justifyContent: 'center', padding: '0.125rem 0' }}>
-                        <ArrowDown style={{ width: '0.75rem', height: '0.75rem', color: '#64748B', opacity: 0.5 }} />
+                        <ArrowDown style={{ width: '0.75rem', height: '0.75rem', color: '#666666', opacity: 0.5 }} />
                       </div>
                     )}
                   </div>
@@ -294,15 +277,14 @@ export default function WhatsAppConversion() {
                 style={{
                   borderRadius: '16px',
                   padding: '1.5rem',
-                  border: '1px solid rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(255,255,255,0.08)',
                 }}
               >
                 <h3
                   style={{
                     fontSize: '1rem',
                     fontWeight: 700,
-                    color: '#F5F7FA',
-                    fontFamily: 'var(--font-display)',
+                    color: '#FFFFFF',
                     marginBottom: '1.25rem',
                   }}
                 >
@@ -319,8 +301,8 @@ export default function WhatsAppConversion() {
                         gap: '0.75rem',
                         padding: '1rem',
                         borderRadius: '12px',
-                        backgroundColor: 'rgba(7,17,31,0.5)',
-                        border: '1px solid rgba(255,255,255,0.04)',
+                        backgroundColor: 'rgba(20,20,20,0.7)',
+                        border: '1px solid rgba(255,255,255,0.08)',
                       }}
                     >
                       <span
@@ -328,8 +310,8 @@ export default function WhatsAppConversion() {
                           width: '1.75rem',
                           height: '1.75rem',
                           borderRadius: '8px',
-                          backgroundColor: '#C4FA00',
-                          color: '#000',
+                          backgroundColor: '#FFFFFF',
+                          color: '#000000',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
@@ -344,7 +326,7 @@ export default function WhatsAppConversion() {
                         <p
                           style={{
                             fontSize: '0.85rem',
-                            color: '#F5F7FA',
+                            color: '#FFFFFF',
                             fontWeight: 600,
                             marginBottom: '0.25rem',
                           }}
@@ -354,7 +336,7 @@ export default function WhatsAppConversion() {
                         <p
                           style={{
                             fontSize: '0.75rem',
-                            color: '#64748B',
+                            color: '#666666',
                             lineHeight: 1.5,
                             margin: 0,
                           }}
@@ -374,8 +356,8 @@ export default function WhatsAppConversion() {
                 style={{
                   borderRadius: '16px',
                   padding: '1.25rem 1.5rem',
-                  border: '1px solid rgba(196,250,0,0.15)',
-                  backgroundColor: 'rgba(196,250,0,0.04)',
+                  border: '1px solid rgba(255,255,255,0.15)',
+                  backgroundColor: 'rgba(255,255,255,0.04)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.75rem',
@@ -386,20 +368,20 @@ export default function WhatsAppConversion() {
                     width: '2.5rem',
                     height: '2.5rem',
                     borderRadius: '10px',
-                    backgroundColor: 'rgba(34,197,94,0.15)',
+                    backgroundColor: 'rgba(255,255,255,0.1)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexShrink: 0,
                   }}
                 >
-                  <CheckCircle2 style={{ width: '1.125rem', height: '1.125rem', color: '#22C55E' }} />
+                  <CheckCircle2 style={{ width: '1.125rem', height: '1.125rem', color: '#FFFFFF' }} />
                 </div>
                 <div>
                   <p
                     style={{
                       fontSize: '0.9rem',
-                      color: '#C4FA00',
+                      color: '#FFFFFF',
                       fontWeight: 700,
                       marginBottom: '0.125rem',
                     }}
@@ -409,7 +391,7 @@ export default function WhatsAppConversion() {
                   <p
                     style={{
                       fontSize: '0.75rem',
-                      color: '#94A3B8',
+                      color: '#A0A0A0',
                       margin: 0,
                     }}
                   >
@@ -424,7 +406,7 @@ export default function WhatsAppConversion() {
 
       <style>{`
         @media (max-width: 900px) {
-          #whatsapp-conversion .container > div:last-of-type {
+          #whatsapp-conversion .section-container > div:last-of-type {
             grid-template-columns: 1fr !important;
           }
         }

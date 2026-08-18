@@ -33,43 +33,63 @@ export default function Hero() {
     <section
       id="strategy"
       style={{
-        position: 'relative', minHeight: '100vh',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        position: 'relative',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         overflow: 'hidden',
-        background: 'radial-gradient(ellipse 70% 60% at 50% 45%, #101F32 0%, #0B1728 40%, #07111F 100%)',
+        background: '#000000',
       }}
     >
+      {/* Radial gradient overlay */}
+      <div style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none',
+        background: 'radial-gradient(ellipse 70% 60% at 50% 45%, #141414 0%, #0A0A0A 40%, #000000 100%)',
+      }} />
+
       {/* Subtle ambient glow */}
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: 'radial-gradient(circle at 50% 35%, rgba(196,250,0,0.03) 0%, transparent 60%)',
+        background: 'radial-gradient(circle at 50% 35%, rgba(255,255,255,0.02) 0%, transparent 60%)',
       }} />
 
       <div style={{
-        position: 'relative', zIndex: 10,
-        width: '100%', maxWidth: '72rem',
-        marginInline: 'auto', paddingInline: '1.5rem',
-        paddingTop: '8rem', paddingBottom: '5rem',
+        position: 'relative',
+        zIndex: 10,
+        width: '100%',
+        maxWidth: '72rem',
+        marginInline: 'auto',
+        paddingInline: '1.5rem',
+        paddingTop: '8rem',
+        paddingBottom: '5rem',
         textAlign: 'center',
       }}>
         {/* Badge */}
         <motion.div {...fadeUp(0.15)} style={{
-          display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-          padding: '0.4rem 1rem', borderRadius: '9999px',
-          backgroundColor: 'rgba(196,250,0,0.08)',
-          border: '1px solid rgba(196,250,0,0.15)',
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          padding: '0.4rem 1rem',
+          borderRadius: '9999px',
+          backgroundColor: 'rgba(255,255,255,0.06)',
+          border: '1px solid rgba(255,255,255,0.1)',
           marginBottom: '2.5rem',
         }}>
           <span style={{
-            width: 6, height: 6, borderRadius: '50%',
-            backgroundColor: '#C4FA00',
-            boxShadow: '0 0 8px rgba(196,250,0,0.5)',
+            width: 6,
+            height: 6,
+            borderRadius: '50%',
+            backgroundColor: '#FFFFFF',
+            boxShadow: '0 0 8px rgba(255,255,255,0.5)',
             animation: 'pulse 2.5s ease-in-out infinite',
           }} />
           <span style={{
-            fontSize: '0.8rem', fontWeight: 600,
+            fontSize: '0.8rem',
+            fontWeight: 600,
             fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
-            color: '#C4FA00', letterSpacing: '0.01em',
+            color: '#FFFFFF',
+            letterSpacing: '0.01em',
           }}>
             الاستراتيجية الرقمية 2026/2027
           </span>
@@ -81,28 +101,21 @@ export default function Hero() {
           fontWeight: 800,
           fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
           lineHeight: 1.15,
-          color: '#F5F7FA',
+          color: '#FFFFFF',
           marginBottom: '1.75rem',
           maxWidth: '56rem',
           marginInline: 'auto',
         }}>
           من حساب قانوني
           <br />
-          <span style={{
-            background: 'linear-gradient(135deg, #C4FA00 0%, #D2FF00 50%, #A8D600 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-          }}>
-            إلى محرك مستمر للثقة والعملاء
-          </span>
+          إلى محرك مستمر للثقة والعملاء
         </motion.h1>
 
         {/* Subtitle */}
         <motion.p {...fadeUp(0.55)} style={{
           fontSize: 'clamp(0.95rem, 1.8vw, 1.2rem)',
           fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
-          color: '#94A3B8',
+          color: '#A0A0A0',
           maxWidth: '46rem',
           marginInline: 'auto',
           lineHeight: 1.7,
@@ -115,7 +128,7 @@ export default function Hero() {
         <motion.p {...fadeUp(0.7)} style={{
           fontSize: '0.8rem',
           fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
-          color: '#64748B',
+          color: '#666666',
           letterSpacing: '0.04em',
           marginBottom: '3.5rem',
         }}>
@@ -138,51 +151,62 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 1.05 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
               style={{
-                padding: '1.25rem 1.5rem', borderRadius: '0.875rem',
-                backgroundColor: 'rgba(16,31,50,0.6)',
+                padding: '1.25rem 1.5rem',
+                borderRadius: '0.875rem',
+                backgroundColor: 'rgba(20,20,20,0.6)',
                 backdropFilter: 'blur(12px)',
                 WebkitBackdropFilter: 'blur(12px)',
-                border: '1px solid rgba(255,255,255,0.06)',
-                display: 'flex', flexDirection: 'column', alignItems: 'flex-start',
+                border: '1px solid rgba(255,255,255,0.08)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
                 gap: '0.5rem',
                 textAlign: 'start',
                 transition: 'border-color 0.3s, background-color 0.3s',
                 cursor: 'default',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(196,250,0,0.2)'
-                e.currentTarget.style.backgroundColor = 'rgba(16,31,50,0.8)'
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'
+                e.currentTarget.style.backgroundColor = 'rgba(20,20,20,0.8)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'
-                e.currentTarget.style.backgroundColor = 'rgba(16,31,50,0.6)'
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
+                e.currentTarget.style.backgroundColor = 'rgba(20,20,20,0.6)'
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                 <div style={{
-                  width: '2rem', height: '2rem', borderRadius: '0.5rem',
-                  backgroundColor: 'rgba(196,250,0,0.1)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  width: '2rem',
+                  height: '2rem',
+                  borderRadius: '0.5rem',
+                  backgroundColor: 'rgba(255,255,255,0.06)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                 }}>
-                  <m.icon style={{ width: '1rem', height: '1rem', color: '#C4FA00' }} />
+                  <m.icon style={{ width: '1rem', height: '1rem', color: '#FFFFFF' }} />
                 </div>
                 <span style={{
-                  fontSize: '0.6rem', fontWeight: 700,
+                  fontSize: '0.6rem',
+                  fontWeight: 700,
                   fontFamily: "monospace, 'Noto Sans Arabic'",
-                  color: '#C4FA00', letterSpacing: '0.12em',
+                  color: '#FFFFFF',
+                  letterSpacing: '0.12em',
                 }}>
                   {m.en}
                 </span>
               </div>
               <div style={{
-                fontSize: '0.95rem', fontWeight: 600,
+                fontSize: '0.95rem',
+                fontWeight: 600,
                 fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
-                color: '#F5F7FA',
+                color: '#FFFFFF',
               }}>
                 {m.label}
               </div>
               <div style={{
-                fontSize: '0.7rem', color: '#64748B',
+                fontSize: '0.7rem',
+                color: '#666666',
                 fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
               }}>
                 {m.sub}
@@ -193,9 +217,10 @@ export default function Hero() {
 
         {/* Tagline below cards */}
         <motion.p {...fadeUp(1.35)} style={{
-          fontSize: '0.75rem', fontWeight: 500,
+          fontSize: '0.75rem',
+          fontWeight: 500,
           fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
-          color: '#64748B',
+          color: '#666666',
           letterSpacing: '0.06em',
           textTransform: 'uppercase',
           marginBottom: '2.5rem',
@@ -214,25 +239,25 @@ export default function Hero() {
             }}
             style={{
               padding: '0.875rem 2.25rem',
-              backgroundColor: '#C4FA00',
-              color: '#07111F',
+              backgroundColor: '#FFFFFF',
+              color: '#000000',
               fontWeight: 700,
               fontSize: '0.95rem',
               fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
               borderRadius: '9999px',
               border: 'none',
               cursor: 'pointer',
-              boxShadow: '0 8px 32px rgba(196,250,0,0.2)',
+              boxShadow: '0 8px 32px rgba(255,255,255,0.1)',
               transition: 'box-shadow 0.3s',
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.5rem',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = '0 12px 40px rgba(196,250,0,0.35)'
+              e.currentTarget.style.boxShadow = '0 12px 40px rgba(255,255,255,0.15)'
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow = '0 8px 32px rgba(196,250,0,0.2)'
+              e.currentTarget.style.boxShadow = '0 8px 32px rgba(255,255,255,0.1)'
             }}
           >
             استكشف الاستراتيجية
@@ -247,14 +272,16 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 2 }}
           style={{
             marginTop: '4rem',
-            display: 'flex', flexDirection: 'column', alignItems: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
           }}
         >
           <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
           >
-            <ChevronDown style={{ width: '1.25rem', height: '1.25rem', color: '#64748B' }} />
+            <ChevronDown style={{ width: '1.25rem', height: '1.25rem', color: '#666666' }} />
           </motion.div>
         </motion.div>
       </div>

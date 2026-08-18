@@ -6,8 +6,8 @@ export default function Footer() {
     <footer
       style={{
         position: 'relative',
-        backgroundColor: '#07111F',
-        borderTop: '1px solid rgba(255,255,255,0.06)',
+        backgroundColor: '#000000',
+        borderTop: '1px solid rgba(255,255,255,0.08)',
         overflow: 'hidden',
       }}
     >
@@ -19,7 +19,7 @@ export default function Footer() {
           right: 0,
           height: '1px',
           background:
-            'linear-gradient(90deg, transparent 0%, rgba(196,250,0,0.3) 50%, transparent 100%)',
+            'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)',
         }}
       />
 
@@ -48,20 +48,20 @@ export default function Footer() {
                     width: '2.5rem',
                     height: '2.5rem',
                     borderRadius: '0.75rem',
-                    backgroundColor: '#C4FA00',
+                    backgroundColor: '#FFFFFF',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}
                 >
-                  <Scale style={{ width: '1.25rem', height: '1.25rem', color: '#07111F' }} />
+                  <Scale style={{ width: '1.25rem', height: '1.25rem', color: '#000000' }} />
                 </div>
                 <div>
                   <h4
                     style={{
                       fontSize: '1.05rem',
                       fontWeight: 700,
-                      color: '#F5F7FA',
+                      color: '#FFFFFF',
                       lineHeight: 1.2,
                     }}
                   >
@@ -69,7 +69,7 @@ export default function Footer() {
                   </h4>
                 </div>
               </div>
-              <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '0.875rem', color: '#666666', lineHeight: 1.6 }}>
                 للمحاماة والاستشارات القانونية
               </p>
             </div>
@@ -81,7 +81,7 @@ export default function Footer() {
                 style={{
                   fontSize: '0.85rem',
                   fontWeight: 600,
-                  color: '#94A3B8',
+                  color: '#A0A0A0',
                   letterSpacing: '0.04em',
                   marginBottom: '0.25rem',
                 }}
@@ -101,15 +101,15 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   style={{
                     fontSize: '0.875rem',
-                    color: '#94A3B8',
+                    color: '#A0A0A0',
                     textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#C4FA00'
+                    e.currentTarget.style.color = '#FFFFFF'
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = '#94A3B8'
+                    e.currentTarget.style.color = '#A0A0A0'
                   }}
                 >
                   {link.label}
@@ -124,15 +124,15 @@ export default function Footer() {
                 style={{
                   fontSize: '0.85rem',
                   fontWeight: 600,
-                  color: '#94A3B8',
+                  color: '#A0A0A0',
                   letterSpacing: '0.04em',
                   marginBottom: '0.25rem',
                 }}
               >
                 تواصل
               </h4>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#94A3B8', fontSize: '0.875rem' }}>
-                <MapPin style={{ width: '0.875rem', height: '0.875rem', color: '#64748B', flexShrink: 0 }} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#A0A0A0', fontSize: '0.875rem' }}>
+                <MapPin style={{ width: '0.875rem', height: '0.875rem', color: '#666666', flexShrink: 0 }} />
                 جدة — المملكة العربية السعودية
               </div>
               <a
@@ -143,16 +143,16 @@ export default function Footer() {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.5rem',
-                  color: '#94A3B8',
+                  color: '#A0A0A0',
                   fontSize: '0.875rem',
                   textDecoration: 'none',
                   transition: 'color 0.2s',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#C4FA00'
+                  e.currentTarget.style.color = '#FFFFFF'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#94A3B8'
+                  e.currentTarget.style.color = '#A0A0A0'
                 }}
               >
                 <Phone style={{ width: '0.875rem', height: '0.875rem', flexShrink: 0 }} />
@@ -164,16 +164,16 @@ export default function Footer() {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.5rem',
-                  color: '#94A3B8',
+                  color: '#A0A0A0',
                   fontSize: '0.875rem',
                   textDecoration: 'none',
                   transition: 'color 0.2s',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#C4FA00'
+                  e.currentTarget.style.color = '#FFFFFF'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#94A3B8'
+                  e.currentTarget.style.color = '#A0A0A0'
                 }}
               >
                 <Mail style={{ width: '0.875rem', height: '0.875rem', flexShrink: 0 }} />
@@ -185,7 +185,7 @@ export default function Footer() {
 
         <div
           style={{
-            borderTop: '1px solid rgba(255,255,255,0.06)',
+            borderTop: '1px solid rgba(255,255,255,0.08)',
             paddingTop: '1.5rem',
             display: 'flex',
             flexWrap: 'wrap',
@@ -194,7 +194,7 @@ export default function Footer() {
             gap: '0.5rem',
           }}
         >
-          <p style={{ fontSize: '0.8rem', color: '#64748B', textAlign: 'center' }}>
+          <p style={{ fontSize: '0.8rem', color: '#666666', textAlign: 'center' }}>
             © 2026 مكتب المحامي يزيد اليوبي — جميع الحقوق محفوظة
           </p>
         </div>
@@ -209,22 +209,22 @@ export default function Footer() {
           width: '3rem',
           height: '3rem',
           borderRadius: '50%',
-          backgroundColor: '#C4FA00',
-          color: '#07111F',
+          backgroundColor: '#FFFFFF',
+          color: '#000000',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           border: 'none',
           cursor: 'pointer',
           zIndex: 40,
-          boxShadow: '0 4px 20px rgba(196,250,0,0.3)',
+          boxShadow: '0 4px 20px rgba(255,255,255,0.15)',
           transition: 'box-shadow 0.3s',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.boxShadow = '0 6px 28px rgba(196,250,0,0.45)'
+          e.currentTarget.style.boxShadow = '0 6px 28px rgba(255,255,255,0.3)'
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.boxShadow = '0 4px 20px rgba(196,250,0,0.3)'
+          e.currentTarget.style.boxShadow = '0 4px 20px rgba(255,255,255,0.15)'
         }}
       >
         <ArrowUp style={{ width: '1.25rem', height: '1.25rem' }} />

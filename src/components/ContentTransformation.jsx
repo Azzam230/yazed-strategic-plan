@@ -1,10 +1,9 @@
 import AnimatedSection from './AnimatedSection'
-import SectionHeader from './SectionHeader'
 import {
   Lightbulb,
   Film,
   Music,
-  Images,
+  Camera,
   MessageSquare,
   Briefcase,
   Smartphone,
@@ -15,7 +14,7 @@ import {
 const assets = [
   { icon: Film, name: 'Reel', platform: 'Instagram' },
   { icon: Music, name: 'TikTok', platform: 'TikTok' },
-  { icon: Images, name: 'Instagram Carousel', platform: 'Instagram' },
+  { icon: Camera, name: 'Instagram Carousel', platform: 'Instagram' },
   { icon: MessageSquare, name: 'X Thread', platform: 'X' },
   { icon: Briefcase, name: 'LinkedIn Post', platform: 'LinkedIn' },
   { icon: Smartphone, name: 'Story', platform: 'Instagram / TikTok' },
@@ -25,9 +24,9 @@ const assets = [
 export default function ContentTransformation() {
   return (
     <section
-      className="slide"
+      className="section-padding"
       style={{
-        backgroundColor: '#07111F',
+        backgroundColor: '#000000',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -36,23 +35,43 @@ export default function ContentTransformation() {
         style={{
           position: 'absolute',
           top: '50%',
-          insetInlineStart: '50%',
+          left: '50%',
           transform: 'translate(-50%, -50%)',
           width: '600px',
           height: '600px',
           borderRadius: '50%',
-          background: 'rgba(196,250,0,0.03)',
+          background: 'rgba(255,255,255,0.015)',
           filter: 'blur(150px)',
           pointerEvents: 'none',
         }}
       />
 
-      <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+      <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
         <AnimatedSection delay={0}>
-          <SectionHeader
-            title="حول رؤية قانونية واحدة إلى 7 أصول تسويقية"
-            subtitle="One Legal Insight → 7 Marketing Assets"
-          />
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2
+              style={{
+                fontSize: 'clamp(1.875rem, 4vw, 3rem)',
+                fontWeight: 800,
+                fontFamily: 'var(--font-display)',
+                lineHeight: 1.2,
+                color: '#FFFFFF',
+                marginBottom: '0.5rem',
+              }}
+            >
+              حول رؤية قانونية واحدة إلى 7 أصول تسويقية
+            </h2>
+            <p
+              style={{
+                fontSize: 'clamp(0.9rem, 1.5vw, 1.1rem)',
+                color: '#A0A0A0',
+                fontWeight: 500,
+                letterSpacing: '0.03em',
+              }}
+            >
+              One Legal Insight → 7 Marketing Assets
+            </p>
+          </div>
         </AnimatedSection>
 
         <div
@@ -72,8 +91,8 @@ export default function ContentTransformation() {
               style={{
                 padding: '1.5rem 2.5rem',
                 borderRadius: '16px',
-                border: '1px solid rgba(196,250,0,0.2)',
-                background: 'rgba(196,250,0,0.08)',
+                border: '1px solid rgba(255,255,255,0.15)',
+                background: 'rgba(20,20,20,0.7)',
                 textAlign: 'center',
                 minWidth: '280px',
               }}
@@ -91,14 +110,14 @@ export default function ContentTransformation() {
                     width: '2.5rem',
                     height: '2.5rem',
                     borderRadius: '10px',
-                    backgroundColor: 'rgba(196,250,0,0.15)',
+                    backgroundColor: 'rgba(255,255,255,0.06)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}
                 >
                   <Lightbulb
-                    style={{ width: '1.25rem', height: '1.25rem', color: '#C4FA00' }}
+                    style={{ width: '1.25rem', height: '1.25rem', color: '#FFFFFF' }}
                   />
                 </div>
                 <div style={{ textAlign: 'start' }}>
@@ -106,14 +125,14 @@ export default function ContentTransformation() {
                     style={{
                       fontSize: '1.1rem',
                       fontWeight: 700,
-                      color: '#C4FA00',
+                      color: '#FFFFFF',
                       fontFamily: 'var(--font-display)',
                     }}
                   >
                     رؤية قانونية
                   </span>
                   <br />
-                  <span style={{ fontSize: '0.75rem', color: '#94A3B8' }}>
+                  <span style={{ fontSize: '0.75rem', color: '#A0A0A0' }}>
                     Legal Insight
                   </span>
                 </div>
@@ -136,14 +155,14 @@ export default function ContentTransformation() {
                   width: '2px',
                   height: '40px',
                   background:
-                    'linear-gradient(to bottom, rgba(196,250,0,0.4), rgba(196,250,0,0.1))',
+                    'linear-gradient(to bottom, rgba(255,255,255,0.25), rgba(255,255,255,0.05))',
                 }}
               />
               <ArrowDown
                 style={{
                   width: '1.25rem',
                   height: '1.25rem',
-                  color: 'rgba(196,250,0,0.5)',
+                  color: 'rgba(255,255,255,0.35)',
                 }}
               />
             </div>
@@ -165,6 +184,8 @@ export default function ContentTransformation() {
                   style={{
                     padding: '1rem',
                     borderRadius: '12px',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    background: 'rgba(20,20,20,0.7)',
                     textAlign: 'center',
                     transition: 'all 0.3s',
                     cursor: 'default',
@@ -176,11 +197,11 @@ export default function ContentTransformation() {
                     gap: '0.5rem',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(196,250,0,0.2)'
+                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'
                     e.currentTarget.style.transform = 'translateY(-2px)'
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'
+                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
                     e.currentTarget.style.transform = 'translateY(0)'
                   }}
                 >
@@ -189,27 +210,27 @@ export default function ContentTransformation() {
                       width: '2.25rem',
                       height: '2.25rem',
                       borderRadius: '10px',
-                      backgroundColor: 'rgba(196,250,0,0.1)',
+                      backgroundColor: 'rgba(255,255,255,0.06)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                     }}
                   >
                     <asset.icon
-                      style={{ width: '1.1rem', height: '1.1rem', color: '#C4FA00' }}
+                      style={{ width: '1.1rem', height: '1.1rem', color: '#FFFFFF' }}
                     />
                   </div>
                   <span
                     style={{
                       fontSize: '0.85rem',
                       fontWeight: 600,
-                      color: '#F5F7FA',
+                      color: '#FFFFFF',
                       fontFamily: 'var(--font-display)',
                     }}
                   >
                     {asset.name}
                   </span>
-                  <span style={{ fontSize: '0.65rem', color: '#64748B' }}>
+                  <span style={{ fontSize: '0.65rem', color: '#666666' }}>
                     {asset.platform}
                   </span>
                 </div>
@@ -224,7 +245,7 @@ export default function ContentTransformation() {
             style={{
               textAlign: 'center',
               fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
-              color: '#94A3B8',
+              color: '#A0A0A0',
               marginTop: '3rem',
               fontWeight: 500,
               letterSpacing: '0.02em',

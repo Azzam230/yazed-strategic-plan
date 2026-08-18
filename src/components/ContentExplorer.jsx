@@ -19,7 +19,6 @@ const ideas = [
     pillarId: 'entitlement',
     title: 'هل يحق لك تجاوز بوابيع الإجارة؟',
     platform: 'Instagram Reel',
-    platformColor: '#E1306C',
     description: 'شرح لحقوق المستأجر والمالك عند حدوث خلاف حول بنود الإجارة',
     tags: ['تعليمي', 'تحفيزي'],
   },
@@ -29,7 +28,6 @@ const ideas = [
     pillarId: 'risk',
     title: '3 بنود يجب فحصها قبل توقيع عقد العمل',
     platform: 'LinkedIn Post',
-    platformColor: '#0A66C2',
     description: 'aremphasizes على أهمية قراءة العقد قبل التوقيع لحماية حقوقك',
     tags: ['توعوي', 'تعليمي'],
   },
@@ -39,7 +37,6 @@ const ideas = [
     pillarId: 'case',
     title: 'قضية أمانة: شركاء تجاريون واختلاف في التقسيم',
     platform: 'TikTok',
-    platformColor: '#FF004F',
     description: 'قصة واقعية عن نزاع بين شركاء تجاريين وكيف تم حله بالقانون',
     tags: ['ترفيهي', 'قانوني'],
   },
@@ -49,7 +46,6 @@ const ideas = [
     pillarId: 'crisis',
     title: 'ماذا تفعل إذا تم حذفك من واتساب العمل فجأة؟',
     platform: 'Instagram Carousel',
-    platformColor: '#E1306C',
     description: 'خطوات عملية للتعامل مع فقدان الوصول لحسابات العمل الرقمية',
     tags: ['عملي', 'توعوي'],
   },
@@ -59,7 +55,6 @@ const ideas = [
     pillarId: 'b2b',
     title: 'كيف تحفظ حقوقك في عقد المقاولات',
     platform: 'LinkedIn',
-    platformColor: '#0A66C2',
     description: 'نصائح للشركات والمقاولين عند إبرام عقود المقاولات',
     tags: ['تعليمي', 'B2B'],
   },
@@ -69,7 +64,6 @@ const ideas = [
     pillarId: 'news',
     title: 'الجديد من هيئة التسويق: قرار حماية تجارب المستهلك',
     platform: 'X Thread',
-    platformColor: '#94A3B8',
     description: 'تحليل مبسّط لأحدث القرارات التنظيمية وتأثيرها على الشركات',
     tags: ['تحليلي', 'أخبار'],
   },
@@ -79,7 +73,6 @@ const ideas = [
     pillarId: 'b2b',
     title: '5 أخطاء تجنبها عند تأسيس شركة',
     platform: 'Instagram Reel',
-    platformColor: '#E1306C',
     description: 'الأخطاء الشائعة التي يقع فيها رواد الأعمال عند بدء مشروعهم',
     tags: ['تعليمي', 'تحفيزي'],
   },
@@ -89,7 +82,6 @@ const ideas = [
     pillarId: 'entitlement',
     title: 'هل يمكنك فسخ العقد بسبب التأخر عن التسليم؟',
     platform: 'TikTok',
-    platformColor: '#FF004F',
     description: 'شرح للحقوق القانونية عند إخلال الطرف الآخر بمواعيد التسليم',
     tags: ['توعوي', 'قانوني'],
   },
@@ -110,8 +102,8 @@ function IdeaCard({ idea, index }) {
           height: '100%',
           transition: 'all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           border: hovered
-            ? '1px solid rgba(196,250,0,0.25)'
-            : '1px solid rgba(255,255,255,0.06)',
+            ? '1px solid rgba(255,255,255,0.15)'
+            : '1px solid rgba(255,255,255,0.08)',
           transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
           cursor: 'default',
           display: 'flex',
@@ -129,8 +121,8 @@ function IdeaCard({ idea, index }) {
             width: '100%',
             height: '3px',
             background: hovered
-              ? 'linear-gradient(90deg, transparent, #C4FA00, transparent)'
-              : 'linear-gradient(90deg, transparent, rgba(196,250,0,0.3), transparent)',
+              ? 'linear-gradient(90deg, transparent, #FFFFFF, transparent)'
+              : 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
             transition: 'all 0.35s',
           }}
         />
@@ -147,8 +139,8 @@ function IdeaCard({ idea, index }) {
             style={{
               padding: '0.25rem 0.75rem',
               borderRadius: '9999px',
-              backgroundColor: 'rgba(196,250,0,0.1)',
-              color: '#C4FA00',
+              backgroundColor: 'rgba(255,255,255,0.06)',
+              color: '#FFFFFF',
               fontSize: '0.7rem',
               fontWeight: 600,
               whiteSpace: 'nowrap',
@@ -160,8 +152,8 @@ function IdeaCard({ idea, index }) {
             style={{
               padding: '0.2rem 0.625rem',
               borderRadius: '9999px',
-              backgroundColor: `${idea.platformColor}18`,
-              color: idea.platformColor,
+              backgroundColor: 'rgba(255,255,255,0.06)',
+              color: '#A0A0A0',
               fontSize: '0.65rem',
               fontWeight: 600,
               whiteSpace: 'nowrap',
@@ -175,8 +167,7 @@ function IdeaCard({ idea, index }) {
           style={{
             fontSize: '1.05rem',
             fontWeight: 700,
-            color: '#F5F7FA',
-            fontFamily: 'var(--font-display)',
+            color: '#FFFFFF',
             lineHeight: 1.5,
             margin: 0,
           }}
@@ -187,7 +178,7 @@ function IdeaCard({ idea, index }) {
         <p
           style={{
             fontSize: '0.8rem',
-            color: '#94A3B8',
+            color: '#A0A0A0',
             lineHeight: 1.7,
             margin: 0,
             flex: 1,
@@ -210,8 +201,8 @@ function IdeaCard({ idea, index }) {
               style={{
                 padding: '0.2rem 0.5rem',
                 borderRadius: '6px',
-                backgroundColor: 'rgba(148,163,184,0.1)',
-                color: '#94A3B8',
+                backgroundColor: 'rgba(255,255,255,0.06)',
+                color: '#A0A0A0',
                 fontSize: '0.65rem',
                 fontWeight: 500,
               }}
@@ -236,31 +227,17 @@ export default function ContentExplorer() {
   return (
     <section
       id="content-explorer"
-      className="slide"
+      className="section-padding"
       style={{
-        backgroundColor: '#07111F',
+        backgroundColor: '#000000',
         position: 'relative',
         overflow: 'hidden',
       }}
     >
-      <div
-        style={{
-          position: 'absolute',
-          top: '20%',
-          insetInlineStart: '50%',
-          transform: 'translateX(-50%)',
-          width: '600px',
-          height: '300px',
-          borderRadius: '50%',
-          background: 'rgba(196,250,0,0.03)',
-          filter: 'blur(150px)',
-          pointerEvents: 'none',
-        }}
-      />
-
-      <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+      <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
         <AnimatedSection delay={0}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div className="accent-line" style={{ marginInline: 'auto', marginBottom: '1rem' }} />
             <div
               style={{
                 display: 'inline-flex',
@@ -268,17 +245,17 @@ export default function ContentExplorer() {
                 gap: '0.5rem',
                 padding: '0.4rem 1rem',
                 borderRadius: '9999px',
-                backgroundColor: 'rgba(196,250,0,0.08)',
-                border: '1px solid rgba(196,250,0,0.15)',
+                backgroundColor: 'rgba(255,255,255,0.06)',
+                border: '1px solid rgba(255,255,255,0.08)',
                 marginBottom: '1.25rem',
               }}
             >
-              <Lightbulb style={{ width: '0.875rem', height: '0.875rem', color: '#C4FA00' }} />
+              <Lightbulb style={{ width: '0.875rem', height: '0.875rem', color: '#FFFFFF' }} />
               <span
                 style={{
                   fontSize: '0.75rem',
                   fontWeight: 600,
-                  color: '#C4FA00',
+                  color: '#FFFFFF',
                   letterSpacing: '0.05em',
                 }}
               >
@@ -289,8 +266,7 @@ export default function ContentExplorer() {
               style={{
                 fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
                 fontWeight: 800,
-                color: '#F5F7FA',
-                fontFamily: 'var(--font-display)',
+                color: '#FFFFFF',
                 marginBottom: '0.5rem',
                 lineHeight: 1.3,
               }}
@@ -300,7 +276,7 @@ export default function ContentExplorer() {
             <p
               style={{
                 fontSize: '1rem',
-                color: '#94A3B8',
+                color: '#A0A0A0',
                 maxWidth: '500px',
                 margin: '0 auto',
               }}
@@ -317,9 +293,9 @@ export default function ContentExplorer() {
               alignItems: 'center',
               gap: '0.25rem',
               padding: '0.375rem',
-              backgroundColor: 'rgba(16,31,50,0.8)',
+              backgroundColor: 'rgba(20,20,20,0.7)',
               borderRadius: '14px',
-              border: '1px solid rgba(255,255,255,0.06)',
+              border: '1px solid rgba(255,255,255,0.08)',
               marginBottom: '2rem',
               overflowX: 'auto',
               flexWrap: 'wrap',
@@ -334,10 +310,10 @@ export default function ContentExplorer() {
                   onClick={() => setActiveTab(tab.id)}
                   style={{
                     padding: '0.6rem 1rem',
-                    borderRadius: '10px',
+                    borderRadius: '8px',
                     border: 'none',
-                    backgroundColor: isActive ? 'rgba(196,250,0,0.1)' : 'transparent',
-                    color: isActive ? '#C4FA00' : '#64748B',
+                    backgroundColor: isActive ? 'rgba(255,255,255,0.1)' : 'transparent',
+                    color: isActive ? '#FFFFFF' : '#666666',
                     fontSize: '0.8rem',
                     fontWeight: isActive ? 700 : 500,
                     fontFamily: 'inherit',
@@ -345,8 +321,7 @@ export default function ContentExplorer() {
                     transition: 'all 0.25s ease',
                     whiteSpace: 'nowrap',
                     position: 'relative',
-                    borderBottom: isActive ? '2px solid #C4FA00' : '2px solid transparent',
-                    borderRadius: '8px',
+                    borderBottom: isActive ? '2px solid #FFFFFF' : '2px solid transparent',
                   }}
                 >
                   {tab.label}
@@ -377,18 +352,18 @@ export default function ContentExplorer() {
               gap: '0.5rem',
               marginTop: '2.5rem',
               padding: '0.75rem 1.25rem',
-              backgroundColor: 'rgba(16,31,50,0.5)',
+              backgroundColor: 'rgba(20,20,20,0.7)',
               borderRadius: '12px',
-              border: '1px solid rgba(255,255,255,0.04)',
+              border: '1px solid rgba(255,255,255,0.08)',
               width: 'fit-content',
               marginInline: 'auto',
             }}
           >
-            <ExternalLink style={{ width: '0.875rem', height: '0.875rem', color: '#64748B' }} />
+            <ExternalLink style={{ width: '0.875rem', height: '0.875rem', color: '#666666' }} />
             <span
               style={{
                 fontSize: '0.8rem',
-                color: '#64748B',
+                color: '#666666',
                 fontWeight: 500,
               }}
             >

@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import AnimatedSection from './AnimatedSection'
-import SectionHeader from './SectionHeader'
-import { HelpCircle, ShieldAlert, BookOpen, AlertTriangle, Briefcase, Newspaper } from 'lucide-react'
+import { useState } from 'react';
+import AnimatedSection from './AnimatedSection';
+import { HelpCircle, ShieldAlert, BookOpen, AlertTriangle, Briefcase, Newspaper } from 'lucide-react';
 
 const pillars = [
   {
@@ -52,10 +51,10 @@ const pillars = [
     audience: 'عام',
     example: 'تعديلات نظام العمل الجديدة وتأثيرها على الشركات',
   },
-]
+];
 
 function PillarCard({ pillar, index }) {
-  const [hovered, setHovered] = useState(false)
+  const [hovered, setHovered] = useState(false);
 
   return (
     <AnimatedSection delay={index * 0.08}>
@@ -69,8 +68,8 @@ function PillarCard({ pillar, index }) {
           height: '100%',
           transition: 'all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           border: hovered
-            ? '1px solid rgba(196,250,0,0.25)'
-            : '1px solid rgba(255,255,255,0.06)',
+            ? '1px solid rgba(255,255,255,0.15)'
+            : '1px solid rgba(255,255,255,0.08)',
           transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
           cursor: 'default',
           position: 'relative',
@@ -85,8 +84,8 @@ function PillarCard({ pillar, index }) {
             width: '100%',
             height: '3px',
             background: hovered
-              ? 'linear-gradient(90deg, transparent, #C4FA00, transparent)'
-              : 'linear-gradient(90deg, transparent, rgba(196,250,0,0.3), transparent)',
+              ? 'linear-gradient(90deg, transparent, #FFFFFF, transparent)'
+              : 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
             transition: 'all 0.35s',
           }}
         />
@@ -104,21 +103,21 @@ function PillarCard({ pillar, index }) {
               width: '2.75rem',
               height: '2.75rem',
               borderRadius: '12px',
-              backgroundColor: 'rgba(196,250,0,0.1)',
+              backgroundColor: 'rgba(255,255,255,0.06)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}
           >
             <pillar.icon
-              style={{ width: '1.25rem', height: '1.25rem', color: '#C4FA00' }}
+              style={{ width: '1.25rem', height: '1.25rem', color: '#FFFFFF' }}
             />
           </div>
           <span
             style={{
               fontSize: '0.8rem',
               fontFamily: 'monospace',
-              color: '#C4FA00',
+              color: '#FFFFFF',
               fontWeight: 700,
               letterSpacing: '0.05em',
             }}
@@ -131,9 +130,9 @@ function PillarCard({ pillar, index }) {
           style={{
             fontSize: '1.2rem',
             fontWeight: 700,
-            color: '#F5F7FA',
+            color: '#FFFFFF',
             marginBottom: '0.25rem',
-            fontFamily: 'var(--font-display)',
+            fontFamily: "'Noto Sans Arabic', sans-serif",
             lineHeight: 1.4,
           }}
         >
@@ -143,7 +142,7 @@ function PillarCard({ pillar, index }) {
         <span
           style={{
             fontSize: '0.8rem',
-            color: '#C4FA00',
+            color: '#FFFFFF',
             fontWeight: 500,
             display: 'block',
             marginBottom: '0.75rem',
@@ -164,8 +163,8 @@ function PillarCard({ pillar, index }) {
             style={{
               padding: '0.2rem 0.625rem',
               borderRadius: '9999px',
-              backgroundColor: 'rgba(196,250,0,0.1)',
-              color: '#C4FA00',
+              backgroundColor: 'rgba(255,255,255,0.06)',
+              color: '#FFFFFF',
               fontSize: '0.7rem',
               fontWeight: 600,
             }}
@@ -176,16 +175,16 @@ function PillarCard({ pillar, index }) {
 
         <div
           style={{
-            backgroundColor: 'rgba(7,17,31,0.6)',
+            backgroundColor: 'rgba(20,20,20,0.5)',
             borderRadius: '10px',
             padding: '0.75rem',
-            border: '1px solid rgba(255,255,255,0.04)',
+            border: '1px solid rgba(255,255,255,0.06)',
           }}
         >
           <p
             style={{
               fontSize: '0.8rem',
-              color: '#94A3B8',
+              color: '#A0A0A0',
               lineHeight: 1.6,
               margin: 0,
             }}
@@ -195,16 +194,16 @@ function PillarCard({ pillar, index }) {
         </div>
       </div>
     </AnimatedSection>
-  )
+  );
 }
 
 export default function ContentPillars() {
   return (
     <section
       id="content"
-      className="slide"
+      className="section-padding"
       style={{
-        backgroundColor: '#07111F',
+        backgroundColor: '#000000',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -218,49 +217,27 @@ export default function ContentPillars() {
           width: '700px',
           height: '350px',
           borderRadius: '50%',
-          background: 'rgba(196,250,0,0.03)',
+          background: 'rgba(255,255,255,0.015)',
           filter: 'blur(150px)',
           pointerEvents: 'none',
         }}
       />
 
-      <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+      <div className="section-container" style={{ position: 'relative', zIndex: 10 }}>
         <AnimatedSection delay={0}>
-          <SectionHeader
-            badge="05"
-            title="استراتيجية المحتوى"
-            subtitle="6 ركائز محتوى مصممة لتحقيق التفاعل والتحويل"
-          />
+          <div>
+            <div style={{ fontSize: '4rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1, marginBottom: 8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>05</div>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#FFFFFF', marginBottom: 8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>استراتيجية المحتوى</h2>
+            <p style={{ fontSize: '1.1rem', color: '#A0A0A0', maxWidth: 600, lineHeight: 1.8, marginBottom: 48, fontFamily: "'Noto Sans Arabic', sans-serif" }}>6 ركائز محتوى مصممة لتحقيق التفاعل والتحويل</p>
+          </div>
         </AnimatedSection>
 
-        <div
-          className="pillars-grid"
-          style={{
-            display: 'grid',
-            gap: '1.25rem',
-          }}
-        >
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
           {pillars.map((pillar, i) => (
             <PillarCard key={i} pillar={pillar} index={i} />
           ))}
         </div>
       </div>
-
-      <style>{`
-        .pillars-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-        @media (max-width: 1024px) {
-          .pillars-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-        @media (max-width: 640px) {
-          .pillars-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-      `}</style>
     </section>
-  )
+  );
 }
