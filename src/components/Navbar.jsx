@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import { Scale, Menu, X } from 'lucide-react';
 
 const sectionIds = [
-  'strategy', 'problem', 'data', 'audience', 'content',
+  'strategy', 'problem', 'audience', 'content',
   'organic', 'paid', 'roadmap', 'next'
 ];
 
 const sectionLabels = [
-  'الاستراتيجية', 'المشكلة', 'البيانات', 'الجمهور', 'المحتوى',
+  'الاستراتيجية', 'المشكلة', 'الجمهور', 'المحتوى',
   'العضوي', 'المدفوع', 'خارطة الطريق', 'الخطوة القادمة'
 ];
 

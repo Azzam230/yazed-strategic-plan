@@ -2,7 +2,6 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ExecutiveSummary from './components/ExecutiveSummary'
 import ProblemSlide from './components/ProblemSlide'
-import DataSlide from './components/DataSlide'
 import AudienceSlide from './components/AudienceSlide'
 import ContentPillars from './components/ContentPillars'
 import ContentTransformation from './components/ContentTransformation'
@@ -26,7 +25,6 @@ export default function App() {
         <Hero />
         <ExecutiveSummary />
         <ProblemSlide />
-        <DataSlide />
         <AudienceSlide />
         <ContentPillars />
         <ContentTransformation />
