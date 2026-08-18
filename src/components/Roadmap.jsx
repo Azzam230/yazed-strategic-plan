@@ -3,105 +3,45 @@ import SectionHeader from './SectionHeader'
 import { Rocket, Settings, TrendingUp, CheckCircle2, Clock } from 'lucide-react'
 
 const phases = [
-  {
-    icon: Rocket,
-    month: 'الشهر الأول',
-    title: 'التأسيس والاختبار',
-    color: 'brand',
-    tasks: [
-      'تحسين بيئة الحسابات (Bio, Highlights)',
-      'يوم التصوير الأول (20 مقطع)',
-      'إطلاق حملات B2C و B2B المبدئية',
-      'اختبار 4 أنواع من الـ Hooks',
-      'ضبط الرد الآلي للواتساب',
-    ],
-    kpi: 'تحديد CPL Baseline',
-  },
-  {
-    icon: Settings,
-    month: 'الشهر الثاني',
-    title: 'التحسين والتوسع',
-    color: 'brand',
-    tasks: [
-      'التركيز على الركائز الأكثر نجاحاً',
-      'إطلاق حملات إعادة الاستهداف Retargeting',
-      'إيقاف الإعلانات الضعيفة',
-      'تجهيز Case Studies مكثفة',
-      'رفع معدل التحويل لاستشارات مدفوعة',
-    ],
-    kpi: 'Consultation Rate > 25%',
-  },
-  {
-    icon: TrendingUp,
-    month: 'الشهر الثالث',
-    title: 'التحويل والمضاعفة',
-    color: 'brand',
-    tasks: [
-      'التوسع في حملات B2B على LinkedIn',
-      'بناء شراكات مع منصات أعمال',
-      'مضاعفة الميزانية على الزوايا الأعلى',
-      'تثبيت عوائد عقود المحاماة السنوية',
-      'الوصول لـ ROAS يستهدف 5x',
-    ],
-    kpi: 'ROAS > 5x',
-  },
+  { icon: Rocket, month: 'الشهر الأول', title: 'التأسيس والاختبار', tasks: ['تحسين بيئة الحسابات (Bio, Highlights)', 'يوم التصوير الأول (20 مقطع)', 'إطلاق حملات B2C و B2B المبدئية', 'اختبار 4 أنواع من الـ Hooks', 'ضبط الرد الآلي للواتساب'], kpi: 'تحديد CPL Baseline' },
+  { icon: Settings, month: 'الشهر الثاني', title: 'التحسين والتوسع', tasks: ['التركيز على الركائز الأكثر نجاحاً', 'إطلاق حملات إعادة الاستهداف Retargeting', 'إيقاف الإعلانات الضعيفة', 'تجهيز Case Studies مكثفة', 'رفع معدل التحويل لاستشارات مدفوعة'], kpi: 'Consultation Rate > 25%' },
+  { icon: TrendingUp, month: 'الشهر الثالث', title: 'التحويل والمضاعفة', tasks: ['التوسع في حملات B2B على LinkedIn', 'بناء شراكات مع منصات أعمال', 'مضاعفة الميزانية على الزوايا الأعلى', 'تثبيت عوائد عقود المحاماة السنوية', 'الوصول لـ ROAS يستهدف 5x'], kpi: 'ROAS > 5x' },
 ]
 
 export default function Roadmap() {
   return (
-    <section id="roadmap" className="py-20 md:py-32 bg-surface-dark-alt relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          badge="خطة التنفيذ"
-          title="خطة 90 يوماً للتنفيذ"
-          subtitle="من التأسيس والاختبار إلى التحويل المستدام ومضاعفة النتائج"
-          light
-        />
+    <section id="roadmap" className="section-padding" style={{ backgroundColor: '#0A0A0A', position: 'relative' }}>
+      <div className="section-container">
+        <SectionHeader badge="خطة التنفيذ" title="خطة 90 يوماً للتنفيذ" subtitle="من التأسيس والاختبار إلى التحويل المستدام ومضاعفة النتائج" dark />
 
-        <div className="relative">
-          <div className="hidden md:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-brand via-brand to-brand/20" />
-
-          <div className="space-y-8 md:space-y-0">
-            {phases.map((phase, i) => (
-              <AnimatedSection key={i} delay={i * 0.15}>
-                <div className={`md:flex items-center gap-8 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} md:mb-12`}>
-                  <div className={`md:w-[calc(50%-2rem)] ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                    <div className="glass-card-light rounded-3xl p-6 md:p-8 hover:shadow-xl hover:shadow-brand/5 transition-all duration-300">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-11 h-11 rounded-xl bg-brand flex items-center justify-center">
-                          <phase.icon className="w-5 h-5 text-surface-dark" />
-                        </div>
-                        <div>
-                          <span className="text-xs text-brand font-bold">{phase.month}</span>
-                          <h3 className="text-lg font-bold text-text-dark font-[family-name:var(--font-family-display)]">{phase.title}</h3>
-                        </div>
-                      </div>
-                      <ul className="space-y-2.5 mb-4">
-                        {phase.tasks.map((task, j) => (
-                          <li key={j} className="flex items-start gap-2">
-                            <CheckCircle2 className="w-4 h-4 text-brand mt-0.5 shrink-0" />
-                            <span className="text-text-dark-secondary text-sm leading-relaxed">{task}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="flex items-center gap-2 px-3 py-2 bg-brand/10 rounded-xl">
-                        <Clock className="w-4 h-4 text-brand" />
-                        <span className="text-sm font-semibold text-text-dark">{phase.kpi}</span>
-                      </div>
-                    </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          {phases.map((phase, i) => (
+            <AnimatedSection key={i} delay={i * 0.15}>
+              <div className="glass-light" style={{ borderRadius: '1.5rem', padding: 'clamp(1.5rem, 3vw, 2rem)', transition: 'all 0.3s' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
+                  <div style={{ width: '2.75rem', height: '2.75rem', borderRadius: '0.75rem', backgroundColor: '#C4FA00', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <phase.icon style={{ width: '1.25rem', height: '1.25rem', color: '#000' }} />
                   </div>
-
-                  <div className="hidden md:flex relative z-10">
-                    <div className="w-12 h-12 rounded-full bg-brand flex items-center justify-center text-surface-dark font-black text-lg">
-                      {i + 1}
-                    </div>
+                  <div>
+                    <span style={{ fontSize: '0.75rem', color: '#C4FA00', fontWeight: 700 }}>{phase.month}</span>
+                    <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#111111', fontFamily: 'var(--font-display)' }}>{phase.title}</h3>
                   </div>
-
-                  <div className="md:w-[calc(50%-2rem)]" />
                 </div>
-              </AnimatedSection>
-            ))}
-          </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '0.625rem', marginBottom: '1.25rem' }}>
+                  {phase.tasks.map((task, j) => (
+                    <div key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                      <CheckCircle2 style={{ width: '1rem', height: '1rem', color: '#C4FA00', marginTop: '2px', flexShrink: 0 }} />
+                      <span style={{ color: '#4B5563', fontSize: '0.875rem', lineHeight: 1.5 }}>{task}</span>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', backgroundColor: 'rgba(196,250,0,0.1)', borderRadius: '0.75rem' }}>
+                  <Clock style={{ width: '1rem', height: '1rem', color: '#C4FA00' }} />
+                  <span style={{ fontSize: '0.875rem', fontWeight: 600, color: '#111111' }}>{phase.kpi}</span>
+                </div>
+              </div>
+            </AnimatedSection>
+          ))}
         </div>
       </div>
     </section>

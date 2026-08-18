@@ -4,8 +4,8 @@ import { Target, Users, Building2, ArrowLeft } from 'lucide-react'
 
 export default function ExecutiveSummary() {
   return (
-    <section id="summary" className="py-20 md:py-32 bg-surface-dark relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="summary" className="section-padding" style={{ backgroundColor: '#000', position: 'relative' }}>
+      <div className="section-container">
         <SectionHeader
           badge="الملخص التنفيذي"
           title="التحول من النص القانوني إلى حلول حقيقية"
@@ -13,98 +13,87 @@ export default function ExecutiveSummary() {
         />
 
         <AnimatedSection>
-          <div className="glass-card rounded-3xl p-6 md:p-10 mb-8">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="w-12 h-12 rounded-2xl bg-brand/10 flex items-center justify-center shrink-0">
-                <Target className="w-6 h-6 text-brand" />
+          <div className="glass-dark" style={{ borderRadius: '1.5rem', padding: 'clamp(1.5rem, 3vw, 2.5rem)', marginBottom: '2rem' }}>
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', marginBottom: '1.5rem' }}>
+              <div style={{ width: '3rem', height: '3rem', borderRadius: '1rem', backgroundColor: 'rgba(196,250,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <Target style={{ width: '1.5rem', height: '1.5rem', color: '#C4FA00' }} />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-text-primary mb-2 font-[family-name:var(--font-family-display)]">العمود الفقري للاستراتيجية</h3>
-                <p className="text-text-secondary leading-relaxed">
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FFF', marginBottom: '0.5rem', fontFamily: 'var(--font-display)' }}>العمود الفقري للاستراتيجية</h3>
+                <p style={{ color: '#9CA3AF', lineHeight: 1.7, fontSize: '0.95rem' }}>
                   نموذج التحويل المتكامل الذي يربط بين الوصول العضوي والاستحواذ على العملاء المحتملين وتحقيق الإيرادات المباشرة
                 </p>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-0">
+            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
               {['Reach', 'Trust', 'Leads', 'Consultations', 'Contracts', 'Revenue'].map((step, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <div className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
-                    i === 0 || i === 5
-                      ? 'bg-brand text-surface-dark'
-                      : 'bg-surface-dark-card border border-surface-dark-border text-text-primary'
-                  }`}>
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <div style={{
+                    padding: '0.625rem 1rem', borderRadius: '0.75rem', fontWeight: 700, fontSize: '0.875rem',
+                    backgroundColor: (i === 0 || i === 5) ? '#C4FA00' : '#111111',
+                    color: (i === 0 || i === 5) ? '#000' : '#FFF',
+                    border: (i === 0 || i === 5) ? 'none' : '1px solid #1C1C1C',
+                  }}>
                     {step}
                   </div>
-                  {i < 5 && (
-                    <ArrowLeft className="w-4 h-4 text-brand/40 hidden md:block" />
-                  )}
+                  {i < 5 && <ArrowLeft style={{ width: '1rem', height: '1rem', color: 'rgba(196,250,0,0.4)', display: 'none' }} className="md-block" />}
                 </div>
               ))}
             </div>
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
           <AnimatedSection delay={0.1}>
-            <div className="glass-card rounded-3xl p-6 md:p-8 h-full">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-11 h-11 rounded-xl bg-brand/10 flex items-center justify-center">
-                  <Users className="w-5 h-5 text-brand" />
+            <div className="glass-dark" style={{ borderRadius: '1.5rem', padding: 'clamp(1.5rem, 3vw, 2rem)', height: '100%' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
+                <div style={{ width: '2.75rem', height: '2.75rem', borderRadius: '0.75rem', backgroundColor: 'rgba(196,250,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Users style={{ width: '1.25rem', height: '1.25rem', color: '#C4FA00' }} />
                 </div>
                 <div>
-                  <span className="text-xs text-brand font-semibold">قطاع B2C</span>
-                  <h4 className="text-lg font-bold text-text-primary font-[family-name:var(--font-family-display)]">الأفراد</h4>
+                  <div style={{ fontSize: '0.75rem', color: '#C4FA00', fontWeight: 600 }}>قطاع B2C</div>
+                  <div style={{ fontSize: '1.125rem', fontWeight: 700, color: '#FFF', fontFamily: 'var(--font-display)' }}>الأفراد</div>
                 </div>
               </div>
-              <ul className="space-y-3">
-                {[
-                  'القضايا العقارية والنزاعات المالية',
-                  'التعويضات والقضايا العمالية',
-                  'الأحوال الشخصية والتنفيذ',
-                  'عرض دراسات الحالة + مرونة السداد',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2 shrink-0" />
-                    <span className="text-text-secondary text-sm leading-relaxed">{item}</span>
+              <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                {['القضايا العقارية والنزاعات المالية', 'التعويضات والقضايا العمالية', 'الأحوال الشخصية والتنفيذ', 'عرض دراسات الحالة + مرونة السداد'].map((item, i) => (
+                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#C4FA00', marginTop: '8px', flexShrink: 0 }} />
+                    <span style={{ color: '#9CA3AF', fontSize: '0.875rem', lineHeight: 1.6 }}>{item}</span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 flex flex-wrap gap-2">
+              <div style={{ marginTop: '1.5rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                 {['Instagram', 'TikTok', 'X'].map((p) => (
-                  <span key={p} className="px-3 py-1 rounded-full bg-surface-dark-card border border-surface-dark-border text-xs text-text-muted">{p}</span>
+                  <span key={p} style={{ padding: '0.25rem 0.75rem', borderRadius: '9999px', backgroundColor: '#111111', border: '1px solid #1C1C1C', fontSize: '0.75rem', color: '#6B7280' }}>{p}</span>
                 ))}
               </div>
             </div>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <div className="glass-card rounded-3xl p-6 md:p-8 h-full">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-11 h-11 rounded-xl bg-brand/10 flex items-center justify-center">
-                  <Building2 className="w-5 h-5 text-brand" />
+            <div className="glass-dark" style={{ borderRadius: '1.5rem', padding: 'clamp(1.5rem, 3vw, 2rem)', height: '100%' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
+                <div style={{ width: '2.75rem', height: '2.75rem', borderRadius: '0.75rem', backgroundColor: 'rgba(196,250,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Building2 style={{ width: '1.25rem', height: '1.25rem', color: '#C4FA00' }} />
                 </div>
                 <div>
-                  <span className="text-xs text-brand font-semibold">قطاع B2B</span>
-                  <h4 className="text-lg font-bold text-text-primary font-[family-name:var(--font-family-display)]">الشركات والأعمال</h4>
+                  <div style={{ fontSize: '0.75rem', color: '#C4FA00', fontWeight: 600 }}>قطاع B2B</div>
+                  <div style={{ fontSize: '1.125rem', fontWeight: 700, color: '#FFF', fontFamily: 'var(--font-display)' }}>الشركات والأعمال</div>
                 </div>
               </div>
-              <ul className="space-y-3">
-                {[
-                  'حوكمة الشركات وصياغة العقود',
-                  'النزاعات التجارية والشراكات',
-                  'اللوائح الداخلية وحماية المنشآت',
-                  'الوقاية من المخاطر + العمق التنفيذي',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2 shrink-0" />
-                    <span className="text-text-secondary text-sm leading-relaxed">{item}</span>
+              <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                {['حوكمة الشركات وصياغة العقود', 'النزاعات التجارية والشراكات', 'اللوائح الداخلية وحماية المنشآت', 'الوقاية من المخاطر + العمق التنفيذي'].map((item, i) => (
+                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#C4FA00', marginTop: '8px', flexShrink: 0 }} />
+                    <span style={{ color: '#9CA3AF', fontSize: '0.875rem', lineHeight: 1.6 }}>{item}</span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 flex flex-wrap gap-2">
+              <div style={{ marginTop: '1.5rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                 {['LinkedIn', 'X'].map((p) => (
-                  <span key={p} className="px-3 py-1 rounded-full bg-surface-dark-card border border-surface-dark-border text-xs text-text-muted">{p}</span>
+                  <span key={p} style={{ padding: '0.25rem 0.75rem', borderRadius: '9999px', backgroundColor: '#111111', border: '1px solid #1C1C1C', fontSize: '0.75rem', color: '#6B7280' }}>{p}</span>
                 ))}
               </div>
             </div>

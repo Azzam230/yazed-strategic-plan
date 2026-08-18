@@ -13,40 +13,44 @@ const metrics = [
 
 export default function MetricsGrid() {
   return (
-    <section id="metrics" className="py-20 md:py-32 bg-surface-dark relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="metrics" className="section-padding" style={{ backgroundColor: '#000', position: 'relative' }}>
+      <div className="section-container">
         <SectionHeader
           badge="مؤشرات الأداء"
           title="الأرقام التي تتحدث"
           subtitle="الTargets الشهرية لمؤشرات الأداء الرئيسية"
         />
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1.25rem' }}>
           {metrics.map((m, i) => (
             <AnimatedSection key={i} delay={i * 0.08}>
-              <div className={`rounded-3xl p-6 md:p-8 h-full transition-all duration-300 hover:-translate-y-1 ${
-                m.accent
-                  ? 'bg-brand text-surface-dark'
-                  : 'glass-card'
-              }`}>
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${
-                  m.accent ? 'bg-surface-dark/10' : 'bg-brand/10'
-                }`}>
-                  <m.icon className={`w-5 h-5 ${m.accent ? 'text-surface-dark' : 'text-brand'}`} />
+              <div style={{
+                borderRadius: '1.5rem',
+                padding: 'clamp(1.5rem, 3vw, 2rem)',
+                height: '100%',
+                transition: 'all 0.3s',
+                backgroundColor: m.accent ? '#C4FA00' : 'rgba(255,255,255,0.04)',
+                backdropFilter: 'blur(20px)',
+                border: m.accent ? 'none' : '1px solid rgba(255,255,255,0.08)',
+              }}>
+                <div style={{
+                  width: '2.5rem', height: '2.5rem', borderRadius: '0.75rem',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem',
+                  backgroundColor: m.accent ? 'rgba(0,0,0,0.1)' : 'rgba(196,250,0,0.1)',
+                }}>
+                  <m.icon style={{ width: '1.25rem', height: '1.25rem', color: m.accent ? '#000' : '#C4FA00' }} />
                 </div>
-                <div className={`text-3xl md:text-4xl font-black font-[family-name:var(--font-family-display)] mb-2 ${
-                  m.accent ? 'text-surface-dark' : 'text-text-primary'
-                }`}>
+                <div style={{
+                  fontSize: 'clamp(1.75rem, 3vw, 2.25rem)', fontWeight: 900,
+                  fontFamily: 'var(--font-display)', marginBottom: '0.5rem',
+                  color: m.accent ? '#000' : '#FFF',
+                }}>
                   {m.value}
                 </div>
-                <div className={`text-sm font-semibold mb-1 ${
-                  m.accent ? 'text-surface-dark/80' : 'text-text-primary'
-                }`}>
+                <div style={{ fontSize: '0.875rem', fontWeight: 600, color: m.accent ? 'rgba(0,0,0,0.7)' : '#FFF', marginBottom: '0.25rem' }}>
                   {m.label}
                 </div>
-                <div className={`text-xs ${
-                  m.accent ? 'text-surface-dark/50' : 'text-text-muted'
-                }`}>
+                <div style={{ fontSize: '0.75rem', color: m.accent ? 'rgba(0,0,0,0.4)' : '#6B7280' }}>
                   {m.sub}
                 </div>
               </div>

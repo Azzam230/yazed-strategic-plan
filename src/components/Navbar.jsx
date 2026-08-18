@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Scale, Menu, X } from 'lucide-react'
 
 const navLinks = [
-  { label: 'المملخص التنفيذي', href: '#summary' },
+  { label: 'الملخص التنفيذي', href: '#summary' },
   { label: 'الهوية', href: '#branding' },
   { label: 'الركائز', href: '#pillars' },
   { label: 'المؤشرات', href: '#metrics' },
@@ -27,56 +27,74 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-surface-dark/80 backdrop-blur-xl border-b border-surface-dark-border'
-          : 'bg-transparent'
-      }`}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50,
+        backgroundColor: scrolled ? 'rgba(0,0,0,0.85)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(20px)' : 'none',
+        borderBottom: scrolled ? '1px solid #1C1C1C' : '1px solid transparent',
+        transition: 'all 0.3s ease',
+      }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-brand flex items-center justify-center">
-              <Scale className="w-5 h-5 text-surface-dark" />
-            </div>
-            <div>
-              <span className="text-lg font-bold font-[family-name:var(--font-family-display)] text-text-primary">
-                يزيد اليوبي
-              </span>
-              <span className="hidden sm:block text-xs text-text-muted">
-                المحاماة والاستشارات القانونية
-              </span>
-            </div>
-          </a>
-
-          <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="px-3 py-2 text-sm text-text-secondary hover:text-brand transition-colors rounded-lg hover:bg-brand/5"
-              >
-                {link.label}
-              </a>
-            ))}
+      <div className="section-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '4.5rem' }}>
+        <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
+          <div style={{
+            width: '2.5rem', height: '2.5rem', borderRadius: '0.75rem',
+            backgroundColor: '#C4FA00', display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}>
+            <Scale style={{ width: '1.25rem', height: '1.25rem', color: '#000' }} />
           </div>
+          <div>
+            <div style={{ fontSize: '1.1rem', fontWeight: 700, fontFamily: 'var(--font-display)', color: '#FFF' }}>
+              يزيد اليوبي
+            </div>
+            <div style={{ fontSize: '0.7rem', color: '#6B7280' }}>
+              المحاماة والاستشارات القانونية
+            </div>
+          </div>
+        </a>
 
-          <div className="hidden md:flex items-center gap-3">
+        <div className="md-flex-center" style={{ gap: '0.25rem', alignItems: 'center' }}>
+          {navLinks.map((link) => (
             <a
-              href="#cta"
-              className="px-5 py-2.5 bg-brand text-surface-dark font-semibold text-sm rounded-full hover:bg-brand-light transition-all hover:shadow-lg hover:shadow-brand/20"
+              key={link.href}
+              href={link.href}
+              style={{
+                padding: '0.5rem 0.75rem', fontSize: '0.875rem',
+                color: '#9CA3AF', borderRadius: '0.5rem', textDecoration: 'none',
+                transition: 'all 0.2s',
+              }}
+              onMouseEnter={(e) => { e.target.style.color = '#C4FA00'; e.target.style.backgroundColor = 'rgba(196,250,0,0.05)' }}
+              onMouseLeave={(e) => { e.target.style.color = '#9CA3AF'; e.target.style.backgroundColor = 'transparent' }}
             >
-              ابدأ الآن
+              {link.label}
             </a>
-          </div>
-
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-text-primary"
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          ))}
         </div>
+
+        <div className="md-flex-center" style={{ gap: '0.75rem' }}>
+          <a
+            href="#cta"
+            style={{
+              padding: '0.625rem 1.25rem', backgroundColor: '#C4FA00', color: '#000',
+              fontWeight: 600, fontSize: '0.875rem', borderRadius: '9999px',
+              textDecoration: 'none', transition: 'all 0.2s',
+            }}
+          >
+            ابدأ الآن
+          </a>
+        </div>
+
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md-hidden"
+          style={{ padding: '0.5rem', color: '#FFF', background: 'none', border: 'none', cursor: 'pointer' }}
+        >
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
 
       <AnimatePresence>
@@ -85,15 +103,23 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-surface-dark/95 backdrop-blur-xl border-b border-surface-dark-border overflow-hidden"
+            style={{
+              backgroundColor: 'rgba(0,0,0,0.95)',
+              backdropFilter: 'blur(20px)',
+              borderBottom: '1px solid #1C1C1C',
+              overflow: 'hidden',
+            }}
           >
-            <div className="px-4 py-4 space-y-1">
+            <div style={{ padding: '1rem' }}>
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 text-text-secondary hover:text-brand hover:bg-brand/5 rounded-xl transition-colors"
+                  style={{
+                    display: 'block', padding: '0.75rem 1rem', color: '#9CA3AF',
+                    borderRadius: '0.75rem', textDecoration: 'none', fontSize: '1rem',
+                  }}
                 >
                   {link.label}
                 </a>
@@ -101,7 +127,11 @@ export default function Navbar() {
               <a
                 href="#cta"
                 onClick={() => setMobileOpen(false)}
-                className="block px-4 py-3 bg-brand text-surface-dark font-semibold rounded-xl text-center mt-2"
+                style={{
+                  display: 'block', padding: '0.75rem 1rem', backgroundColor: '#C4FA00',
+                  color: '#000', fontWeight: 600, borderRadius: '0.75rem', textAlign: 'center',
+                  marginTop: '0.5rem', textDecoration: 'none',
+                }}
               >
                 ابدأ الآن
               </a>
