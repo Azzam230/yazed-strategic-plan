@@ -33,7 +33,7 @@ const scenarios = [
 
 export default function Budget() {
   return (
-    <section id="kpi" className="section-padding" style={{ backgroundColor: '#07111F', position: 'relative' }}>
+    <section className="section-padding" style={{ backgroundColor: '#07111F', position: 'relative' }}>
       <div className="section-container">
         <SectionHeader
           badge="الميزانيات"

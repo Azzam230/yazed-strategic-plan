@@ -113,7 +113,7 @@ export default function Navbar() {
           </a>
 
           {/* Nav links — center */}
-          <div className="md-flex-center" style={{ gap: '0.125rem', alignItems: 'center' }}>
+          <div className="md-hide-mobile" style={{ gap: '0.125rem', alignItems: 'center', display: 'flex' }}>
             {sections.map((s, i) => {
               const isActive = i === activeIdx
               return (
@@ -150,7 +150,7 @@ export default function Navbar() {
           </div>
 
           {/* Progress counter — left side */}
-          <div className="md-flex-center" style={{ alignItems: 'center', gap: '0.5rem', flexShrink: 0 }}>
+          <div className="md-hide-mobile" style={{ alignItems: 'center', gap: '0.5rem', flexShrink: 0, display: 'flex' }}>
             <div style={{
               fontFamily: "'Noto Sans Arabic', monospace",
               fontSize: '0.8rem', fontWeight: 600,
@@ -169,10 +169,10 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md-hidden"
+            className="show-mobile-only"
             style={{
               padding: '0.5rem', color: '#F5F7FA', background: 'none',
-              border: 'none', cursor: 'pointer',
+              border: 'none', cursor: 'pointer', display: 'none',
             }}
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
