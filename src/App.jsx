@@ -1,38 +1,50 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ExecutiveSummary from './components/ExecutiveSummary'
-import BrandPositioning from './components/BrandPositioning'
+import ProblemSlide from './components/ProblemSlide'
+import DataSlide from './components/DataSlide'
+import AudienceSlide from './components/AudienceSlide'
 import ContentPillars from './components/ContentPillars'
-import MetricsGrid from './components/MetricsGrid'
-import ContentSeries from './components/ContentSeries'
-import PlatformStrategy from './components/PlatformStrategy'
-import Roadmap from './components/Roadmap'
-import BudgetAllocation from './components/BudgetAllocation'
+import ContentTransformation from './components/ContentTransformation'
+import CaseStudies from './components/CaseStudies'
+import OrganicGrowth from './components/OrganicGrowth'
+import VideoStrategy from './components/VideoStrategy'
+import PaidAds from './components/PaidAds'
+import Retargeting from './components/Retargeting'
+import Budget from './components/Budget'
 import KPIDashboard from './components/KPIDashboard'
-import GrowthFunnel from './components/GrowthFunnel'
-import WhatsAppProtocol from './components/WhatsAppProtocol'
-import ContentCalendar from './components/ContentCalendar'
-import SuccessTimeline from './components/SuccessTimeline'
+import ContentExplorer from './components/ContentExplorer'
+import WhatsAppConversion from './components/WhatsAppConversion'
+import Differentiation from './components/Differentiation'
+import Roadmap from './components/Roadmap'
+import FinalSlide from './components/FinalSlide'
 import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-surface-dark">
+    <div style={{ backgroundColor: '#07111F', minHeight: '100vh' }}>
       <Navbar />
-      <Hero />
-      <ExecutiveSummary />
-      <BrandPositioning />
-      <ContentPillars />
-      <MetricsGrid />
-      <ContentSeries />
-      <PlatformStrategy />
-      <Roadmap />
-      <BudgetAllocation />
-      <KPIDashboard />
-      <ContentCalendar />
-      <GrowthFunnel />
-      <WhatsAppProtocol />
-      <SuccessTimeline />
+      <main>
+        <Hero />
+        <ExecutiveSummary />
+        <ProblemSlide />
+        <DataSlide />
+        <AudienceSlide />
+        <ContentPillars />
+        <ContentTransformation />
+        <CaseStudies />
+        <OrganicGrowth />
+        <VideoStrategy />
+        <PaidAds />
+        <Retargeting />
+        <Budget />
+        <KPIDashboard />
+        <ContentExplorer />
+        <WhatsAppConversion />
+        <Differentiation />
+        <Roadmap />
+        <FinalSlide />
+      </main>
       <Footer />
     </div>
   )

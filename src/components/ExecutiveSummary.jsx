@@ -1,105 +1,324 @@
-import AnimatedSection from './AnimatedSection'
-import SectionHeader from './SectionHeader'
-import { Target, Users, Building2, ArrowLeft } from 'lucide-react'
+import React from 'react';
+import AnimatedSection from './AnimatedSection';
+import { Shield, Eye, Target, ArrowLeft } from 'lucide-react';
 
-export default function ExecutiveSummary() {
+const steps = [
+  {
+    num: '01',
+    title: 'بناء السلطة',
+    subtitle: 'Build Authority',
+    desc: 'تأسيس حضور رقمي يعكس الخبرة والاحترافية',
+    icon: Shield,
+  },
+  {
+    num: '02',
+    title: 'جذب الانتباه',
+    subtitle: 'Create Attention',
+    desc: 'محتوى يوقف السكرول ويبني التفاعل',
+    icon: Eye,
+  },
+  {
+    num: '03',
+    title: 'التقاط الطلب',
+    subtitle: 'Capture Demand',
+    desc: 'تحويل البحث العضوي إلى استفسارات فعلية',
+    icon: Target,
+  },
+  {
+    num: '04',
+    title: 'تحويل العملاء',
+    subtitle: 'Convert Leads',
+    desc: 'ضمان وصول كل استفسار إلى عميل مدفوع',
+    icon: ArrowLeft,
+  },
+];
+
+const formulaParts = ['Content', '+', 'Paid Media', '+', 'Retargeting', '=', 'Growth Engine'];
+
+const b2cServices = [
+  'التواصل العائلي والعقاري',
+  'النزاعات المالية والديون',
+  'الأحوال الشخصية والطلاق',
+  'العقود والمطالبات',
+  'الاستشارات القانونية العامة',
+];
+
+const b2bServices = [
+  'صياغة ومراجعة العقود',
+  'الحوكمة المؤسسية',
+  'قانون العمل والتوظيف',
+  'تأسيس الشركات',
+  'المخاطر القانونية المؤسسية',
+];
+
+const styles = {
+  section: {
+    padding: '120px 0',
+    background: '#07111F',
+    position: 'relative',
+    overflow: 'hidden',
+  },
+  container: {
+    maxWidth: 1200,
+    margin: '0 auto',
+    padding: '0 24px',
+  },
+  sectionNum: {
+    fontSize: '4rem',
+    fontWeight: 800,
+    color: '#C4FA00',
+    lineHeight: 1,
+    marginBottom: 8,
+    fontFamily: "'Noto Sans Arabic', sans-serif",
+  },
+  title: {
+    fontSize: '2.5rem',
+    fontWeight: 700,
+    color: '#F5F7FA',
+    marginBottom: 12,
+    fontFamily: "'Noto Sans Arabic', sans-serif",
+  },
+  subtitle: {
+    fontSize: '1.1rem',
+    color: '#94A3B8',
+    maxWidth: 600,
+    lineHeight: 1.8,
+    marginBottom: 60,
+    fontFamily: "'Noto Sans Arabic', sans-serif",
+  },
+  stepsRow: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(4, 1fr)',
+    gap: 20,
+    marginBottom: 60,
+  },
+  stepCard: {
+    background: '#101F32',
+    border: '1px solid rgba(255,255,255,0.06)',
+    borderRadius: 16,
+    padding: '36px 24px',
+    position: 'relative',
+    overflow: 'hidden',
+    transition: 'transform 0.3s, border-color 0.3s',
+  },
+  stepCardHover: {
+    transform: 'translateY(-4px)',
+    borderColor: 'rgba(196,250,0,0.3)',
+  },
+  stepNum: {
+    fontSize: '3rem',
+    fontWeight: 800,
+    color: 'rgba(196,250,0,0.12)',
+    lineHeight: 1,
+    marginBottom: 16,
+    fontFamily: "'Noto Sans Arabic', sans-serif",
+  },
+  stepIcon: {
+    marginBottom: 16,
+    color: '#C4FA00',
+  },
+  stepTitle: {
+    fontSize: '1.25rem',
+    fontWeight: 700,
+    color: '#F5F7FA',
+    marginBottom: 4,
+    fontFamily: "'Noto Sans Arabic', sans-serif",
+  },
+  stepSubtitle: {
+    fontSize: '0.8rem',
+    fontWeight: 600,
+    color: '#C4FA00',
+    textTransform: 'uppercase',
+    letterSpacing: 1,
+    marginBottom: 12,
+  },
+  stepDesc: {
+    fontSize: '0.9rem',
+    color: '#94A3B8',
+    lineHeight: 1.7,
+    fontFamily: "'Noto Sans Arabic', sans-serif",
+  },
+  accentLine: {
+    width: 40,
+    height: 3,
+    background: '#C4FA00',
+    borderRadius: 2,
+    marginBottom: 20,
+  },
+  formulaSection: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 12,
+    flexWrap: 'wrap',
+    marginBottom: 80,
+  },
+  pill: {
+    background: '#101F32',
+    border: '1px solid rgba(255,255,255,0.08)',
+    borderRadius: 50,
+    padding: '12px 28px',
+    color: '#F5F7FA',
+    fontSize: '0.95rem',
+    fontWeight: 600,
+    fontFamily: "'Noto Sans Arabic', sans-serif",
+  },
+  pillEquals: {
+    background: '#C4FA00',
+    color: '#07111F',
+    borderRadius: 50,
+    padding: '12px 28px',
+    fontSize: '1.1rem',
+    fontWeight: 800,
+  },
+  pillResult: {
+    background: 'rgba(196,250,0,0.12)',
+    border: '1px solid rgba(196,250,0,0.3)',
+    borderRadius: 50,
+    padding: '12px 28px',
+    color: '#C4FA00',
+    fontSize: '0.95rem',
+    fontWeight: 700,
+  },
+  twoCol: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gap: 32,
+  },
+  b2bCard: {
+    background: '#101F32',
+    border: '1px solid rgba(255,255,255,0.06)',
+    borderRadius: 20,
+    padding: 40,
+  },
+  b2bHeader: {
+    fontSize: '1.4rem',
+    fontWeight: 700,
+    color: '#C4FA00',
+    marginBottom: 24,
+    fontFamily: "'Noto Sans Arabic', sans-serif",
+  },
+  b2bItem: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 12,
+    padding: '12px 0',
+    borderBottom: '1px solid rgba(255,255,255,0.06)',
+    fontSize: '0.95rem',
+    color: '#F5F7FA',
+    fontFamily: "'Noto Sans Arabic', sans-serif",
+  },
+  b2bDot: {
+    width: 8,
+    height: 8,
+    borderRadius: '50%',
+    background: '#C4FA00',
+    flexShrink: 0,
+  },
+};
+
+const ExecutiveSummary = () => {
+  const [hoveredStep, setHoveredStep] = React.useState(null);
+
   return (
-    <section id="summary" className="section-padding" style={{ backgroundColor: '#000', position: 'relative' }}>
-      <div className="section-container">
-        <SectionHeader
-          badge="الملخص التنفيذي"
-          title="التحول من النص القانوني إلى حلول حقيقية"
-          subtitle="تحويل الخطاب القانوني التقليدي إلى خطاب موجه لنقاط الألم الحقيقية لدى العملاء"
-        />
+    <section id="strategy" style={styles.section}>
+      <div style={styles.container}>
+        <AnimatedSection direction="up">
+          <div style={styles.sectionNum}>01</div>
+        </AnimatedSection>
 
-        <AnimatedSection>
-          <div className="glass-dark" style={{ borderRadius: '1.5rem', padding: 'clamp(1.5rem, 3vw, 2.5rem)', marginBottom: '2rem' }}>
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', marginBottom: '1.5rem' }}>
-              <div style={{ width: '3rem', height: '3rem', borderRadius: '1rem', backgroundColor: 'rgba(196,250,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <Target style={{ width: '1.5rem', height: '1.5rem', color: '#C4FA00' }} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FFF', marginBottom: '0.5rem', fontFamily: 'var(--font-display)' }}>العمود الفقري للاستراتيجية</h3>
-                <p style={{ color: '#9CA3AF', lineHeight: 1.7, fontSize: '0.95rem' }}>
-                  نموذج التحويل المتكامل الذي يربط بين الوصول العضوي والاستحواذ على العملاء المحتملين وتحقيق الإيرادات المباشرة
-                </p>
-              </div>
-            </div>
+        <AnimatedSection direction="up" delay={100}>
+          <h2 style={styles.title}>الاستراتيجية الرقمية المتكاملة</h2>
+        </AnimatedSection>
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-              {['Reach', 'Trust', 'Leads', 'Consultations', 'Contracts', 'Revenue'].map((step, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <div style={{
-                    padding: '0.625rem 1rem', borderRadius: '0.75rem', fontWeight: 700, fontSize: '0.875rem',
-                    backgroundColor: (i === 0 || i === 5) ? '#C4FA00' : '#111111',
-                    color: (i === 0 || i === 5) ? '#000' : '#FFF',
-                    border: (i === 0 || i === 5) ? 'none' : '1px solid #1C1C1C',
-                  }}>
-                    {step}
+        <AnimatedSection direction="up" delay={200}>
+          <p style={styles.subtitle}>
+            نظام متكامل يحوّل الحضور الرقمي إلى مصدر مستدام للثقة والعملاء
+          </p>
+        </AnimatedSection>
+
+        <div style={styles.stepsRow}>
+          {steps.map((step, i) => {
+            const Icon = step.icon;
+            return (
+              <AnimatedSection key={i} direction="up" delay={300 + i * 120}>
+                <div
+                  style={{
+                    ...styles.stepCard,
+                    ...(hoveredStep === i ? styles.stepCardHover : {}),
+                  }}
+                  onMouseEnter={() => setHoveredStep(i)}
+                  onMouseLeave={() => setHoveredStep(null)}
+                >
+                  <div style={styles.stepNum}>{step.num}</div>
+                  <div style={styles.accentLine} />
+                  <div style={styles.stepIcon}>
+                    <Icon size={28} />
                   </div>
-                  {i < 5 && <ArrowLeft style={{ width: '1rem', height: '1rem', color: 'rgba(196,250,0,0.4)', display: 'none' }} className="md-block" />}
+                  <h3 style={styles.stepTitle}>{step.title}</h3>
+                  <div style={styles.stepSubtitle}>{step.subtitle}</div>
+                  <p style={styles.stepDesc}>{step.desc}</p>
                 </div>
-              ))}
-            </div>
+              </AnimatedSection>
+            );
+          })}
+        </div>
+
+        <AnimatedSection direction="fade" delay={600}>
+          <div style={styles.formulaSection}>
+            {formulaParts.map((part, i) => {
+              if (part === '+') {
+                return (
+                  <span key={i} style={{ color: '#64748B', fontSize: '1.2rem', fontWeight: 300 }}>
+                    +
+                  </span>
+                );
+              }
+              if (part === '=') {
+                return (
+                  <span key={i} style={styles.pillEquals}>=</span>
+                );
+              }
+              if (part === 'Growth Engine') {
+                return (
+                  <span key={i} style={styles.pillResult}>{part}</span>
+                );
+              }
+              return (
+                <span key={i} style={styles.pill}>{part}</span>
+              );
+            })}
           </div>
         </AnimatedSection>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
-          <AnimatedSection delay={0.1}>
-            <div className="glass-dark" style={{ borderRadius: '1.5rem', padding: 'clamp(1.5rem, 3vw, 2rem)', height: '100%' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-                <div style={{ width: '2.75rem', height: '2.75rem', borderRadius: '0.75rem', backgroundColor: 'rgba(196,250,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Users style={{ width: '1.25rem', height: '1.25rem', color: '#C4FA00' }} />
+        <div style={styles.twoCol}>
+          <AnimatedSection direction="left" delay={800}>
+            <div style={styles.b2bCard}>
+              <h3 style={styles.b2bHeader}>B2B — الشركات</h3>
+              {b2bServices.map((s, i) => (
+                <div key={i} style={styles.b2bItem}>
+                  <div style={styles.b2bDot} />
+                  <span>{s}</span>
                 </div>
-                <div>
-                  <div style={{ fontSize: '0.75rem', color: '#C4FA00', fontWeight: 600 }}>قطاع B2C</div>
-                  <div style={{ fontSize: '1.125rem', fontWeight: 700, color: '#FFF', fontFamily: 'var(--font-display)' }}>الأفراد</div>
-                </div>
-              </div>
-              <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                {['القضايا العقارية والنزاعات المالية', 'التعويضات والقضايا العمالية', 'الأحوال الشخصية والتنفيذ', 'عرض دراسات الحالة + مرونة السداد'].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#C4FA00', marginTop: '8px', flexShrink: 0 }} />
-                    <span style={{ color: '#9CA3AF', fontSize: '0.875rem', lineHeight: 1.6 }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div style={{ marginTop: '1.5rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {['Instagram', 'TikTok', 'X'].map((p) => (
-                  <span key={p} style={{ padding: '0.25rem 0.75rem', borderRadius: '9999px', backgroundColor: '#111111', border: '1px solid #1C1C1C', fontSize: '0.75rem', color: '#6B7280' }}>{p}</span>
-                ))}
-              </div>
+              ))}
             </div>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.2}>
-            <div className="glass-dark" style={{ borderRadius: '1.5rem', padding: 'clamp(1.5rem, 3vw, 2rem)', height: '100%' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-                <div style={{ width: '2.75rem', height: '2.75rem', borderRadius: '0.75rem', backgroundColor: 'rgba(196,250,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Building2 style={{ width: '1.25rem', height: '1.25rem', color: '#C4FA00' }} />
+          <AnimatedSection direction="right" delay={800}>
+            <div style={styles.b2bCard}>
+              <h3 style={styles.b2bHeader}>B2C — الأفراد</h3>
+              {b2cServices.map((s, i) => (
+                <div key={i} style={styles.b2bItem}>
+                  <div style={styles.b2bDot} />
+                  <span>{s}</span>
                 </div>
-                <div>
-                  <div style={{ fontSize: '0.75rem', color: '#C4FA00', fontWeight: 600 }}>قطاع B2B</div>
-                  <div style={{ fontSize: '1.125rem', fontWeight: 700, color: '#FFF', fontFamily: 'var(--font-display)' }}>الشركات والأعمال</div>
-                </div>
-              </div>
-              <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                {['حوكمة الشركات وصياغة العقود', 'النزاعات التجارية والشراكات', 'اللوائح الداخلية وحماية المنشآت', 'الوقاية من المخاطر + العمق التنفيذي'].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#C4FA00', marginTop: '8px', flexShrink: 0 }} />
-                    <span style={{ color: '#9CA3AF', fontSize: '0.875rem', lineHeight: 1.6 }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div style={{ marginTop: '1.5rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {['LinkedIn', 'X'].map((p) => (
-                  <span key={p} style={{ padding: '0.25rem 0.75rem', borderRadius: '9999px', backgroundColor: '#111111', border: '1px solid #1C1C1C', fontSize: '0.75rem', color: '#6B7280' }}>{p}</span>
-                ))}
-              </div>
+              ))}
             </div>
           </AnimatedSection>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
+export default ExecutiveSummary;

@@ -3,72 +3,199 @@ import { Scale, ArrowUp, Phone, Mail, MapPin } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <section id="cta" className="section-padding" style={{ backgroundColor: '#000', position: 'relative', overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-        <div style={{ position: 'absolute', top: '25%', right: '25%', width: '500px', height: '500px', borderRadius: '50%', background: 'rgba(196,250,0,0.06)', filter: 'blur(120px)' }} />
-        <div style={{ position: 'absolute', bottom: '25%', left: '25%', width: '400px', height: '400px', borderRadius: '50%', background: 'rgba(196,250,0,0.04)', filter: 'blur(100px)' }} />
-      </div>
+    <footer
+      style={{
+        position: 'relative',
+        backgroundColor: '#07111F',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
+        overflow: 'hidden',
+      }}
+    >
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '1px',
+          background:
+            'linear-gradient(90deg, transparent 0%, rgba(196,250,0,0.3) 50%, transparent 100%)',
+        }}
+      />
 
-      <div className="section-container" style={{ position: 'relative', zIndex: 10, textAlign: 'center' }}>
-        <AnimatedSection>
-          <span style={{ display: 'inline-block', padding: '0.375rem 1rem', borderRadius: '9999px', backgroundColor: 'rgba(196,250,0,0.1)', border: '1px solid rgba(196,250,0,0.2)', color: '#C4FA00', fontSize: '0.875rem', fontWeight: 600, marginBottom: '1.5rem' }}>
-            ابدأ التنفيذ
-          </span>
-          <h2 style={{ fontSize: 'clamp(1.875rem, 5vw, 3.75rem)', fontWeight: 900, fontFamily: 'var(--font-display)', color: '#FFF', marginBottom: '1.5rem', lineHeight: 1.2 }}>
-            جاهز لتحقيق
-            <br />
-            <span className="text-gradient">النمو المستدام؟</span>
-          </h2>
-          <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: '#9CA3AF', maxWidth: '40rem', marginInline: 'auto', marginBottom: '2.5rem', lineHeight: 1.7 }}>
-            الخطوة الأولى هي تفعيل الحسابات وبدء إنتاج المحتوى. الخطة جاهزة، المحتوى مصمم، والاستراتيجية محكمة.
-          </p>
-
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem', marginBottom: '4rem' }}>
-            <a href="https://wa.me/966500000000" target="_blank" rel="noopener noreferrer" style={{ padding: '1rem 2rem', backgroundColor: '#C4FA00', color: '#000', fontWeight: 700, fontSize: '1.125rem', borderRadius: '9999px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'all 0.3s', boxShadow: '0 10px 30px rgba(196,250,0,0.25)' }}>
-              <Phone style={{ width: '1.25rem', height: '1.25rem' }} />
-              تواصل عبر الواتساب
-            </a>
-            <a href="mailto:info@yazeedalyoubi.sa" style={{ padding: '1rem 2rem', border: '1px solid #1C1C1C', color: '#FFF', fontWeight: 600, fontSize: '1.125rem', borderRadius: '9999px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'all 0.3s' }}>
-              <Mail style={{ width: '1.25rem', height: '1.25rem' }} />
-              info@yazeedalyoubi.sa
-            </a>
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection delay={0.2}>
-          <div className="glass-dark" style={{ borderRadius: '1.5rem', padding: 'clamp(2rem, 4vw, 3rem)' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
-                <div style={{ width: '3rem', height: '3rem', borderRadius: '0.75rem', backgroundColor: 'rgba(196,250,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Scale style={{ width: '1.5rem', height: '1.5rem', color: '#C4FA00' }} />
+      <div
+        style={{
+          maxWidth: '80rem',
+          marginInline: 'auto',
+          paddingInline: '1.5rem',
+          paddingBlock: '4rem 2rem',
+        }}
+      >
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '3rem',
+            marginBottom: '3rem',
+            direction: 'rtl',
+          }}
+        >
+          <AnimatedSection direction="right">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <div
+                  style={{
+                    width: '2.5rem',
+                    height: '2.5rem',
+                    borderRadius: '0.75rem',
+                    backgroundColor: '#C4FA00',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Scale style={{ width: '1.25rem', height: '1.25rem', color: '#07111F' }} />
                 </div>
-                <h4 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#FFF', fontFamily: 'var(--font-display)' }}>مكتب يزيد اليوبي</h4>
-                <p style={{ fontSize: '0.875rem', color: '#6B7280' }}>للمحاماة والاستشارات القانونية</p>
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-                <div style={{ width: '3rem', height: '3rem', borderRadius: '0.75rem', backgroundColor: 'rgba(196,250,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <MapPin style={{ width: '1.5rem', height: '1.5rem', color: '#C4FA00' }} />
+                <div>
+                  <h4
+                    style={{
+                      fontSize: '1.05rem',
+                      fontWeight: 700,
+                      color: '#F5F7FA',
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    مكتب المحامي يزيد اليوبي
+                  </h4>
                 </div>
-                <p style={{ fontSize: '0.875rem', color: '#9CA3AF' }}>جدة، المملكة العربية السعودية</p>
-                <p style={{ fontSize: '0.75rem', color: '#6B7280' }}>المنطقة الغربية</p>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-                <div style={{ width: '3rem', height: '3rem', borderRadius: '0.75rem', backgroundColor: 'rgba(196,250,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Phone style={{ width: '1.5rem', height: '1.5rem', color: '#C4FA00' }} />
-                </div>
-                <p style={{ fontSize: '0.875rem', color: '#9CA3AF' }}>واتساب مباشر</p>
-                <p style={{ fontSize: '0.75rem', color: '#6B7280' }}>خيارات سداد ميسرة</p>
-              </div>
+              <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6 }}>
+                للمحاماة والاستشارات القانونية
+              </p>
             </div>
-          </div>
-        </AnimatedSection>
+          </AnimatedSection>
 
-        <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid #1C1C1C', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
-          <p style={{ fontSize: '0.875rem', color: '#6B7280' }}>
-            &copy; 2026 مكتب المحامي يزيد اليوبي. جميع الحقوق محفوظة.
-          </p>
-          <p style={{ fontSize: '0.75rem', color: '#4B5563' }}>
-            الخطة الاستراتيجية والتسويقية المتكاملة | الإصدار 1.0 التنفيذي
+          <AnimatedSection delay={0.1}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <h4
+                style={{
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  color: '#94A3B8',
+                  letterSpacing: '0.04em',
+                  marginBottom: '0.25rem',
+                }}
+              >
+                تابعنا
+              </h4>
+              {[
+                { label: 'Instagram', href: 'https://instagram.com/' },
+                { label: 'TikTok', href: 'https://tiktok.com/@' },
+                { label: 'X (Twitter)', href: 'https://x.com/' },
+                { label: 'LinkedIn', href: 'https://linkedin.com/in/' },
+              ].map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontSize: '0.875rem',
+                    color: '#94A3B8',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#C4FA00'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = '#94A3B8'
+                  }}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.2}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <h4
+                style={{
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  color: '#94A3B8',
+                  letterSpacing: '0.04em',
+                  marginBottom: '0.25rem',
+                }}
+              >
+                تواصل
+              </h4>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#94A3B8', fontSize: '0.875rem' }}>
+                <MapPin style={{ width: '0.875rem', height: '0.875rem', color: '#64748B', flexShrink: 0 }} />
+                جدة — المملكة العربية السعودية
+              </div>
+              <a
+                href="https://wa.me/966500000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  color: '#94A3B8',
+                  fontSize: '0.875rem',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#C4FA00'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = '#94A3B8'
+                }}
+              >
+                <Phone style={{ width: '0.875rem', height: '0.875rem', flexShrink: 0 }} />
+                واتساب مباشر
+              </a>
+              <a
+                href="mailto:info@yazeedalyoubi.sa"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  color: '#94A3B8',
+                  fontSize: '0.875rem',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#C4FA00'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = '#94A3B8'
+                }}
+              >
+                <Mail style={{ width: '0.875rem', height: '0.875rem', flexShrink: 0 }} />
+                info@yazeedalyoubi.sa
+              </a>
+            </div>
+          </AnimatedSection>
+        </div>
+
+        <div
+          style={{
+            borderTop: '1px solid rgba(255,255,255,0.06)',
+            paddingTop: '1.5rem',
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '0.5rem',
+          }}
+        >
+          <p style={{ fontSize: '0.8rem', color: '#64748B', textAlign: 'center' }}>
+            © 2026 مكتب المحامي يزيد اليوبي — جميع الحقوق محفوظة
           </p>
         </div>
       </div>
@@ -76,16 +203,32 @@ export default function Footer() {
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         style={{
-          position: 'fixed', bottom: '1.5rem', left: '1.5rem',
-          width: '3rem', height: '3rem', borderRadius: '50%',
-          backgroundColor: '#C4FA00', color: '#000',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          border: 'none', cursor: 'pointer', zIndex: 40,
+          position: 'fixed',
+          bottom: '1.5rem',
+          left: '1.5rem',
+          width: '3rem',
+          height: '3rem',
+          borderRadius: '50%',
+          backgroundColor: '#C4FA00',
+          color: '#07111F',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          border: 'none',
+          cursor: 'pointer',
+          zIndex: 40,
           boxShadow: '0 4px 20px rgba(196,250,0,0.3)',
+          transition: 'box-shadow 0.3s',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.boxShadow = '0 6px 28px rgba(196,250,0,0.45)'
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.boxShadow = '0 4px 20px rgba(196,250,0,0.3)'
         }}
       >
         <ArrowUp style={{ width: '1.25rem', height: '1.25rem' }} />
       </button>
-    </section>
+    </footer>
   )
 }
