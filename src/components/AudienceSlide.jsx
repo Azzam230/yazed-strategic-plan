@@ -23,13 +23,13 @@ const AudienceSlide = () => {
           <div style={{ fontSize: '4rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1, marginBottom: 8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>04</div>
         </AnimatedSection>
 
-        <AnimatedSection direction="up" delay={100}>
+        <AnimatedSection direction="up" delay={0.1}>
           <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#FFFFFF', marginBottom: 60, fontFamily: "'Noto Sans Arabic', sans-serif" }}>الجمهور المستهدف</h2>
         </AnimatedSection>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
           {/* B2C Path */}
-          <AnimatedSection direction="right" delay={300}>
+          <AnimatedSection direction="right" delay={0.3}>
             <div className="glass" style={{ padding: 40, display: 'flex', flexDirection: 'column' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 28 }}>
                 <div style={{ width: 48, height: 48, borderRadius: 12, background: 'rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', flexShrink: 0 }}>
@@ -80,7 +80,7 @@ const AudienceSlide = () => {
           </AnimatedSection>
 
           {/* B2B Path */}
-          <AnimatedSection direction="left" delay={300}>
+          <AnimatedSection direction="left" delay={0.3}>
             <div className="glass" style={{ padding: 40, display: 'flex', flexDirection: 'column' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 28 }}>
                 <div style={{ width: 48, height: 48, borderRadius: 12, background: 'rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', flexShrink: 0 }}>

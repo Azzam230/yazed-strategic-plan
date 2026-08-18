@@ -32,17 +32,17 @@ const DataSlide = () => {
           <div style={{ fontSize: '4rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1, marginBottom: 8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>03</div>
         </AnimatedSection>
 
-        <AnimatedSection direction="up" delay={100}>
+        <AnimatedSection direction="up" delay={0.1}>
           <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#FFFFFF', marginBottom: 8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>ماذا تخبرنا البيانات؟</h2>
         </AnimatedSection>
 
-        <AnimatedSection direction="up" delay={150}>
+        <AnimatedSection direction="up" delay={0.15}>
           <p style={{ fontSize: '1rem', color: '#999999', marginBottom: 60, fontWeight: 500, letterSpacing: 1 }}>Previous Content Performance</p>
         </AnimatedSection>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginBottom: 80 }}>
           {metrics.map((m, i) => (
-            <AnimatedSection key={i} direction="up" delay={300 + i * 150}>
+            <AnimatedSection key={i} direction="up" delay={0.3 + i * 0.15}>
               <div
                 className="glass"
                 style={{
@@ -72,14 +72,14 @@ const DataSlide = () => {
           ))}
         </div>
 
-        <AnimatedSection direction="up" delay={700}>
+        <AnimatedSection direction="up" delay={0.7}>
           <div style={{ textAlign: 'center', marginBottom: 80 }}>
             <div style={{ fontSize: '1.8rem', fontWeight: 700, color: '#FFFFFF', lineHeight: 1.8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>المحتوى المرتبط بمشكلة قانونية حقيقية</div>
             <div style={{ fontSize: '1.8rem', fontWeight: 700, color: '#FFFFFF', lineHeight: 1.8, fontFamily: "'Noto Sans Arabic', sans-serif" }}>يتفوق على المعلومة القانونية العامة.</div>
           </div>
         </AnimatedSection>
 
-        <AnimatedSection direction="fade" delay={900}>
+        <AnimatedSection direction="fade" delay={0.9}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
             {formulaParts.map((part, i) => {
               if (part === '+') {
