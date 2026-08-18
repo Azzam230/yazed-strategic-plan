@@ -60,31 +60,6 @@ export default function Hero() {
         paddingBottom: '5rem',
         textAlign: 'center',
       }}>
-        <motion.div {...fadeUp(0.05)} style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-          padding: '0.4rem 1rem',
-          borderRadius: '9999px',
-          backgroundColor: 'rgba(255,255,255,0.06)',
-          border: '1px solid rgba(255,255,255,0.1)',
-          marginBottom: '2.5rem',
-        }}>
-          <span style={{
-            width: 6, height: 6, borderRadius: '50%',
-            backgroundColor: '#FFFFFF',
-            boxShadow: '0 0 8px rgba(255,255,255,0.5)',
-            animation: 'pulse 2.5s ease-in-out infinite',
-          }} />
-          <span style={{
-            fontSize: '0.8rem', fontWeight: 600,
-            fontFamily: "'Noto Sans Arabic', system-ui, sans-serif",
-            color: '#FFFFFF',
-          }}>
-            الاستراتيجية الرقمية 2026/2027
-          </span>
-        </motion.div>
-
         <motion.h1 {...fadeUp(0.1)} style={{
           fontSize: 'clamp(2.25rem, 6.5vw, 4.5rem)',
           fontWeight: 800,
